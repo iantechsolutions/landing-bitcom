@@ -1,0 +1,162 @@
+---
+console.log("javascript")
+---
+
+
+<header class="header">
+  <img class="logo"  src="https://utfs.io/f/5e8f0ac9-219d-4b75-bf71-1768551d369c-ju8o7r.png" alt=""/>
+  <img class="abrir-menu" id="abrir" src="https://utfs.io/f/3aa9015e-7f46-49b5-931a-90160b29c11a-vriuvg.png"/>
+  <nav class=nav id="nav">
+    
+    <img class="cerrar-menu" id="cerrar" src="https://utfs.io/f/3aa9015e-7f46-49b5-931a-90160b29c11a-vriuvg.png" />
+    
+    <ul class="navlinks">
+        <li>
+            <a href="">Acceso a entidades</a>
+          </li>
+        <li>
+          <a href="">Nuestra Plataforma</a>
+        </li>
+        <li>
+          <a href="">Servicios</a>
+        </li>
+        <li>
+          <a href="">Contacto</a>
+        </li>
+      </ul>
+  </nav>
+  </header>
+
+  <script>
+    const nav = document.querySelector("#nav");
+    const abrir = document.querySelector("#abrir");
+    const cerrar = document.querySelector("#cerrar");
+
+    abrir.addEventListener("click", () => {
+        nav.classList.add("visible");
+    })
+
+    cerrar.addEventListener("click", () => {
+        nav.classList.remove("visible");
+    })
+  </script>
+
+
+  <style>
+    
+    .header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: #212121;
+    border-bottom: 1px dotted #1bdfb7;
+}
+
+.logo{
+    width: 20rem;
+    height: auto;
+    margin-left: 10rem;
+}
+
+.navlinks{
+    list-style-type: none;
+    display: flex;
+    gap: 4rem;
+    margin-right: 7rem;
+    align-items: center;
+    font-size: 1.3rem;
+}
+
+.navlinks a{
+    text-decoration: none;
+    color: white;
+}
+
+.abrir-menu{
+    margin-right: 1rem;
+}
+
+.abrir-menu, .cerrar-menu {
+    width: 1.7rem;
+    height: auto;
+    display: none;
+}
+
+
+@media screen and (max-width: 1024px) {
+
+    .logo{
+        height: 3rem;
+        width: 15rem;
+        margin-left: 3rem;
+    }
+    .navlinks{
+        gap: 1rem;
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    
+    .logo{
+        height: 3rem;
+        width: 15rem;
+        margin-left: 1rem;
+    }
+
+    .navlinks{
+    list-style-type: none;
+    display: flex;
+    gap: 0.6rem;
+    margin-right: 1rem;
+    align-items: center;
+    font-size: 1rem;
+}
+}
+
+@media screen and (max-width: 550px) {
+    
+    .abrir-menu, .cerrar-menu{
+        display: block;
+        cursor: pointer;
+    }
+
+    .nav{
+        opacity: 0;
+        visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        gap: 1rem;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #212121;
+        padding: 2rem;
+        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+    }
+
+    .nav.visible{
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .navlinks{
+        flex-direction: column;
+        align-items: end;
+        margin-top: 20px;
+
+    }
+
+    .navlinks a{
+        color: white;
+    }
+}
+
+
+@media screen and (max-width: 425px){
+
+}
+  </style>

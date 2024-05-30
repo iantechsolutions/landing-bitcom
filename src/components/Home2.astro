@@ -1,0 +1,270 @@
+---
+---
+
+
+
+<section class="home-2" id="home-2">
+    <div class="home-2-tittle">
+      <h2>
+        Nuestra <span>Plataforma</span>
+      </h2>
+      <p>Gestione sus cobranzas y pagos de forma online.</p>
+    </div>
+    <div class="home-2-container">
+      <div class="grid-container">
+        <figure>
+          <img
+            src="https://utfs.io/f/2f53996b-28a5-4ee5-8167-5e3fa25e2455-c2frxe.png"
+            alt=""
+          />
+        </figure>
+        <figure>
+          <img
+            src="https://utfs.io/f/847c1eab-1be0-4a88-9e0b-61475fa0cb88-c2frxd.png"
+            alt=""
+          />
+        </figure>
+        <figure>
+          <img
+            src="https://utfs.io/f/9c8d4b16-ed42-4958-8a08-4b672c554a9e-c2frxc.png"
+            alt=""
+          />
+        </figure>
+        <figure>
+          <img
+            src="https://utfs.io/f/19acdbb4-e7fb-46ab-9112-50acd7ca5ef1-c2frxb.png"
+            alt=""
+          />
+        </figure>
+        <figure>
+          <img
+            src="https://utfs.io/f/3f0727e4-7e48-4fc9-a6a8-6d391adaf19f-c2frxa.png"
+            alt=""
+          />
+        </figure>
+        <figure>
+          <img
+            src="https://utfs.io/f/9a736e15-ada0-4dca-9b7c-fa258a5c3161-c2frx9.png"
+            alt=""
+          />
+        </figure>
+      </div>
+    </div>
+
+    <div class="sliderh2">
+      <div class="slide-track">
+        <div class="slide">
+          <img
+            src="https://utfs.io/f/2f53996b-28a5-4ee5-8167-5e3fa25e2455-c2frxe.png"
+            alt=""
+          />
+        </div>
+        <div class="slide">
+          <img
+            src="https://utfs.io/f/847c1eab-1be0-4a88-9e0b-61475fa0cb88-c2frxd.png"
+            alt=""
+          />
+        </div>
+        <div class="slide">
+          <img
+            src="https://utfs.io/f/9c8d4b16-ed42-4958-8a08-4b672c554a9e-c2frxc.png"
+            alt=""
+          />
+        </div>
+        <div class="slide">
+          <img
+            src="https://utfs.io/f/19acdbb4-e7fb-46ab-9112-50acd7ca5ef1-c2frxb.png"
+            alt=""
+          />
+        </div>
+        <div class="slide">
+          <img
+            src="https://utfs.io/f/3f0727e4-7e48-4fc9-a6a8-6d391adaf19f-c2frxa.png"
+            alt=""
+          />
+        </div>
+        <div class="slide">
+          <img
+            src="https://utfs.io/f/9a736e15-ada0-4dca-9b7c-fa258a5c3161-c2frx9.png"
+            alt=""
+          />
+        </div>
+    </div>    
+  </section>
+
+
+
+  <style>
+
+.home-2 {
+  background-image: url(https://utfs.io/f/0a01fa82-702b-478a-aa50-e5da470939d5-oaakwe.jpg);
+  background-size: 100%;
+  padding-bottom: 10rem;
+}
+
+.home-2-tittle {
+  display: flex;
+  flex-direction: column;
+  padding: 5rem 10rem 30px;
+}
+
+.home-2-tittle h2 {
+  font-size: 40px;
+  color: white;
+  font-family: "Spline Sans", sans-serif;
+}
+
+.home-2-tittle span {
+  color: #1bdfb7;
+}
+
+.home-2-tittle p {
+  font-size: 25px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: white;
+}
+
+.home-2-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 3fr);
+  gap: 8px;
+  margin-left: -45px;
+  margin-top: 30px;
+}
+
+.grid-container figure img {
+  height: 250px;
+  width: 25rem;
+}
+
+
+.sliderh2{
+  display: none;
+}
+
+
+
+@media screen and (max-width: 1024px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    gap: 5px;
+    margin-left: 1rem;
+  }
+
+  .home-2-tittle {
+    display: flex;
+    flex-direction: column;
+    padding: 5rem 10rem 30px;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .home-2-tittle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5rem 10rem 30px;
+  }
+
+  .home-2-tittle p {
+    font-size: 25px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    color: white;
+    text-align: center;
+  }
+
+  .grid-container figure img {
+    height: 210px;
+    width: 21rem;
+  }
+}
+
+
+@media screen and (max-width: 550px){
+
+  .home-2-tittle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem 5rem 30px;
+  }
+
+  .sliderh2 {
+        display: block;
+        width: 100%;
+        height: 16rem;
+        margin: auto;
+        overflow: hidden;
+        padding: 40px;
+    }
+
+    .sliderh2 .slide-track {
+        display: flex;
+        animation: scroll 30s linear infinite;
+        width: calc(200px * 6); 
+        gap: 15rem;
+    }
+
+    .sliderh2 .slide {
+        width: 200px;
+    }
+
+    .sliderh2 .slide img {
+        width: 25rem;
+    }
+
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(calc(-200px * 3)); 
+        }
+    }
+
+    .grid-container {
+        display: none;
+    }
+}
+
+
+
+@media screen and (max-width: 425px) {
+  .home-2-tittle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 4rem 5rem 30px;
+  }
+
+  .home-2-tittle h2 {
+  font-size: 35px;
+
+}
+}
+
+@media screen and (max-width: 375px){
+  .home-2-tittle h2 {
+  font-size: 30px;
+  color: white;
+  font-family: "Spline Sans", sans-serif;
+}
+
+.home-2-tittle p{
+  font-size: 20px;
+}
+}
+
+  </style>
