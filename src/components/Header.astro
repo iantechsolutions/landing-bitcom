@@ -54,9 +54,9 @@ console.log("javascript")
 }
 
 .logo{
-    width: 19rem;
+    width: 17rem;
     height: auto;
-    margin-left: 7rem;
+    margin-left: 7.6rem;
 }
 
 .navlinks{
@@ -100,15 +100,15 @@ console.log("javascript")
 @media screen and (max-width: 768px) {
     
     .logo{
-        height: 3rem;
-        width: 15rem;
+        height: 2.6rem;
+        width: 13rem;
         margin-left: 1rem;
     }
 
     .navlinks{
     list-style-type: none;
     display: flex;
-    gap: 0.6rem;
+    gap: 0.8rem;
     margin-right: 1rem;
     align-items: center;
     font-size: 1rem;
@@ -156,7 +156,27 @@ console.log("javascript")
 }
 
 
-@media screen and (max-width: 425px){
+@media screen and (max-width: 430px){
 
+    .navlinks{
+        flex-direction: column;
+        align-items: end;
+        margin-top: 20px;
+        gap: 20px;
+    }
+
+    .navlinks a{
+        color: white;
+    }
+}
+
+
+
+@media screen and (max-width: 425px) {
+    .logo{
+        height: 2.4rem;
+        width: 13rem;
+        margin-left: 1rem;
+    }
 }
   </style>

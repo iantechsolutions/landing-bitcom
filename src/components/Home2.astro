@@ -129,19 +129,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
 }
 
 .grid-container {
   display: grid;
   grid-template-columns: repeat(3, 3fr);
-  gap: 8px;
+  gap: 10px;
   margin-top: 30px;
 }
 
 .grid-container figure img {
-  height: 13rem;
-  width: 21rem;
+  height: 14.3rem;
+  width: 23rem;
 }
 
 
@@ -210,7 +209,7 @@
 
     .sliderh2 .slide-track {
         display: flex;
-        animation: scroll 30s linear infinite;
+        animation: scroll 25s linear infinite;
         width: calc(200px * 6); 
         gap: 15rem;
     }
@@ -240,6 +239,21 @@
 
 
 @media screen and (max-width: 425px) {
+  .home-2-tittle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 4rem 5rem 30px;
+  }
+
+  .home-2-tittle h2 {
+  font-size: 35px;
+
+}
+}
+
+@media screen and (max-width: 430px) {
   .home-2-tittle {
     display: flex;
     flex-direction: column;

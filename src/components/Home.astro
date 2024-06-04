@@ -7,12 +7,12 @@ console.log("javascript")
 <section class="home" id="home">
     <div class="header-home">
       <h1>
-        Simplifique la gestión de <br /> tesorería{" "}
+        Simplifique la gestión de tesorería
         <span>de su Empresa</span>
       </h1>
       <p>
         Accede a un <span>servicio integral</span> de Gestion de Canales
-        de Recaudación y
+        de Recaudación <br> y
         Cash Managment de forma online con nuestra Plataforma.
       </p>
 
@@ -239,6 +239,70 @@ console.log("javascript")
 }
 
 
+
+
+
+
+@media screen and (max-width: 430px) {
+    .home{
+        background-image: url(https://utfs.io/f/00afc46a-fb23-459f-96a7-c070a5d1afca-2723.png);
+
+        height: 40rem;
+    }
+
+    .header-home{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 8rem 1rem;
+    text-align: start;
+}
+
+.header-home h1{
+    font-size: 32px;
+    width: 25rem;
+    color: white;
+    font-weight: 300;
+    text-align: start;
+    font-family: "Spline Sans", sans-serif;
+    margin-bottom: 2rem;
+}
+
+.header-home h1 span{
+    color: #1BDFB7;
+    font-weight: bold;
+    font-family: "Spline Sans", sans-serif;
+}
+
+.header-home p{
+    font-size: 20px;
+    font-weight: 300;
+    text-align: start; 
+    font-family: "Roboto", sans-serif;
+    color: white;
+    padding: 1px;
+    width: 25rem;
+    margin-bottom: 2rem;
+}
+
+.header-home p span{
+    font-weight: 700;
+}
+
+.header-home button{
+    background: none;
+    border: none;
+    padding: 0;
+    margin-top: 15px;
+ }
+ 
+.header-home button img{
+    width: 13rem;
+    height: auto;
+    cursor: pointer;
+ }
+}
+
 @media screen and (max-width: 375px) {
     .home{
         background-image: url(https://utfs.io/f/00afc46a-fb23-459f-96a7-c070a5d1afca-2723.png);
@@ -283,7 +347,35 @@ console.log("javascript")
     
 }
 
+@media screen and (max-width: 320px) {
 
+    .header-home{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+    .header-home h1{
+    font-size: 36px;
+    width: 15rem;
+    color: white;
+    font-weight: 300;
+    font-family: "Spline Sans", sans-serif;
+    margin-bottom: 2rem;
+}
+
+.header-home p{
+    font-size: 20px;
+    font-weight: 300;
+    font-family: "Roboto", sans-serif;
+    color: white;
+    padding: 1px;
+    margin-left: 1.3rem;
+    width: 17rem;
+    margin-bottom: 2rem;
+}
+}
 
 
   </style>

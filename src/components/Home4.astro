@@ -4,70 +4,51 @@
 
 
 
-
-
-<div class="home-4">
-    <div class="title">
+<section class="home-4" id="home-4">
+    <div class="home-4-tittle">
       <h2>
-        Nuestros servicios <span>destacados:</span>
+        Nuestros servicios <span >destacados</span>
       </h2>
       <p>Gestione sus recaudaciones y pagos de forma online:</p>
     </div>
-  </div>
-
-  <div class="home-4-images">
-    <div class="image-row-1">
-      <div class="image-container">
-        <img
-          src="./images/home4 tarjeta 1.png"
-          alt=""
-          class="imagenes-cards"
-        />
-      </div>
-    </div>{" "}
-    <div class="image-row-2">
-      <div class="image-container">
-        <img
-          src="./images/home4 tarjeta 2.png"
-          alt=""
-          class="imagenes-cards"
-        />
-      </div>
-    </div>{" "}
-    <div class="image-row-3">
-      <div class="image-container">
-        <img
-          src="./images/home4 tarjeta 3.png"
-          alt=""
-          class="imagenes-cards"
-        />
-      </div>
-    </div>
-    <div class="image-row-4">
-      <div class="image-container">
-        <img
-          src="./images/home4 tarjeta 4.png"
-          alt=""
-          class="imagenes-cards"
-        />
-      </div>
-    </div>{" "}
-    <div class="image-row-5">
-      <div class="image-container">
-        <img
-          src="./images/home4 tarjeta5.png"
-          alt=""
-          class="imagenes-cards"
-        />
-      </div>
-    </div>{" "}
-    <div class="image-row-6">
-      <div class="image-container">
-        <img
-          src="./images/home4 tarjeta 6.png"
-          alt=""
-          class="imagenes-cards"
-        />
+    <div class="home-4-container">
+      <div class="grid-container-4">
+        <figure>
+          <img
+            src="./images/home4 tarjeta 1.png"
+            alt=""
+          />
+        </figure>
+        <figure>
+          <img
+            src="./images/home4 tarjeta 2.png"
+            alt=""
+          />
+        </figure>
+        <figure>
+          <img
+            src="./images/home4 tarjeta 3.png"
+            alt=""
+          />
+        </figure>
+        <figure>
+          <img
+            src="./images/home4 tarjeta 4.png"
+            alt=""
+          />
+        </figure>
+        <figure>
+          <img
+            src="./images/home4 tarjeta5.png"
+            alt=""
+          />
+        </figure>
+        <figure>
+          <img
+            src="./images/home4 tarjeta 6.png"
+            alt=""
+          />
+        </figure>
       </div>
     </div>
 
@@ -109,160 +90,59 @@
             alt=""
           />
         </div>
-        </div>
-
-  </div>
-
+    </div>    
+  </section>
 
 
 
   <style>
 
-    .home-4 {
+.home-4 {
   background-color: #212121;
-  grid-template-rows: auto auto auto;
-  grid-template-columns: repeat(3, 1fr);
-  margin-left: 0;
-  overflow: hidden;
-  max-width: 100%;
-  padding-right: 2.8rem;
-}
-.home-4-images {
-  display: grid;
-  background-color: #212121;
-  grid-template-rows: auto auto auto;
-  grid-template-columns: repeat(3, 1fr);
-  margin-left: 0;
-  overflow: hidden;
-  max-width: 100%;
-  padding-left: 8rem;
-  padding-right: 8.1rem;
-  zoom: 68%;
-
+  padding-bottom: 3rem;
 }
 
-.title {
-  grid-row: 1;
-  grid-column: 1 / span 2;
-  position: relative;
-  right: 5px;
+.home-4-tittle {
+  display: flex;
+  flex-direction: column;
+  padding: 5rem 10rem 30px;
 }
 
-.title h2 {
-  margin-top: 7.5rem;
+.home-4-tittle h2 {
   font-size: 40px;
   color: white;
-  margin-left: 8rem;
-  font-family: "Roboto", sans-serif;
+  font-family: "Spline Sans", sans-serif;
 }
 
-.title span {
+.home-4-tittle span {
   color: #1bdfb7;
 }
-.title p {
-  font-size: 1.5rem;
-  font-family: "Spline Sans", sans-serif;
+
+.home-4-tittle p {
+  font-size: 25px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
   color: white;
-  margin-left: 8rem;
-  margin-bottom: 3.5rem;
 }
 
-.image-row-1 {
-  grid-row: 2 / span 1;
-  margin-left: 0;
-  border-radius: 30px;
-  /* border: 1px dotted #1bdfb7; */
+.home-4-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.image-row-1::before{
-  content: "";
-    position: absolute;
-    left: -1px;
-    width: calc(44.5rem);
-    border-top: 1px dotted #1BDFB7;
+.grid-container-4 {
+  display: grid;
+  grid-template-columns: repeat(3, 3fr);
+  gap: 5px;
+  margin-top: 30px;
 }
 
-.image-row-2 {
-  grid-row: 2 / span 1;
-  margin-left: 0;
-  border-radius: 30px;
+.grid-container-4 figure img {
   border: 1px dotted #1bdfb7;
-  position: relative;
-}
-
-/* .image-row-2::after {
-  content: '';
-  position: absolute;
-  right: 0;
-  top: -10px; 
-  height: 100px; 
-  border-right: 1px dotted #1bdfb7;
-} */
-
-.image-row-3 {
-  grid-row: 2 / span 1;
-  margin-left: 0;
-  border-radius: 30px 0 0;
-  /* border-top: 1px dotted #1bdfb7; */
-  /* border-bottom: 1px dotted #1BDFB7; */
-
-}
-
- .image-row-3::before{
-  content: '';
-  position: absolute;
-  right: 0px;
-  width: calc(45rem);
-  border-top: 1px dotted #1BDFB7;
-} 
-
-.image-row-4 {
-  grid-row: 3 / span 1;
-  margin-left: 0;
-  border-radius: 30px;
-  border-top: 1px dotted #1bdfb7;
-  border-bottom: 1px dotted #1BDFB7;
-  position: relative;
-}
-
-.image-row-4::after {
-  content: '';
-  position: absolute;
-  left: -1px; 
-  bottom: -1px; 
-  height: 19.5rem; 
-  border-left: 1px dotted #1bdfb7;
-}
-
-
-.image-row-5 {
-  grid-row: 3 / span 1;
-  margin-left: 0;
-  border-radius: 30px;
-  border: 1px dotted #1bdfb7;
-}
-
-
-.image-row-6 {
-  grid-row: 3 / span 1;
-  margin-left: 0;
-  border-radius: 30px;
-  border-bottom: 1px dotted #1bdfb7;
-  position: relative;
-}
-
-.image-row-6::before{
-  content: '';
-  position: absolute;
-  right: -125px;
-  width: calc(44.2rem);
-  border-top: 1px dotted #1BDFB7;
-} 
-
-
-img {
-  width: 100%;
-  height: auto;
+  border-radius: 27px;
+  height: 14.3rem;
+  width: 23rem;
 }
 
 
@@ -270,175 +150,58 @@ img {
   display: none;
 }
 
+
 @media screen and (max-width: 1024px) {
-  .home-4-images {
+  .grid-container-4 {
     display: grid;
-    background-color: #212121;
-    grid-template-rows: auto auto auto;
-    grid-template-columns: repeat(3, 1fr);
-    margin-left: 0;
-    overflow: hidden;
-    max-width: 100%;
-    padding-left: 8rem;
-    padding-right: 8.1rem;
-    zoom: 50%;
-  
-  }
-  
-  .title {
-    grid-row: 1;
-    grid-column: 1 / span 2;
-    position: relative;
-    right: -8px;
+    grid-template-columns: repeat(2, 2fr);
+    gap: 5px;
+    margin-left: 1rem;
   }
 
-  .image-row-1::before{
-    content: "";
-      position: absolute;
-      left: -1px;
-      width: calc(47rem);
-      border-top: 1px dotted #1BDFB7;
-  }
-
-  
-
-  .image-row-3::before{
-    content: '';
-    position: absolute;
-    right: 0px;
-    width: calc(47rem);
-    border-top: 1px dotted #1BDFB7;
-  } 
-
-  .image-row-4::after {
-    content: '';
-    position: absolute;
-    left: 3px; 
-    bottom: -1px; 
-    height: 20.8rem; 
-    border-left: 1px dotted #1bdfb7;
-  }
-
-
-  .image-row-5 {
-  grid-row: 3 / span 1;
-  margin-left: 0;
-  border-radius: 30px;
-  border: 1px dotted #1bdfb7;
-}
-
-  .image-row-6::before{
-    content: '';
-    position: absolute;
-    right: -125px;
-    width: calc(46.5rem);
-    border-top: 1px dotted #1BDFB7;
+  .home-4-tittle {
+    display: flex;
+    flex-direction: column;
+    padding: 5rem 10rem 30px;
   }
 }
-
 
 
 @media screen and (max-width: 768px) {
-  .home-4-images {
-    display: grid;
-    background-color: #212121;
-    grid-template-rows: auto auto auto;
-    grid-template-columns: repeat(3, 1fr);
-    margin-left: 0;
-    overflow: hidden;
-    max-width: 100%;
-    padding-left: 8rem;
-    padding-right: 8.1rem;
-    zoom: 38%;
+  .home-4-tittle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5rem 5rem 30px;
   }
 
-  .title {
-    grid-row: 1;
-    grid-column: 1 / span 2;
-    position: relative;
-    right: 2rem;
-    grid-column: center;
-  }
 
-  .title h2 {
-    margin-top: 3rem;
-    font-size: 35px;
-    color: white;
-    margin-left: 7rem;
+  .home-4-tittle p {
+    font-size: 25px;
     font-family: "Roboto", sans-serif;
-  }
-
-  .title p {
-    font-size: 1.5rem;
-    font-family: "Spline Sans", sans-serif;
+    font-weight: 300;
     color: white;
-    margin-left: 6rem;
-    margin-bottom: 3.5rem;
+    text-align: center;
   }
 
-  .image-row-1::before{
-    content: "";
-      position: absolute;
-      left: -1px;
-      width: calc(45.8rem);
-      border-top: 1px dotted #1BDFB7;
-  }
-
-  .image-row-3::before{
-    content: '';
-    position: absolute;
-    right: 0px;
-    width: calc(46rem);
-    border-top: 1px dotted #1BDFB7;
-  } 
-
-  .image-row-4::after {
-    content: '';
-    position: absolute;
-    left: 3px; 
-    bottom: 10px; 
-    height: 19.9rem; 
-    border-left: 1px dotted #1bdfb7;
-  }
-
-  .image-row-6::before{
-    content: '';
-    position: absolute;
-    right: -125px;
-    width: calc(46.1rem);
-    border-top: 1px dotted #1BDFB7;
+  .grid-container-4 figure img {
+    height: 210px;
+    width: 21rem;
   }
 }
 
 
 @media screen and (max-width: 550px){
 
-  .title {
-    grid-row: 1;
-    grid-column: 1 / span 2;
-    position: relative;
-    right: 1rem;
-    grid-column: center;
-  }
-
-  .title h2 {
-    text-align: center;
-    margin-top: 3rem;
-    font-size: 35px;
-    color: white;
-    font-family: "Roboto", sans-serif;
-  }
-
-  .title p {
-    text-align: center;
-    font-size: 1.5rem;
-    font-family: "Spline Sans", sans-serif;
-    color: white;
-    margin-bottom: 3.5rem;
+  .home-4-tittle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem 5rem 30px;
   }
 
   .sliderh4 {
-        display: none;
+        display: block;
         width: 100%;
         height: 16rem;
         margin: auto;
@@ -448,17 +211,20 @@ img {
 
     .sliderh4 .slide-track {
         display: flex;
-        animation: scroll 40s linear infinite;
+        animation: scroll 25s linear infinite;
         width: calc(200px * 6); 
         gap: 15rem;
     }
 
-    .sliderh2 .slide {
+    .sliderh4 .slide {
         width: 200px;
     }
 
-    .sliderh2 .slide img {
+    .sliderh4 .slide img {
         width: 25rem;
+        height: 13.5rem;
+        border: 1px dotted #1bdfb7;
+        border-radius: 27px;
     }
 
     @keyframes scroll {
@@ -470,67 +236,53 @@ img {
         }
     }
 
-
-.home-4-images{
-  display: none;
+    .grid-container-4 {
+        display: none;
+    }
 }
 
-}
 
 
 @media screen and (max-width: 425px) {
-  .title {
-    grid-row: 1;
-    grid-column: 1 / span 2;
-    position: relative;
-    right: 1rem;
-    grid-column: center;
-  }
-
-  .title h2 {
+  .home-4-tittle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    margin-top: 3rem;
-    font-size: 30px;
-    color: white;
-    font-family: "Roboto", sans-serif;
+    padding: 4rem 3rem 30px;
   }
 
-  .title p {
-    text-align: center;
-    font-size: 1.1rem;
-    font-family: "Spline Sans", sans-serif;
-    color: white;
-    margin-bottom: 3.5rem;
-  }
-
+  .home-4-tittle h2 {
+  font-size: 33px;
 
 }
-
-
-@media screen and (max-width: 375px) {
-  .title {
-    grid-row: 1;
-    grid-column: 1 / span 2;
-    position: relative;
-    right: 1rem;
-    grid-column: center;
-  }
-
-  .title h2 {
-    text-align: center;
-    margin-top: 3rem;
-    margin-bottom: 10px;
-    font-size: 25px;
-    color: white;
-    font-family: "Roboto", sans-serif;
-  }
-
-  .title p {
-    text-align: center;
-    font-size: 1rem;
-    font-family: "Spline Sans", sans-serif;
-    color: white;
-    margin-bottom: 3.5rem;
-  }
 }
-  </style>
+
+@media screen and (max-width: 430px) {
+  .home-4-tittle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 4rem 5rem 30px;
+  }
+
+  .home-4-tittle h2 {
+  font-size: 35px;
+
+}
+}
+
+@media screen and (max-width: 375px){
+  .home-4-tittle h2 {
+  font-size: 30px;
+  color: white;
+  font-family: "Spline Sans", sans-serif;
+}
+
+.home-4-tittle p{
+  font-size: 20px;
+}
+}
+
+</style>
