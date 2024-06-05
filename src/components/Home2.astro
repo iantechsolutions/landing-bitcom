@@ -97,7 +97,7 @@
   <style>
 
 .home-2 {
-  background-image: url(https://utfs.io/f/0a01fa82-702b-478a-aa50-e5da470939d5-oaakwe.jpg);
+  background-image: url("./images/fondo home 2.jpg");
   background-size: 100%;
   padding-bottom: 10rem;
 }
@@ -149,6 +149,19 @@
 }
 
 
+@media screen and (max-width: 1128px) {
+
+  .grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 3fr);
+  gap: 6px;
+  margin-top: 30px;
+}
+  .grid-container figure img {
+  height: 10.5rem;
+  width: 16.8rem;
+}
+}
 
 @media screen and (max-width: 1024px) {
   .grid-container {

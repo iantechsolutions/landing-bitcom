@@ -4,11 +4,11 @@ console.log("javascript")
 
 
 <header class="header">
-  <img class="logo"  src="https://utfs.io/f/5e8f0ac9-219d-4b75-bf71-1768551d369c-ju8o7r.png" alt=""/>
-  <img class="abrir-menu" id="abrir" src="https://utfs.io/f/3aa9015e-7f46-49b5-931a-90160b29c11a-vriuvg.png"/>
+  <img class="logo"  src="./images/logo bitcom.png" alt=""/>
+  <img class="abrir-menu" id="abrir" src="./images/cerrar menu.png"/>
   <nav class=nav id="nav">
     
-    <img class="cerrar-menu" id="cerrar" src="https://utfs.io/f/3aa9015e-7f46-49b5-931a-90160b29c11a-vriuvg.png" />
+    <img class="cerrar-menu" id="cerrar" src="./images/cerrar menu.png" />
     
     <ul class="navlinks">
         <li>
@@ -81,6 +81,25 @@ console.log("javascript")
     width: 1.7rem;
     height: auto;
     display: none;
+}
+
+
+@media screen and (max-width: 1128px) {
+    .logo{
+    width: 15rem;
+    height: auto;
+    margin-left: 5rem;
+}
+
+.navlinks{
+    list-style-type: none;
+    display: flex;
+    gap: 3rem;
+    margin-right: 3rem;
+    align-items: center;
+    font-size: 1.3rem;
+}
+
 }
 
 
