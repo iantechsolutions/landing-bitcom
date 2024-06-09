@@ -31,7 +31,7 @@ console.log("javascript")
 
   <style>
     .home{
-    background-image: url('/images/fondo_primero.jpg');
+    background-image: url('/images/fondo_primero2.png');
     height: 800px;
     width: 100%;
 }
@@ -154,6 +154,53 @@ console.log("javascript")
  }
 
 
+ @media screen and (max-width: 770px) {
+    .home{
+        height: 50rem;
+        width: 100%;
+    }
+    
+    .header-home{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 12rem 6rem;
+    text-align: start;
+    }
+
+    .header-home h1{
+        font-size: 55px;
+        width: 38rem;
+        color: white;
+        font-weight: 300;
+        text-align: start;
+        font-family: "Spline Sans", sans-serif;
+    }
+    
+    .header-home h1 span{
+        color: #1BDFB7;
+        font-weight: bold;
+        font-family: "Spline Sans", sans-serif;
+    }
+    
+    .header-home p{
+        font-size: 25px;
+        width: 38rem;
+        font-weight: 300;
+        text-align: start; 
+        font-family: "Roboto", sans-serif;
+        color: white;
+        padding: 10px;
+    }
+    
+    .header-home p span{
+        font-weight: 700;
+    }
+ }
+
+
+
+
  @media screen and (max-width: 550px){
 
   .header-home{
@@ -208,6 +255,114 @@ console.log("javascript")
     cursor: pointer;
  }
   
+}
+
+@media screen and (max-width: 692px) and (min-width: 551px){
+    .header-home{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 10rem 7rem;
+    text-align: start;
+}
+
+.header-home h1{
+    font-size: 35px;
+    width: 25rem;
+    color: white;
+    font-weight: 300;
+    text-align: start;
+    font-family: "Spline Sans", sans-serif;
+    margin-bottom: 2rem;
+}
+
+.header-home h1 span{
+    color: #1BDFB7;
+    font-weight: bold;
+    font-family: "Spline Sans", sans-serif;
+}
+
+.header-home p{
+    font-size: 25px;
+    font-weight: 300;
+    text-align: start; 
+    font-family: "Roboto", sans-serif;
+    color: white;
+    padding: 1px;
+    width: 25rem;
+    margin-bottom: 2rem;
+}
+
+.header-home p span{
+    font-weight: 700;
+}
+
+.header-home button{
+    background: none;
+    border: none;
+    padding: 0;
+    margin-top: 15px;
+ }
+ 
+.header-home button img{
+    width: 15rem;
+    height: auto;
+    cursor: pointer;
+ }
+}
+
+@media screen and (max-width: 511px) and (min-width: 481px){
+    .header-home{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 11rem 5rem;
+    text-align: start;
+}
+
+.header-home h1{
+    font-size: 35px;
+    width: 25rem;
+    color: white;
+    font-weight: 300;
+    text-align: start;
+    font-family: "Spline Sans", sans-serif;
+    margin-bottom: 2rem;
+}
+
+.header-home h1 span{
+    color: #1BDFB7;
+    font-weight: bold;
+    font-family: "Spline Sans", sans-serif;
+}
+
+.header-home p{
+    font-size: 25px;
+    font-weight: 300;
+    text-align: start; 
+    font-family: "Roboto", sans-serif;
+    color: white;
+    padding: 1px;
+    width: 25rem;
+    margin-bottom: 2rem;
+}
+
+.header-home p span{
+    font-weight: 700;
+}
+
+.header-home button{
+    background: none;
+    border: none;
+    padding: 0;
+    margin-top: 15px;
+ }
+ 
+.header-home button img{
+    width: 15rem;
+    height: auto;
+    cursor: pointer;
+ }
 }
 
 @media screen and (max-width: 480px) {
