@@ -99,7 +99,10 @@
 
 .home-4 {
   background-color: #212121;
+  padding-top: 3rem;
   padding-bottom: 3rem;
+  width: auto;
+  height: 60rem;
 }
 
 .home-4-tittle {
@@ -139,7 +142,6 @@
 .grid-container-4 {
   display: grid;
   grid-template-columns: repeat(3, 3fr);
-  /* gap: 2px; */
   margin-top: 3rem;
 }
 
@@ -171,18 +173,25 @@
 }
 
 @media screen and (max-width: 1024px) {
-  .grid-container-4 {
-    display: grid;
-    grid-template-columns: repeat(2, 2fr);
-    /* gap: 5px; */
-    margin-left: 1rem;
-  }
 
   .home-4-tittle {
     display: flex;
     flex-direction: column;
     padding: 5rem 10rem 30px;
   }
+
+  .grid-container-4 {
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    margin-left: 1rem;
+  }
+  
+  .grid-container-4 figure img{
+    height: 13.7rem;
+     width: 22rem;
+  }
+
+
 }
 
 

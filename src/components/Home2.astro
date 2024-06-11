@@ -6,9 +6,9 @@
 <section class="home-2" id="home-2">
     <div class="home-2-tittle">
       <h2>
-        Nuestros <span >Servicios</span>
+        Canales de <span >Recaudación:</span>
       </h2>
-      <p>Con un solo contrato publique su Marca en todas las Entidades de Recaudación con mayor alcance de todo el País</p>
+      <p>Con un solo contrato publique su <span>Marca en todas las Entidades de Recaudación</span> con mayor alcance de todo el País</p>
     </div>
     <div class="home-2-container">
       <div class="grid-container">
@@ -20,7 +20,7 @@
         </figure>
         <figure>
           <img
-            src="/images/card1h2.png"
+            src="/images/card2h2.png"
             alt=""
           />
         </figure>
@@ -99,7 +99,9 @@
 .home-2 {
   background-image: url('/images/fondo degrade violeta.jpg');
   background-size: 100%;
-  padding-bottom: 10rem;
+  height: 60rem;
+  width: auto;
+  padding-top: 4rem;
 }
 
 .home-2-tittle {
@@ -123,6 +125,11 @@
   font-family: "Roboto", sans-serif;
   font-weight: 300;
   color: white;
+}
+
+.home-2-tittle p span{
+  color: white;
+  font-weight: 700;
 }
 
 .home-2-container {
@@ -164,18 +171,33 @@
 }
 
 @media screen and (max-width: 1024px) {
-  .grid-container {
-    display: grid;
-    grid-template-columns: repeat(2, 2fr);
-    gap: 5px;
-    margin-left: 1rem;
-  }
+  .home-2 {
+  background-image: url('/images/fondo degrade violeta.jpg');
+  background-size: 100%;
+  height: 60rem;
+  width: auto;
+  padding-top: 1rem;
+}
 
   .home-2-tittle {
     display: flex;
     flex-direction: column;
-    padding: 5rem 10rem 30px;
+    padding: 1rem 10rem 30px;
   }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    gap: 3px;
+    margin-left: 1rem;
+  }
+
+  .grid-container figure img {
+    height: 14.2rem;
+    width: 22.5rem;
+}
+
+
 }
 
 
