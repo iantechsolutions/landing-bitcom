@@ -2,130 +2,150 @@
 
 
 <header class="header">
-  <img class="logo"  src="./images/logo bitcom.png" alt=""/>
-  <img class="abrir-menu" id="abrir" src="./images/cerrar menu.png"/>
-  <nav class=nav id="nav">
-    
-    <img class="cerrar-menu" id="cerrar" src="./images/cerrar menu.png" />
-    
-    <ul class="navlinks">
-        <li>
-            <a href="https://bitcompay.vercel.app/">Acceso a entidades</a>
+    <img class="logo"  src="./images/logo bitcom.png" alt=""/>
+    <div class="menu">
+    <img class="abrir-menu" id="abrir" src="./images/cerrar menu.png"/>
+    <nav class=nav id="nav">
+      
+      <img class="cerrar-menu" id="cerrar" src="./images/cerrar menu.png" />
+      
+      <ul class="navlinks">
+          <li>
+            <a href="https://bitcompay.vercel.app"><img src="/images/btnacc.png" alt=""></a>
+            </li>
+          <li>
+            <a href="">Nuestra Plataforma</a>
           </li>
-        <li>
-          <a href="">Nuestra Plataforma</a>
-        </li>
-        <li>
-          <a href="">Servicios</a>
-        </li>
-        <li>
-          <a href="">Contacto</a>
-        </li>
-      </ul>
-  </nav>
-  </header>
-
-  <script>
-    const nav = document.querySelector("#nav");
-    const abrir = document.querySelector("#abrir");
-    const cerrar = document.querySelector("#cerrar");
-
-    abrir.addEventListener("click", () => {
-        nav.classList.add("visible");
-    })
-
-    cerrar.addEventListener("click", () => {
-        nav.classList.remove("visible");
-    })
-  </script>
-
-
-  <style>
+          <li>
+            <a href="">Servicios</a>
+          </li>
+          <li>
+            <a href="">Contacto</a>
+          </li>
+        </ul>
+    </nav>
+  </div>
+    </header>
+  
+    <script>
+      const nav = document.querySelector("#nav");
+      const abrir = document.querySelector("#abrir");
+      const cerrar = document.querySelector("#cerrar");
+  
+      abrir.addEventListener("click", () => {
+          nav.classList.add("visible");
+      })
+  
+      cerrar.addEventListener("click", () => {
+          nav.classList.remove("visible");
+      })
+    </script>
+  
+  
+    <style>
+      
+      .header{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 3.5dvh;
+      padding-bottom: 3dvh;
+      background-color: #212121;
+      border-bottom: 1px dotted #1bdfb7;
+  }
+  
+  .logo{
+      height: 4vh;
+      margin-left: 10dvw;
+  }
+  
+  .navlinks{
+      list-style-type: none;
+      display: flex;
+      gap: 2vw;
+      margin-right: 2vw;
+      align-items: center;
+      text-align: center;
+      font-size: 2.5vh;
+  }
+  
+  .navlinks a{
+      text-decoration: none;
+      color: white;
+  }
+  
+  .abrir-menu{
+      margin-right: 1vw;
+  }
+  
+  .abrir-menu, .cerrar-menu {
     
-    .header{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 3.5dvh;
-    padding-bottom: 3dvh;
-    background-color: #212121;
-    border-bottom: 1px dotted #1bdfb7;
-}
-
-.logo{
-    /* width: 15vw; */
-    height: 4vh;
-    margin-left: 10dvw;
-}
-
-.navlinks{
-    list-style-type: none;
-    display: flex;
-    gap: 1vw;
-    margin-right: 2vw;
-    align-items: center;
-    font-size: 2.5vh;
-}
-
-.navlinks a{
-    text-decoration: none;
-    color: white;
-}
-
-.abrir-menu{
-    margin-right: 1vw;
-}
-
-.abrir-menu, .cerrar-menu {
-    /* width: 5vw; */
-    height: 3.5vh;
-    height: auto;
-    display: none;
-}
-
-
-
-
-
-
-
-
-
-@media screen and (max-width: 768px) {
-    .abrir-menu, .cerrar-menu{
+      height: 3.5vh;
+      height: auto;
+      display: none;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  @media screen and (max-width: 768px) {
+    .abrir-menu, .cerrar-menu {
         display: block;
         cursor: pointer;
     }
 
-    .nav{
+    .abrir-menu{
+        margin-left: 5vh;
+    }
+
+    .header {
+        justify-content: space-between;
+    }
+
+    .menu {
+        order: 1;
+    }
+
+    .logo {
+        order: 2;
+        margin-left: 0;
+        margin-right: 10dvw;
+    }
+
+    .nav {
         opacity: 0;
         visibility: hidden;
         display: flex;
         flex-direction: column;
-        align-items: end;
+        align-items: flex-start;
         gap: 1rem;
         position: absolute;
         top: 0;
-        right: 0;
-        bottom: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
         background-color: #212121;
         padding: 2rem;
         box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
     }
 
-    .nav.visible{
+    .nav.visible {
         opacity: 1;
         visibility: visible;
     }
 
-    .navlinks{
+    .navlinks {
         flex-direction: column;
-        align-items: end;
+        align-items: flex-start;
         margin-top: 20px;
-
     }
 
-    .navlinks a{
+    .navlinks a {
         color: white;
     }
 }
@@ -170,18 +190,4 @@
     }
 }
 
-@media screen and (max-width: 430px) {
-
-}
-
-
-@media screen and (max-width: 425px) and (min-width: 375px) {
-
-}
-
-
-
-@media screen and (max-width: 375px) and (min-width: 320px) {
-
-}
   </style>
