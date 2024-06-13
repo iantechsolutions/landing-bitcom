@@ -161,12 +161,8 @@
   <style>
 
 .home-5{
-    /* background-image: url('/images/2560 h5.jpg'); */
     background-color: #212121;
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+
 }
 
 .home-5-tittle{
@@ -242,6 +238,7 @@
     justify-content: center;
     align-items: center;
     padding-top: 17vh;
+    padding-bottom: 2vh;
 }
 
 .container ul{
@@ -251,7 +248,7 @@
     text-align: center;
     gap: 4.8vw;
     list-style-type: none;
-    font-size: 1.1vw;
+    font-size: 1.3vw;
     color: white;
     font-weight: 300;
     width: auto;
@@ -268,7 +265,72 @@
 
 
 
+@media screen and (max-width: 1024px) {
+
+
+.home-5-tittle h2{
+    font-size: 4.5vw;
+}
+
+.home-5-tittle p{
+    font-size: 2vh;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 17vh;
+}
+
+.container ul{
+    gap: 4vw;
+    
+}
+
+.logo-derechos{
+    height: 2.1vw;
+    width: auto;
+}
+}
+
+
 @media screen and (max-width: 768px) {
+  .home-5-tittle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0vw; 
+  }
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10vh;
+}
+
+.container ul{
+    gap: 4vw;
+    
+}
+
+.logo-derechos{
+    height: 2.2vw;
+    width: auto;
+}
+}
+
+
+@media screen and (max-width: 425px) {
+  .home-5-tittle h2{
+    font-size: 4vh;
+  }
+}
+
+
+
+/* @media screen and (max-width: 768px) {
 
 
   .home-5-tittle{
@@ -461,6 +523,6 @@
     color: white;
     font-family: "Roboto", sans-serif;
 }
-}
+} */
 
   </style>
