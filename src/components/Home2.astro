@@ -1,281 +1,254 @@
----
----
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slider Responsive</title>
 
+  <style>
+    .home-2 {
+      background-image: url('/images/2560 h2.png');
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
 
+    .home-2-tittle {
+      display: flex;
+      flex-direction: column;
+      padding-top: 10vh;
+      padding-left: 10vw;
+      padding-bottom: 2vh;
+    }
+
+    .home-2-tittle h2 {
+      font-size: 2.5vw;
+      color: white;
+      font-family: "Spline Sans", sans-serif;
+    }
+
+    .home-2-tittle span {
+      color: #1bdfb7;
+    }
+
+    .home-2-tittle p {
+      font-size: 1.6vw;
+      font-family: "Roboto", sans-serif;
+      font-weight: 300;
+      color: white;
+    }
+
+    .home-2-tittle p span {
+      color: white;
+      font-weight: 700;
+    }
+
+    .home-2-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(3, 3fr);
+      gap: 1vw;
+      margin-top: 9vh;
+    }
+
+    .grid-container figure img {
+      height: 31vh;
+      width: 26.5vw;
+    }
+
+    .sliderh2 {
+      display: none;
+    }
+
+    @media screen and (max-width: 1024px) {
+      .home-2-tittle h2 {
+        font-size: 4.5vh;
+      }
+      .home-2-tittle p {
+        font-size: 2vh;
+      }
+      .grid-container figure img {
+        height: 22vh;
+        width: 28vw;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .grid-container figure img {
+        height: 19vh;
+        width: 30vw;
+      }
+    }
+
+    @media screen and (max-width: 692px) {
+      .sliderh2 {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+      }
+      .sliderh2 .slide-track {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+      }
+      .sliderh2 .slide {
+        min-width: 100%;
+        box-sizing: border-box;
+      }
+      .sliderh2 .slide img {
+        width: 100%;
+        display: block;
+      }
+      .prev, .next {
+        display: none; 
+      }
+      .grid-container {
+        display: none;
+      }
+    }
+
+    @media screen and (max-width: 425px) {
+      .home-2-tittle {
+        align-items: center;
+        justify-content: center;
+        padding-top: 10vh;
+        padding-left: 2vw;
+      }
+      .home-2-tittle h2 {
+        font-size: 7vw;
+      }
+      .home-2-tittle p {
+        font-size: 4vw;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
 
 <section class="home-2" id="home-2">
   <div class="home-2-tittle">
-      <h2>
-          Canales de <span>Recaudación:</span>
-      </h2>
-      <p>Con un solo contrato publique su <span>Marca en todas las Entidades de Recaudación</span> con mayor alcance de todo el País</p>
+    <h2>
+      Canales de <span>Recaudación:</span>
+    </h2>
+    <p>Con un solo contrato publique su <span>Marca en todas las Entidades de Recaudación</span> con mayor alcance de todo el País</p>
   </div>
   <div class="home-2-container">
-      <div class="grid-container">
-          <figure>
-              <img src="/images/card1h2.png" alt="" />
-          </figure>
-          <figure>
-              <img src="/images/card2h2.png" alt="" />
-          </figure>
-          <figure>
-              <img src="/images/card3h2.png" alt="" />
-          </figure>
-          <figure>
-              <img src="/images/card4h2.png" alt="" />
-          </figure>
-          <figure>
-              <img src="/images/card5h2.png" alt="" />
-          </figure>
-          <figure>
-              <img src="/images/card6h2.png" alt="" />
-          </figure>
-      </div>
+    <div class="grid-container">
+      <figure>
+        <img src="/images/card1h2.png" alt="" />
+      </figure>
+      <figure>
+        <img src="/images/card2h2.png" alt="" />
+      </figure>
+      <figure>
+        <img src="/images/card3h2.png" alt="" />
+      </figure>
+      <figure>
+        <img src="/images/card4h2.png" alt="" />
+      </figure>
+      <figure>
+        <img src="/images/card5h2.png" alt="" />
+      </figure>
+      <figure>
+        <img src="/images/card6h2.png" alt="" />
+      </figure>
+    </div>
   </div>
 
   <div class="sliderh2">
-      <!-- <button class="prev" onclick="moveSlide(-1)">&#10094;</button> -->
-      <div class="slide-track">
-          <div class="slide">
-              <img src="/images/card1h2.png" alt="" />
-          </div>
-          <div class="slide">
-              <img src="/images/card2h2.png" alt="" />
-          </div>
-          <div class="slide">
-              <img src="/images/card3h2.png" alt="" />
-          </div>
-          <div class="slide">
-              <img src="/images/card4h2.png" alt="" />
-          </div>
-          <div class="slide">
-              <img src="/images/card5h2.png" alt="" />
-          </div>
-          <div class="slide">
-              <img src="/images/card6h2.png" alt="" />
-          </div>
+    <div class="slide-track">
+      <div class="slide">
+        <img src="/images/card1h2.png" alt="" />
       </div>
-      <!-- <button class="next" onclick="moveSlide(1)">&#10095;</button> -->
+      <div class="slide">
+        <img src="/images/card2h2.png" alt="" />
+      </div>
+      <div class="slide">
+        <img src="/images/card3h2.png" alt="" />
+      </div>
+      <div class="slide">
+        <img src="/images/card4h2.png" alt="" />
+      </div>
+      <div class="slide">
+        <img src="/images/card5h2.png" alt="" />
+      </div>
+      <div class="slide">
+        <img src="/images/card6h2.png" alt="" />
+      </div>
+    </div>
   </div>
 </section>
-
 
 <script>
   let slideIndex = 0;
   let startX = 0;
   let isSwiping = false;
-  
+
   const sliderContainer = document.querySelector('.slide-track');
   const slides = document.querySelectorAll('.slide');
-  
+  const slideWidth = slides[0].clientWidth;
+
   function showSlides(n) {
-      slideIndex = n % slides.length;
-  
-      const offset = -slideIndex * 100;
-      if (sliderContainer instanceof HTMLElement) {
-          sliderContainer.style.transform = `translateX(${offset}%)`;
-      } else {
-          console.error("sliderContainer is not an HTMLElement");
-      }
+    slideIndex = n;
+
+
+    if (slideIndex < 0) {
+      slideIndex = slides.length - 2;
+    } else if (slideIndex >= slides.length - 1) {
+      slideIndex = 0;
+    }
+
+    const offset = -slideIndex * slideWidth;
+    if (sliderContainer instanceof HTMLElement) {
+      sliderContainer.style.transform = `translateX(${offset}px)`;
+    } else {
+      console.error("sliderContainer is not an HTMLElement");
+    }
   }
-  
+
   function moveSlide(n) {
-      showSlides(slideIndex + n);
+    showSlides(slideIndex + n);
   }
-  
+
   function touchStart(e) {
-      startX = e.touches[0].clientX;
-      isSwiping = true;
+    startX = e.touches[0].clientX;
+    isSwiping = true;
   }
-  
+
   function touchMove(e) {
-      if (!isSwiping) return;
-      const currentX = e.touches[0].clientX;
-      const diffX = currentX - startX;
-  
-      if (diffX > 50) {
-          moveSlide(-1);
-          isSwiping = false;
-      } else if (diffX < -50) {
-          moveSlide(1);
-          isSwiping = false;
-      }
-  }
-  
-  function touchEnd() {
+    if (!isSwiping) return;
+    const currentX = e.touches[0].clientX;
+    const diffX = currentX - startX;
+
+    if (diffX > 50) {
+      moveSlide(-1);
       isSwiping = false;
+    } else if (diffX < -50) {
+      moveSlide(1);
+      isSwiping = false;
+    }
   }
-  
+
+  function touchEnd() {
+    isSwiping = false;
+  }
+
   if (sliderContainer) {
-      sliderContainer.addEventListener('touchstart', touchStart);
-      sliderContainer.addEventListener('touchmove', touchMove);
-      sliderContainer.addEventListener('touchend', touchEnd);
-  
-      showSlides(slideIndex);
+    sliderContainer.addEventListener('touchstart', touchStart);
+    sliderContainer.addEventListener('touchmove', touchMove);
+    sliderContainer.addEventListener('touchend', touchEnd);
+
+    showSlides(slideIndex);
   }
 </script>
 
-  
-  
-  
-  
-
-
-  <style>
-
-.home-2 {
-  background-image: url('/images/2560 h2.png');
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.home-2-tittle {
-  display: flex;
-  flex-direction: column;
-  padding-top: 10vh;
-  padding-left: 10vw;
-  padding-bottom: 2vh; 
-}
-
-.home-2-tittle h2 {
-  font-size: 2.5vw;
-  color: white;
-  font-family: "Spline Sans", sans-serif;
-}
-
-.home-2-tittle span {
-  color: #1bdfb7;
-}
-
-.home-2-tittle p {
-  font-size: 1.6vw;
-  font-family: "Roboto", sans-serif;
-  font-weight: 300;
-  color: white;
-}
-
-.home-2-tittle p span {
-  color: white;
-  font-weight: 700;
-}
-
-.home-2-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(3, 3fr);
-  gap: 1vw;
-  margin-top: 9vh;
-}
-
-.grid-container figure img {
-  height: 31vh;
-  width: 26.5vw;
-}
-
-.sliderh2 {
-  display: none;
-}
-
-@media screen and (max-width: 1024px) {
-  .home-2-tittle h2 {
-    font-size: 4.5vh;
-  }
-  .home-2-tittle p {
-    font-size: 2vh;
-  }
-  .grid-container figure img {
-    height: 22vh;
-    width: 28vw;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .grid-container figure img {
-    height: 19vh;
-    width: 30vw;
-  }
-}
-
-.sliderh2 {
-  display: none;
-}
-
-@media screen and (max-width: 692px) {
-  .sliderh2 {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-  }
-  .sliderh2 .slide-track {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-  }
-  .sliderh2 .slide {
-    min-width: 100%;
-    box-sizing: border-box;
-  }
-  .sliderh2 .slide img {
-    width: 100%;
-    display: block;
-  }
-  .prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    z-index: 1; 
-  }
-  .prev {
-    left: 10px;
-  }
-  .next {
-    right: 10px;
-  }
-  .prev:hover, .next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-  }
-  .next {
-    display: none; 
-  }
-  .sliderh2:not(:last-child) .next {
-    display: block;
-  }
-  .grid-container {
-    display: none;
-  }
-}
-
-
-@media screen and (max-width: 425px) {
-  .home-2-tittle {
-    align-items: center;
-    justify-content: center;
-    padding-top: 10vh;
-    padding-left: 2vw; 
-  }
-  .home-2-tittle h2 {
-    font-size: 7vw;
-  }
-  .home-2-tittle p {
-    font-size: 4vw;
-    text-align: center;
-  }
-}
-
-
-
-
-  </style>
+</body>
+</html>
