@@ -1,9 +1,56 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Slider Responsive</title>
+<section class="home-2" id="home-2">
+  <div class="home-2-tittle">
+    <h2>
+      Canales de <span>Recaudación:</span>
+    </h2>
+    <p>Con un solo contrato publique su <span>Marca en todas las Entidades de Recaudación</span> con mayor alcance de todo el País</p>
+  </div>
+  <div class="home-2-container">
+    <div class="grid-container">
+      <figure>
+        <img src="/images/card1h2.png" alt="" />
+      </figure>
+      <figure>
+        <img src="/images/card2h2.png" alt="" />
+      </figure>
+      <figure>
+        <img src="/images/card3h2.png" alt="" />
+      </figure>
+      <figure>
+        <img src="/images/card4h2.png" alt="" />
+      </figure>
+      <figure>
+        <img src="/images/card5h2.png" alt="" />
+      </figure>
+      <figure>
+        <img src="/images/card6h2.png" alt="" />
+      </figure>
+    </div>
+  </div>
+
+  <div class="sliderh2">
+    <div class="slide-track">
+      <div class="slide">
+        <img src="/images/card1h2.png" alt="" />
+      </div>
+      <div class="slide">
+        <img src="/images/card2h2.png" alt="" />
+      </div>
+      <div class="slide">
+        <img src="/images/card3h2.png" alt="" />
+      </div>
+      <div class="slide">
+        <img src="/images/card4h2.png" alt="" />
+      </div>
+      <div class="slide">
+        <img src="/images/card5h2.png" alt="" />
+      </div>
+      <div class="slide">
+        <img src="/images/card6h2.png" alt="" />
+      </div>
+    </div>
+  </div>
+</section>
 
   <style>
     .home-2 {
@@ -130,133 +177,71 @@
       }
     }
   </style>
-</head>
-<body>
 
-<section class="home-2" id="home-2">
-  <div class="home-2-tittle">
-    <h2>
-      Canales de <span>Recaudación:</span>
-    </h2>
-    <p>Con un solo contrato publique su <span>Marca en todas las Entidades de Recaudación</span> con mayor alcance de todo el País</p>
-  </div>
-  <div class="home-2-container">
-    <div class="grid-container">
-      <figure>
-        <img src="/images/card1h2.png" alt="" />
-      </figure>
-      <figure>
-        <img src="/images/card2h2.png" alt="" />
-      </figure>
-      <figure>
-        <img src="/images/card3h2.png" alt="" />
-      </figure>
-      <figure>
-        <img src="/images/card4h2.png" alt="" />
-      </figure>
-      <figure>
-        <img src="/images/card5h2.png" alt="" />
-      </figure>
-      <figure>
-        <img src="/images/card6h2.png" alt="" />
-      </figure>
-    </div>
-  </div>
 
-  <div class="sliderh2">
-    <div class="slide-track">
-      <!-- Duplicate first and last slides for infinite effect -->
-      <div class="slide">
-        <img src="/images/card6h2.png" alt="" />
-      </div>
-      <div class="slide">
-        <img src="/images/card1h2.png" alt="" />
-      </div>
-      <div class="slide">
-        <img src="/images/card2h2.png" alt="" />
-      </div>
-      <div class="slide">
-        <img src="/images/card3h2.png" alt="" />
-      </div>
-      <div class="slide">
-        <img src="/images/card4h2.png" alt="" />
-      </div>
-      <div class="slide">
-        <img src="/images/card5h2.png" alt="" />
-      </div>
-      <div class="slide">
-        <img src="/images/card6h2.png" alt="" />
-      </div>
-      <div class="slide">
-        <img src="/images/card1h2.png" alt="" />
-      </div>
-    </div>
-  </div>
-</section>
+
 
 <script>
-  let slideIndex = 1;
-let startX = 0;
-let isSwiping = false;
+  let slideIndex = 0;
+  let startX = 0;
+  let isSwiping = false;
 
-const sliderContainer = document.querySelector('.slide-track') as HTMLElement;
-const slides = document.querySelectorAll('.slide');
-const slideWidth = slides[0].clientWidth;
+  const sliderContainer = document.querySelector('.slide-track');
+  const slides = document.querySelectorAll('.slide');
+  const slideWidth = slides[0].clientWidth;
 
-function showSlides(n) {
-  slideIndex = n;
-  const offset = -slideIndex * slideWidth;
-  sliderContainer.style.transition = 'transform 0.5s ease-in-out';
-  sliderContainer.style.transform = `translateX(${offset}px)`;
+  function showSlides(n) {
+    slideIndex = n;
 
-  sliderContainer.addEventListener('transitionend', () => {
-    if (slideIndex === 0) {
-      sliderContainer.style.transition = 'none';
+
+    if (slideIndex < 0) {
       slideIndex = slides.length - 2;
-      sliderContainer.style.transform = `translateX(${-slideIndex * slideWidth}px)`;
-    } else if (slideIndex === slides.length - 1) {
-      sliderContainer.style.transition = 'none';
-      slideIndex = 1;
-      sliderContainer.style.transform = `translateX(${-slideIndex * slideWidth}px)`;
+    } else if (slideIndex >= slides.length - 1) {
+      slideIndex = 0;
     }
-  });
-}
 
-function moveSlide(n) {
-  showSlides(slideIndex + n);
-}
+    const offset = -slideIndex * slideWidth;
+    if (sliderContainer instanceof HTMLElement) {
+      sliderContainer.style.transform = `translateX(${offset}px)`;
+    } else {
+      console.error("sliderContainer is not an HTMLElement");
+    }
+  }
 
-function touchStart(e) {
-  startX = e.touches[0].clientX;
-  isSwiping = true;
-}
+  function moveSlide(n) {
+    showSlides(slideIndex + n);
+  }
 
-function touchMove(e) {
-  if (!isSwiping) return;
-  const currentX = e.touches[0].clientX;
-  const diffX = currentX - startX;
+  function touchStart(e) {
+    startX = e.touches[0].clientX;
+    isSwiping = true;
+  }
 
-  if (diffX > 50) {
-    moveSlide(-1);
-    isSwiping = false;
-  } else if (diffX < -50) {
-    moveSlide(1);
+  function touchMove(e) {
+    if (!isSwiping) return;
+    const currentX = e.touches[0].clientX;
+    const diffX = currentX - startX;
+
+    if (diffX > 50) {
+      moveSlide(-1);
+      isSwiping = false;
+    } else if (diffX < -50) {
+      moveSlide(1);
+      isSwiping = false;
+    }
+  }
+
+  function touchEnd() {
     isSwiping = false;
   }
-}
 
-function touchEnd() {
-  isSwiping = false;
-}
+  if (sliderContainer) {
+    sliderContainer.addEventListener('touchstart', touchStart);
+    sliderContainer.addEventListener('touchmove', touchMove);
+    sliderContainer.addEventListener('touchend', touchEnd);
 
-if (sliderContainer) {
-  sliderContainer.addEventListener('touchstart', touchStart);
-  sliderContainer.addEventListener('touchmove', touchMove);
-  sliderContainer.addEventListener('touchend', touchEnd);
-
-  showSlides(slideIndex);
-}
-
+    showSlides(slideIndex);
+  }
 </script>
 
 </body>
