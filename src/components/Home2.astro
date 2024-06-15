@@ -165,6 +165,10 @@
 
   <div class="sliderh2">
     <div class="slide-track">
+      <!-- Duplicate first and last slides for infinite effect -->
+      <div class="slide">
+        <img src="/images/card6h2.png" alt="" />
+      </div>
       <div class="slide">
         <img src="/images/card1h2.png" alt="" />
       </div>
@@ -183,71 +187,76 @@
       <div class="slide">
         <img src="/images/card6h2.png" alt="" />
       </div>
+      <div class="slide">
+        <img src="/images/card1h2.png" alt="" />
+      </div>
     </div>
   </div>
 </section>
 
 <script>
-  let slideIndex = 0;
-  let startX = 0;
-  let isSwiping = false;
+  let slideIndex = 1;
+let startX = 0;
+let isSwiping = false;
 
-  const sliderContainer = document.querySelector('.slide-track');
-  const slides = document.querySelectorAll('.slide');
-  const slideWidth = slides[0].clientWidth;
+const sliderContainer = document.querySelector('.slide-track') as HTMLElement;
+const slides = document.querySelectorAll('.slide');
+const slideWidth = slides[0].clientWidth;
 
-  function showSlides(n) {
-    slideIndex = n;
+function showSlides(n) {
+  slideIndex = n;
+  const offset = -slideIndex * slideWidth;
+  sliderContainer.style.transition = 'transform 0.5s ease-in-out';
+  sliderContainer.style.transform = `translateX(${offset}px)`;
 
-
-    if (slideIndex < 0) {
+  sliderContainer.addEventListener('transitionend', () => {
+    if (slideIndex === 0) {
+      sliderContainer.style.transition = 'none';
       slideIndex = slides.length - 2;
-    } else if (slideIndex >= slides.length - 1) {
-      slideIndex = 0;
+      sliderContainer.style.transform = `translateX(${-slideIndex * slideWidth}px)`;
+    } else if (slideIndex === slides.length - 1) {
+      sliderContainer.style.transition = 'none';
+      slideIndex = 1;
+      sliderContainer.style.transform = `translateX(${-slideIndex * slideWidth}px)`;
     }
+  });
+}
 
-    const offset = -slideIndex * slideWidth;
-    if (sliderContainer instanceof HTMLElement) {
-      sliderContainer.style.transform = `translateX(${offset}px)`;
-    } else {
-      console.error("sliderContainer is not an HTMLElement");
-    }
-  }
+function moveSlide(n) {
+  showSlides(slideIndex + n);
+}
 
-  function moveSlide(n) {
-    showSlides(slideIndex + n);
-  }
+function touchStart(e) {
+  startX = e.touches[0].clientX;
+  isSwiping = true;
+}
 
-  function touchStart(e) {
-    startX = e.touches[0].clientX;
-    isSwiping = true;
-  }
+function touchMove(e) {
+  if (!isSwiping) return;
+  const currentX = e.touches[0].clientX;
+  const diffX = currentX - startX;
 
-  function touchMove(e) {
-    if (!isSwiping) return;
-    const currentX = e.touches[0].clientX;
-    const diffX = currentX - startX;
-
-    if (diffX > 50) {
-      moveSlide(-1);
-      isSwiping = false;
-    } else if (diffX < -50) {
-      moveSlide(1);
-      isSwiping = false;
-    }
-  }
-
-  function touchEnd() {
+  if (diffX > 50) {
+    moveSlide(-1);
+    isSwiping = false;
+  } else if (diffX < -50) {
+    moveSlide(1);
     isSwiping = false;
   }
+}
 
-  if (sliderContainer) {
-    sliderContainer.addEventListener('touchstart', touchStart);
-    sliderContainer.addEventListener('touchmove', touchMove);
-    sliderContainer.addEventListener('touchend', touchEnd);
+function touchEnd() {
+  isSwiping = false;
+}
 
-    showSlides(slideIndex);
-  }
+if (sliderContainer) {
+  sliderContainer.addEventListener('touchstart', touchStart);
+  sliderContainer.addEventListener('touchmove', touchMove);
+  sliderContainer.addEventListener('touchend', touchEnd);
+
+  showSlides(slideIndex);
+}
+
 </script>
 
 </body>
