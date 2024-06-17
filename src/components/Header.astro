@@ -1,12 +1,15 @@
 
 
-
 <header class="header">
-    <img class="logo"  src="./images/logo bitcom.png" alt=""/>
+    <div class="logo-container">
+    <figure>
+        <img class="logo"  src="./images/logo bitcom.png" alt=""/>
+    </figure>
+</div>  
     <div class="menu">
     <img class="abrir-menu" id="abrir" src="./images/cerrar menu.png"/>
     <nav class=nav id="nav">
-      
+        
       <img class="cerrar-menu" id="cerrar" src="./images/cerrar menu.png" />
       
       <ul class="navlinks">
@@ -20,13 +23,16 @@
             <a href="">Contacto</a>
           </li>
           <li>
-            <a href="https://bitcompay.vercel.app"><img src="/images/btnacc.png" alt=""></a>
+            <a href="https://bitcompay.vercel.app"><img src="/images/btnacc.png" class="btn-acceso" alt=""></a>
             </li>
           <li></li>
         </ul>
     </nav>
   </div>
+
+
     </header>
+
   
     <script>
       const nav = document.querySelector("#nav");
@@ -46,33 +52,57 @@
     <style>
       
       .header{
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(2, 2fr);
       align-items: center;
-      justify-content: space-between;
-      padding-top: 3.5dvh;
-      padding-bottom: 3dvh;
+      
       background-color: #212121;
-      border-bottom: 0.1vh dotted #1bdfb7;
+      /* border-bottom: 0.1vh dotted #1bdfb7;
+      border-radius: 0 0 0 5vh;  */
+      
   }
+
+  .logo-container{
+    height: 100%;
+    background-color: #212121;
+    padding-left: 8vw;
+  }
+
+  .logo-container figure {
+  margin: 0;  
+  border-left:  0.3vh dotted #1bdfb7; 
+  border-radius: 0 3vh 0;
+  padding-top: 3.5vh;
+      padding-bottom: 3vh; 
+      border-bottom:  0.3vh dotted #1bdfb7;
+}
   
   .logo{
       height: 4vh;
       margin-left: 10dvw;
+      
   }
   
   .navlinks{
       list-style-type: none;
       display: flex;
       gap: 2vw;
-      margin-right: 2vw;
       align-items: center;
       text-align: center;
-      font-size: 2.5vh;
+      font-size: 2.4vh;
+      padding-top: 3.5vh;
+      padding-bottom: 3vh; 
+      border-bottom:  0.3vh dotted #1bdfb7;
   }
   
   .navlinks a{
       text-decoration: none;
       color: white;
+  }
+
+  .btn-acceso{
+    height: 3.9vh;
+    width: 9vw;
   }
 
   .navlinks a.plat{
@@ -81,7 +111,7 @@
 
 
   .abrir-menu{
-      margin-right: 1vw;
+      /* margin-right: 1vw; */
   }
   
   .abrir-menu, .cerrar-menu {
@@ -90,16 +120,30 @@
       height: auto;
       display: none;
   }
+
   
   
   
   
-  
+  @media screen and (max-width: 1024px) {
+    .navlinks{
+        padding-top: 4.2vh;
+        padding-bottom: 1.1vh;
+    }
+  }
   
   
   
   
   @media screen and (max-width: 768px) {
+    .header{
+        display: flex;
+        justify-content: space-around;
+    }
+    .logo-container figure {
+        border: 0;
+        padding-bottom: 0;
+    }
     .abrir-menu, .cerrar-menu {
         display: block;
         cursor: pointer;
@@ -107,10 +151,6 @@
 
     .abrir-menu{
         margin-left: 5vh;
-    }
-
-    .header {
-        justify-content: space-between;
     }
 
     .menu {
@@ -121,6 +161,7 @@
         order: 2;
         margin-left: 0;
         margin-right: 10dvw;
+        border: none;
     }
 
     .nav {
@@ -149,6 +190,7 @@
         flex-direction: column;
         align-items: flex-start;
         margin-top: 20px;
+        border-bottom: 0;
     }
 
     .navlinks a {
