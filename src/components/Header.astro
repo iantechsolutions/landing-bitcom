@@ -138,36 +138,19 @@
       display: none;
   }
 
-
-  @media screen and (max-width: 2560px) {
-    .navlinks{
-        padding-top: 3.3vh;
-      padding-bottom: 3vh; 
-    }
-  }
-  
-  @media screen and (max-width: 1440px) {
-    .navlinks{
-        padding-top: 3vh;
-      padding-bottom: 1.9vh; 
-    }
-    .btn-acceso{
-        height: 3vh;
-        width: 13vw;
-    }
-  }
   
   
   @media screen and (max-width: 1024px) {
     .navlinks{
         padding-top: 4.2vh;
-        padding-bottom: 2vh;
+        padding-bottom: 2.3vh;
         font-size: 2vh;
         gap: 1vw;
     }
 
     .btn-acceso{
-        display: none;
+        height: 4vh;
+        width: 11vw;
     }
   }
   
@@ -175,29 +158,33 @@
   
   
   @media screen and (max-width: 768px) {
-    .header{
+    .header {
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
+        align-items: center;
     }
-    .logo-container figure {
-        border: 0;
-        padding-bottom: 0;
-    }
+
     .abrir-menu, .cerrar-menu {
         display: block;
         cursor: pointer;
     }
 
-    .abrir-menu{
+    .abrir-menu {
         margin-left: 5vh;
     }
 
     .menu {
         order: 1;
+        display: flex;
+        align-items: center;
+    }
+
+    .logo-container {
+        order: 2;
+        margin-left: auto;
     }
 
     .logo {
-        order: 2;
         margin-left: 0;
         margin-right: 10dvw;
         border: none;
@@ -235,46 +222,10 @@
     .navlinks a {
         color: white;
     }
+
+    .btn-acceso {
+        display: none;
+    }
 }
-/* 
-@media screen and (max-width: 550px) {
-    
-    .abrir-menu, .cerrar-menu{
-        display: block;
-        cursor: pointer;
-    }
-
-    .nav{
-        opacity: 0;
-        visibility: hidden;
-        display: flex;
-        flex-direction: column;
-        align-items: end;
-        gap: 1rem;
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #212121;
-        padding: 2rem;
-        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
-    }
-
-    .nav.visible{
-        opacity: 1;
-        visibility: visible;
-    }
-
-    .navlinks{
-        flex-direction: column;
-        align-items: end;
-        margin-top: 20px;
-
-    }
-
-    .navlinks a{
-        color: white;
-    }
-} */
 
   </style>
