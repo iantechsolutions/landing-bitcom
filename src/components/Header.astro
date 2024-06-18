@@ -14,10 +14,10 @@
       
       <ul class="navlinks">
           <li>
-            <a href="" class="plat">Nuestra Plataforma</a>
+            <a href="#home-4" class="plat">Nuestra Plataforma</a>
           </li>
           <li>
-            <a href="">Servicios</a>
+            <a href="#home-3">Servicios</a>
           </li>
           <li>
             <a href="">Contacto</a>
@@ -47,6 +47,23 @@
           nav.classList.remove("visible");
       })
     </script>
+
+<script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+</script>
+
   
   
     <style>
