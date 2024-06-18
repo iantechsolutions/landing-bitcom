@@ -7,24 +7,60 @@
   </div>
   <div class="home-2-container">
     <div class="grid-container">
-      <figure>
-        <img src="/images/card1h2.png" alt="" />
-      </figure>
-      <figure>
-        <img src="/images/card2h2.png" alt="" />
-      </figure>
-      <figure>
-        <img src="/images/card3h2.png" alt="" />
-      </figure>
-      <figure>
-        <img src="/images/card4h2.png" alt="" />
-      </figure>
-      <figure>
-        <img src="/images/card5h2.png" alt="" />
-      </figure>
-      <figure>
-        <img src="/images/card6h2.png" alt="" />
-      </figure>
+      <div class="card">
+        <div class="card-content">
+            <h3 class="card-title">Débito Directo Bancario</h3>
+            <p class="card-text">Ordene débitos automáticos en Cajas de Ahorro y/o Cuentas Corrientes de todos los Bancos del Sistema Financiero.</p>
+        </div>
+        <div class="card-icon">
+            <img src="" alt="Icono Bancario">
+        </div>
+    </div>
+    <div class="card">
+      <div class="card-content">
+          <h3 class="card-title">Débito Automático en Tarjetas</h3>
+          <p class="card-text">Sus clientes o afiliados podrán optar por el servicio de débito automatico en tarjetas de crédito, debito y/o prepagas.</p>
+      </div>
+      <div class="card-icon">
+          <img src="" alt="Icono Bancario">
+      </div>
+  </div>
+  <div class="card">
+    <div class="card-content">
+        <h3 class="card-title">Recaudación en Efectivo</h3>
+        <p class="card-text">Habilite los Canales de Recaudacion de las Redes Pago Fácil y/o Rapipago de todo el País, con la modalidad que sea de su convenienvia.</p>
+    </div>
+    <div class="card-icon">
+        <img src="" alt="Icono Bancario">
+    </div>
+</div>
+<div class="card">
+  <div class="card-content">
+      <h3 class="card-title">Canales Electronicos de Pagos</h3>
+      <p class="card-text">Ofrezca la opcion de pago de servicios por medio del Home Banking y/o Billeteras Virtuales mas importantes homologadas con el servicio.</p>
+  </div>
+  <div class="card-icon">
+      <img src="" alt="Icono Bancario">
+  </div>
+</div>
+<div class="card">
+  <div class="card-content">
+      <h3 class="card-title">Gateway de Pagos</h3>
+      <p class="card-text">Incluye POS fisico para ventas presenciales con Tarjetas y/o QR, envio de links por RRSS, Posweb para venta telefonica y boton de pago.</p>
+  </div>
+  <div class="card-icon">
+      <img src="" alt="Icono Bancario">
+  </div>
+</div>
+<div class="card">
+  <div class="card-content">
+      <h3 class="card-title">Cobranzas Mayoristas</h3>
+      <p class="card-text">Reciba en nuestra Cuenta Corriente Recaudadora Mayorista el pago de Facturas de Clientes Corporativos, mediante recepcion de transferencias, Pagos a Proveedores y/o E-cheqs.</p>
+  </div>
+  <div class="card-icon">
+      <img src="" alt="Icono Bancario">
+  </div>
+</div>
     </div>
   </div>
 
@@ -100,18 +136,68 @@
     .grid-container {
       display: grid;
       grid-template-columns: repeat(3, 3fr);
-      gap: 1vw;
+      gap: 2vw;
       margin-top: 9vh;
     }
 
-    .grid-container figure img {
+    /* .grid-container figure img {
       height: 31vh;
       width: 26.5vw;
-    }
+    } */
 
     .sliderh2 {
       display: none;
     }
+
+
+    .card {
+    background-color: #f0f0f0;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0 2px 2px #039275;
+    position: relative;
+    height: 23vh;
+    width: 21vw;
+}
+
+.card-content {
+    max-width: 100%;
+}
+
+.card-title {
+    color: #A55CFF; 
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.card-text {
+    color: #555555;
+    margin-top: 10px;
+    font-size: 1em;
+}
+
+.card-icon {
+    background-color: #1bdfb7;
+    border-radius: 50%;
+    padding: 15px;
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -20px;
+    right: -20px;
+}
+
+.card-icon img {
+    width: 50px; 
+    height: 50px;
+}
+
+
+
 
     @media screen and (max-width: 1024px) {
       .home-2-tittle h2 {
