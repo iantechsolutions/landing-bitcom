@@ -13,62 +13,59 @@
   <div class="slider">
     <div class="slide-track">
       <div class="slide">
-        <img src="/images/pago-facil.png" alt="" />
+        <img src="/images/pago-facil.png" alt="pago facil" />
       </div>
       <div class="slide">
-        <img src="/images/mercado-pago.png" alt="" />
+        <img src="/images/mercado-pago.png" alt="mercado pago" />
+      </div>
+      <div class="slide"><img src="/images/express.png" alt="express" /></div>
+      <div class="slide">
+        <img src="/images/mastercard.png" alt="mastercard" />
+      </div>
+      <div class="slide"><img src="/images/maestro.png" alt="maestro" /></div>
+      <div class="slide"><img src="/images/visa.png" alt="visa" /></div>
+      <div class="slide"><img src="/images/cabal.png" alt="cabal" /></div>
+      <div class="slide"><img src="/images/CUENTA DNI.png" alt="dni" /></div>
+      <div class="slide"><img src="/images/cuentas.png" alt="cuentas" /></div>
+      <div class="slide"><img src="/images/UALA.png" alt="uala" /></div>
+      <div class="slide"><img src="/images/dinners.png" alt="dinners" /></div>
+      <div class="slide"><img src="/images/naranja.png" alt="naranja" /></div>
+      <div class="slide"><img src="/images/naranjax.png" alt="naranjax" /></div>
+      <div class="slide"><img src="/images/apple.png" alt="apple" /></div>
+      <div class="slide"><img src="/images/rapipago.png" alt="rapipago" /></div>
+      <div class="slide"><img src="/images/GOOGLE.png" alt="google" /></div>
+      <div class="slide"><img src="/images/payway.png" alt="payway" /></div>
+      <div class="slide"></div>
+      <div class="slide"><img src="/images/modo.png" alt="modo" /></div>
+
+      <div class="slide">
+        <img src="/images/pago-facil.png" alt="pago facil" />
       </div>
       <div class="slide">
-        <img src="/images/express.png" alt="" />
+        <img src="/images/mercado-pago.png" alt="mercado pago" />
       </div>
+      <div class="slide"><img src="/images/express.png" alt="express" /></div>
       <div class="slide">
-        <img src="/images/mastercard.png" alt="" />
+        <img src="/images/mastercard.png" alt="mastercard" />
       </div>
+      <div class="slide"><img src="/images/maestro.png" alt="maestro" /></div>
+      <div class="slide"><img src="/images/visa.png" alt="visa" /></div>
+      <div class="slide"><img src="/images/cabal.png" alt="cabal" /></div>
       <div class="slide">
-        <img src="/images/maestro.png" alt="" />
+        <img src="/images/CUENTA DNI.png" alt="cuentas" />
       </div>
+      <div class="slide"><img src="/images/UALA.png" alt="uala" /></div>
+      <div class="slide"><img src="/images/dinners.png" alt="dinners" /></div>
+      <div class="slide"><img src="/images/naranja.png" alt="naranja" /></div>
+      <div class="slide"><img src="/images/naranjax.png" alt="naranjax" /></div>
+      <div class="slide"><img src="/images/apple.png" alt="apple" /></div>
+      <div class="slide"><img src="/images/rapipago.png" alt="rapipago" /></div>
+      <div class="slide"><img src="/images/GOOGLE.png" alt="google" /></div>
+      <div class="slide"><img src="/images/payway.png" alt="payway" /></div>
       <div class="slide">
-        <img src="/images/visa.png" alt="" />
+        <img src="/images/alimentar.png" alt="alimentar" />
       </div>
-      <div class="slide">
-        <img src="/images/cabal.png" alt="" />
-      </div>
-      <div class="slide">
-        <img src="/images/dni.png" alt="" />
-      </div>
-      <div class="slide">
-        <img src="/images/cuentas.png" alt="" />
-      </div>
-      <div class="slide">
-        <img src="/images/uala.png" alt="" />
-      </div>
-      <div class="slide">
-        <img src="/images/dinners.png" alt="" />
-      </div>
-      <div class="slide">
-        <img src="/images/naranja.png" alt="" />
-      </div>
-      <div class="slide">
-        <img src="/images/naranjax.png" alt="" />
-      </div>
-      <div class="slide">
-        <img src="/images/apple.png" alt="" />
-      </div>
-      <div class="slide">
-        <img src="/images/rapipago.png" alt="" />
-      </div>
-      <div class="slide">
-        <img src="/images/google.png" alt="" />
-      </div>
-      <div class="slide">
-        <img src="/images/payway.png" alt="" />
-      </div>
-      <div class="slide">
-        <img src="/images/alimentar.png" alt="" />
-      </div>
-      <div class="slide">
-        <img src="/images/modo.png" alt="" />
-      </div>
+      <div class="slide"><img src="/images/modo.png" alt="modo" /></div>
     </div>
   </div>
 
@@ -129,26 +126,26 @@
     display: flex;
     animation: scroll 40s linear infinite;
     -webkit-animation: scroll 40s linear infinite;
-    width: calc(11vw * 14);
+    width: calc(22vw * 20);
     gap: 1.3vw;
   }
 
   .slider .slide {
-    /* width: 200px; */
+    flex: 0 0 auto;
   }
 
   .slider .slide img {
     width: 6vw;
+    height: 6vw;
+    object-fit: contain;
   }
 
   @keyframes scroll {
     0% {
-      -webkit-transform: translateX(0);
       transform: translateX(0);
     }
     100% {
-      -webkit-transform: translateX(calc(-11vw * 7));
-      transform: translateX(calc(-11vw * 7));
+      transform: translateX(calc(-22vw * 10));
     }
   }
 
@@ -233,12 +230,6 @@
     .logo-derechos {
       height: 2.2vw;
       width: auto;
-    }
-  }
-
-  @media screen and (max-width: 425px) {
-    .home-5-tittle h2 {
-      font-size: 4vh;
     }
   }
 
