@@ -211,10 +211,6 @@
     </div> -->
 
   <style>
-    .swiper {
-      visibility: hidden;
-    }
-
     .home-2 {
       background-image: url("/images/2560 h2.png");
       height: 100vh;
@@ -266,10 +262,6 @@
       margin-top: 9vh;
     }
 
-    /* .sliderh2 {
-    display: none;
-  } */
-
     .card {
       background-color: #f0f0f0;
       border-radius: 30px;
@@ -315,29 +307,28 @@
       height: auto;
     }
 
+    .swiper {
+      visibility: hidden;
+    }
     @media screen and (max-width: 1024px) {
       .home-2-tittle h2 {
         font-size: 4.5vh;
       }
+
       .home-2-tittle p {
         font-size: 2vh;
       }
+
       .card {
         height: 24vh;
         width: 30vw;
       }
-
-      /* .card-icon img {
-      width: 40px;
-      height: 40px;
-    } */
 
       .card-title {
         font-size: 1.3em;
       }
 
       .card-text {
-        margin-top:;
         font-size: 1.4vh;
       }
 
@@ -364,54 +355,13 @@
 
       .swiper-slide {
         height: auto;
-        width: auto;
-      }
-    }
-
-    @media screen and (max-width: 692px) {
-      .home-2-tittle {
         display: flex;
-        flex-direction: column;
-        align-items: center;
+        justify-content: center;
       }
 
-      /* .sliderh2 {
-      display: block;
-      width: 100%;
-      height: 16rem;
-      margin: auto;
-      overflow: hidden;
-      padding: 40px;
-    }
-
-    .sliderh2 .slide-track {
-      display: flex;
-      animation: scroll 25s linear infinite;
-      width: calc(200px * 6);
-      gap: 15rem;
-    }
-
-    .sliderh2 .slide {
-      width: 200px;
-    }
-
-    .sliderh2 .slide img {
-      width: 23.3rem;
-      height: 13.5rem;
-      border-radius: 27px;
-    }
-
-    @keyframes scroll {
-      0% {
-        transform: translateX(0);
-      }
-      100% {
-        transform: translateX(calc(-200px * 3));
-      }
-    } */
-
-      .home-2-container {
-        display: none;
+      .card {
+        width: 100vw;
+        height: 25vh;
       }
     }
 
@@ -422,36 +372,63 @@
         padding-top: 10vh;
         padding-left: 2vw;
       }
+
       .home-2-tittle h2 {
         font-size: 7vw;
       }
+
       .home-2-tittle p {
         font-size: 4vw;
         text-align: center;
+      }
+
+      .swiper {
+        visibility: visible;
+        padding-top: 10vh;
+      }
+
+      .swiper-slide {
+        height: auto;
+        width: auto;
+        display: flex;
+        justify-content: center;
+      }
+
+      .card {
+        width: 90vw;
+        height: 20vh;
       }
     }
   </style>
 
   <script>
-    // Core de Swiper y estilos
     import Swiper from "swiper";
     import "swiper/css";
-    // Módulo Navigation de Swiper y estilos
+
     import { Navigation } from "swiper/modules";
     import "swiper/css/navigation";
 
-    // Configurar Swiper
     const swiper = new Swiper(".swiper", {
-      modules: [Navigation], // definir los módulos a usar
-      loop: true, // definir si los slides estarán en bucle
-      slidesPerView: 3, // agregar número de slides para la pantalla
-      spaceBetween: 40, // separación entre slides en px
+      modules: [Navigation],
+      loop: true,
+      slidesPerView: 3,
+      spaceBetween: 40,
       navigation: {
-        // definir botones next y prev para el módulo Navigation
         prevEl: ".swiper-button-prev",
         nextEl: ".swiper-button-next",
       },
+      breakpoints: {
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        425: {
+          slidesPerView: 1,
+          spaceBetween: 10,
+        },
+      },
     });
+
     // let slideIndex = 0;
     // let startX = 0;
     // let isSwiping = false;
