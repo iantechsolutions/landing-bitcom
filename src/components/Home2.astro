@@ -258,7 +258,7 @@
     .grid-container {
       display: grid;
       grid-template-columns: repeat(3, 3fr);
-      gap: 2vw;
+      gap: 3.2vw;
       margin-top: 9vh;
     }
 
@@ -270,8 +270,8 @@
       padding: 1vw;
       box-shadow: 0 2px 2px #039275;
       position: relative;
-      height: 27vh;
-      width: 26vw;
+      height: 25vh;
+      width: 24vw;
     }
 
     .card-content {
@@ -303,7 +303,7 @@
     }
 
     .card-icon img {
-      width: 6.5vw;
+      width: 5.5vw;
       height: auto;
     }
 
@@ -404,7 +404,6 @@
   <script>
     import Swiper from "swiper";
     import "swiper/css";
-
     import { Navigation } from "swiper/modules";
     import "swiper/css/navigation";
 
@@ -431,6 +430,10 @@
           spaceBetween: 10,
         },
         375: {
+          slidesPerView: 1,
+          spaceBetween: 10,
+        },
+        0: {
           slidesPerView: 1,
           spaceBetween: 10,
         },
