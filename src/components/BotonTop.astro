@@ -1,27 +1,35 @@
-<button class="btn-top" id="scrollToTopBtn"><img src="/images/btntop.png" alt=""></button>
+<button class="btn-top" id="scrollToTopBtn"
+  ><img src="/images/btntop.png" alt="" /></button
+>
 
 <style>
-    .btn-top {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        cursor: pointer;
-        display: block; 
-        background: none;
-        border: none;
-        padding: 0;
-    }
-
+  .btn-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    display: none;
+    background: none;
+    border: none;
+    padding: 0;
+  }
 </style>
 
-
-
 <script>
-    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
-    scrollToTopBtn.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
+  const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 100) {
+      scrollToTopBtn.style.display = "block";
+    } else {
+      scrollToTopBtn.style.display = "none";
+    }
+  });
+
+  scrollToTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
     });
+  });
 </script>
