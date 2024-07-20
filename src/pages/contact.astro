@@ -1,0 +1,142 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contact">
+    <header class="header">
+        <div class="logo-container">
+            <figure>
+                <a href="/index"><img class="logo" src="images/logo bitcom.png" alt="" /></a>
+            </figure>
+        </div>  
+        <nav class="nav" id="nav">
+            
+        </nav>
+    </header>
+
+    <section class="contacto">
+        <div class="contact-container">
+            <h1>Contactanos</h1>
+            <p>Dejanos tu mensaje y consultanos tus dudas!</p>
+            <form>
+                <label for="name">Nombre y apellido*</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="cuil">CUIL/CUIT*</label>
+                <input type="text" id="cuil" name="cuil" required>
+
+                <label for="email">Mail*</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="company">Empresa*</label>
+                <input type="text" id="company" name="company" required>
+
+                <label for="message">Mensaje*</label>
+                <textarea id="message" name="message" required></textarea>
+            </form>
+        </div>
+    </section>
+
+    <style>
+        body {
+    background-image: url("images/1440.png");
+    background-size: cover;
+}
+
+.header {
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    align-items: center;
+
+    background-color: #212121;
+}
+
+
+
+.logo-container {
+    height: 100%;
+    background-color: #212121;
+    padding-left: 8vw;
+}
+
+.logo-container figure {
+    border-left: 0.3vh dotted #1bdfb7;
+    border-radius: 0 3vh 0;
+    padding-top: 3.5vh;
+    padding-bottom: 3vh;
+    border-bottom: 0.3vh dotted #1bdfb7;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.logo {
+    height: 4vh;
+    margin-left: 10dvw;
+}
+
+.nav {
+    padding-top: 11vh;
+    border-bottom: 0.3vh dotted #1bdfb7;
+}
+
+
+.contacto {
+    display: flex;
+    justify-content: center;
+    margin-top: 8vh;
+}
+
+.contact-container {
+    background-color: white;
+    padding: 3vw;
+    border-radius: 40px;
+    text-align: center;
+}
+
+h1 {
+    color: #1bdfb7;
+    font-weight: 500;
+    font-size: 2.3vw;
+}
+
+p {
+    font-size: 1.1vw;
+    font-weight: 500;
+    color: #666;
+    margin-bottom: 2vh;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    border-top: 0.8px solid #666;
+}
+
+label {
+    width: 25vw;
+    margin-top: 10px;
+    text-align: left;
+    font-size: 0.vw;
+    color: grey;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(230, 230, 230);
+    margin-top: 1vh;
+    border: 0.2px solid #ccc;
+    border-radius: 5px;
+}
+
+textarea {
+    height: 15vh;
+}
+    </style>
+
+
+</Layout>
