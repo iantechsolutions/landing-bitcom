@@ -10,16 +10,16 @@ import Layout from '../layouts/Layout.astro';
             </figure>
         </div>
         <div class="menu">
-    <img class="abrir-menu" id="abrir" src="./images/cerrar menu.png" />
+
         <nav class="nav" id="nav">
-      <img class="cerrar-menu" id="cerrar" src="./images/cerrar menu.png" />
+
         <div class="navlinks">
       <ul>
         <li>
-          <a href="#home-4" class="plat">Nuestra Plataforma</a>
+          <a href="/" class="plat">Nuestra Plataforma</a>
         </li>
         <li>
-          <a href="#home-3">Servicios</a>
+          <a href="/">Servicios</a>
         </li>
         <li>
             <figure>
@@ -217,6 +217,9 @@ textarea {
 
 
  @media screen and (max-width: 768px){
+    body{
+        background-image: url("images/768.png"); 
+    }
     .header {
         display: flex;
         justify-content: space-between;
