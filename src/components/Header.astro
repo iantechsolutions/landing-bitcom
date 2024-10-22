@@ -15,23 +15,24 @@
   <div class="flex gap-4 lg:contents">
     <nav class="flex items-center order-last lg:order-none">
       <span class="nav-label" hidden>Navigation</span>
-      <button id="btnOpen" aria-expanded="false" aria-labelledby="nav-label">
-        <img class="h-6 lg:hidden" id="abrir" src="./images/menu.svg" />
+      <button
+        id="btnOpen"
+        aria-expanded="false"
+        aria-labelledby="nav-label"
+        class="lg:hidden"
+      >
+        <img class="h-6" id="abrir" src="./images/menu.svg" />
       </button>
       <div
         id="topnav_menu"
-        class="hidden lg:flex lg:items-center aria-expanded:inset-0 aria-expanded:fixed aria-expanded:flex aria-expanded:flex-col"
+        class="lg:flex lg:items-center"
         aria-labelledby="nav-label"
         role="dialog"
       >
-        <button id="btnClose" aria-label="Close">
-          <img
-            class="h-6 block lg:hidden"
-            id="cerrar"
-            src="./images/close-menu.svg"
-          />
+        <button id="btnClose" aria-label="Close" class="lg:hidden">
+          <img class="h-6" id="cerrar" src="./images/close-menu.svg" />
         </button>
-        <ul class="flex gap-4">
+        <ul class="flex items-center gap-4" id="topnav_links">
           <li>
             <a
               href="#home-2"
@@ -40,7 +41,9 @@
             >
           </li>
           <li>
-            <a href="#home-3" class="text-[#3e3e3e] font-medium opacity-70 text-base"
+            <a
+              href="#home-3"
+              class="text-[#3e3e3e] font-medium opacity-70 text-base"
               >Cash Managment</a
             >
           </li>
@@ -82,7 +85,7 @@
 
 <script>
   const btnOpen = document.getElementById("btnOpen");
-  const btnClose = document.getElementById("cerrar");
+  const btnClose = document.getElementById("btnClose");
   const media = window.matchMedia("(max-width: 1024px)");
   const topnav_menu = document.getElementById("topnav_menu");
   const main = document.querySelector("main");
@@ -91,39 +94,39 @@
   function openMobile() {
     btnOpen.setAttribute("aria-expanded", "true");
     topnav_menu.removeAttribute("inert");
-    // topnav_menu.removeAttribute("style");
     main.setAttribute("inert", "");
     btnClose.focus();
   }
 
   function closeMobile() {
-    btnOpen.setAttribute("aria-expanded", "false");
+    btnOpen.ariaExpanded = "false";
     topnav_menu.setAttribute("inert", "");
-    topnav_menu.setAttribute("style", "display: none");
     main.removeAttribute("inert");
     btnOpen.focus();
-
-    setTimeout(() => {
-      topnav_menu.style.transition = "none";
-    }, 500);
   }
+
+  function setupTopNav(e) {
+    if (e.matches) {
+      // is mobile
+      console.log("is mobile");
+      topnav_menu.setAttribute("inert", "");
+      topnav_menu.style.transition = "none";
+    } else {
+      // is tablet/desktop
+      console.log("is desktop");
+      closeMobile();
+      topnav_menu.removeAttribute("inert");
+    }
+  }
+  setupTopNav(media);
 
   btnOpen.addEventListener("click", openMobile);
   btnClose.addEventListener("click", closeMobile);
+  media.addEventListener("change", function (e) {
+    setupTopNav(e);
+  });
 </script>
-<!-- <script>
-  const nav = document.querySelector("#topnav_menu");
-  const abrir = document.querySelector("#btnOpen");
-  const cerrar = document.querySelector("#btnClose");
 
-  abrir.addEventListener("click", () => {
-    nav.classList.add("visible");
-  });
-
-  cerrar.addEventListener("click", () => {
-    nav.classList.remove("visible");
-  });
-</script> -->
 <script>
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
@@ -141,12 +144,29 @@
 </script>
 
 <style>
-  @layer nav {
-  #btnOpen[aria-expanded="true"] + #topnav_menu {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    inset: 0;
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+  @layer components {
+    #btnOpen[aria-expanded="true"] + #topnav_menu {
+      width: 100vw;
+      height: 100vh;
+      translate: 0;
+      transition: translate 0.5s ease-in-out;
+      background-color: white;
+    }
   }
-}
+
+  @media (max-width: 1024px) {
+    #topnav_menu {
+      inset: 0;
+      position: fixed;
+      translate: 100vw 0;
+      padding: 1.5rem;
+    }
+    #topnav_links {
+      flex-direction: column;
+      gap: 2rem;
+    }
+  }
 </style>

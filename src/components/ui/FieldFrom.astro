@@ -3,9 +3,9 @@ interface Props {
   label: string;
   placeholder: string;
   id: string;
-  textArea: boolean;
-  tel: boolean;
-  motive: boolean;
+  textArea?: boolean;
+  tel?: boolean;
+  motive?: boolean;
 }
 const { label, id, placeholder, textArea, tel, motive } = Astro.props;
 ---
@@ -28,7 +28,6 @@ const { label, id, placeholder, textArea, tel, motive } = Astro.props;
     tel && (
       <div class="flex gap-2 items-center pl-4">
         <select
-          placeholder="telefono/celular"
           class="border-none bg-inherit focus:outline-none text-left"
         >
           <option value="phone">Telefono</option>
