@@ -13,6 +13,7 @@
     "@astrojs/tailwind": "^5.1.2",
     "@tailwindcss/typography": "^0.5.15",
     "astro": "^4.16.6",
+    "body-scroll-lock-upgrade": "^1.1.0",
     "lucide-astro": "^0.453.0",
     "photoswiper": "^3.0.4",
     "swiper": "^11.1.4",
