@@ -33,28 +33,28 @@
           <img class="h-6" id="cerrar" src="./images/close-menu.svg" />
         </button>
         <ul class="flex items-center gap-4" id="topnav_links">
-          <li>
+          <li class="link">
             <a
               href="#home-2"
               class="text-[#3e3e3e] font-medium opacity-70 text-base"
               >Servicios</a
             >
           </li>
-          <li>
+          <li class="link">
             <a
               href="#home-3"
               class="text-[#3e3e3e] font-medium opacity-70 text-base"
               >Cash Managment</a
             >
           </li>
-          <li>
+          <li class="link">
             <a
               href="#home-4"
               class="text-[#3e3e3e] font-medium opacity-70 text-base"
               >Plataforma</a
             >
           </li>
-          <li>
+          <li class="link">
             <a
               href="#contact"
               class="text-[#3e3e3e] font-medium opacity-70 text-base"
@@ -89,8 +89,6 @@
   const media = window.matchMedia("(max-width: 1024px)");
   const topnav_menu = document.getElementById("topnav_menu");
   const main = document.querySelector("main");
-  const body = document.querySelector("body");
-
   function openMobile() {
     btnOpen.setAttribute("aria-expanded", "true");
     topnav_menu.removeAttribute("inert");
@@ -124,6 +122,15 @@
   btnClose.addEventListener("click", closeMobile);
   media.addEventListener("change", function (e) {
     setupTopNav(e);
+  });
+  const elements = document.querySelectorAll(".link");
+  elements.forEach((element) => {
+    // Perform actions on each element
+    element.addEventListener("click", () => {
+      if (media.matches) {
+        closeMobile();
+      }
+    });
   });
 </script>
 
