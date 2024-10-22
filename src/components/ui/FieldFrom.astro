@@ -1,0 +1,72 @@
+---
+interface Props {
+  label: string;
+  placeholder: string;
+  id: string;
+  textArea: boolean;
+  tel: boolean;
+  motive: boolean;
+}
+const { label, id, placeholder, textArea, tel, motive } = Astro.props;
+---
+
+<div
+  class={`flex flex-col gap-2 items-start border-b-2 border-[#85CE81] px-0 my-4 pb-2 ${textArea ? 'col-span-2' : ''}`}
+>
+  <label for={id} class="text-[#747474] text-left w-full">{label}</label>
+  {
+    textArea && (
+      <textarea
+        id={id}
+        name={id}
+        class="border-none bg-inherit focus:outline-none w-full h-14"
+        placeholder={placeholder}
+      />
+    )
+  }
+  {
+    tel && (
+      <div class="flex gap-2 items-center pl-4">
+        <select
+          placeholder="telefono/celular"
+          class="border-none bg-inherit focus:outline-none text-left"
+        >
+          <option value="phone">Telefono</option>
+          <option value="cellphone">Celular</option>
+        </select>
+        <input
+          type="tel"
+          placeholder="ej: 11 1234 5678"
+          id={id}
+          name={id}
+          class="border-none bg-inherit focus:outline-none"
+        />
+      </div>
+    )
+  }
+  {
+    motive && (
+      <select
+        id={id}
+        name={id}
+        class="pl-4 border-none bg-inherit focus:outline-none w-full"
+      >
+        <option value="consulta">Consulta</option>
+        <option value="reclamo">Reclamo</option>
+        <option value="sugerencia">Sugerencia</option>
+      </select>
+    )
+  }
+  {
+    !textArea && !tel && !motive && (
+      <input
+        type="text"
+        id={id}
+        name={id}
+        class="pl-4 border-none bg-inherit focus:outline-none w-full"
+        placeholder={placeholder}
+        required
+      />
+    )
+  }
+</div>
