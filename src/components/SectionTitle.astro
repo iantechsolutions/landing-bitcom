@@ -1,0 +1,14 @@
+---
+interface Props{
+    title: string;
+    subtitle: string;
+    color?: string;
+    subColor?:string;
+}
+const {title, subtitle, subColor, color} = Astro.props;
+---
+
+<div class="flex flex-col items-center text-center">
+    <h2 class={`text-[#85ce81] uppercase text-[1.1rem] font-[600] ${color}`}>{title}</h2>
+    <p class={`font-[600] opacity-80 w-[60%] text-[1.5rem] ${subColor}`}>{subtitle}</p>
+</div>

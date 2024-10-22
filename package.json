@@ -10,8 +10,16 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^4.9.1",
+    "@astrojs/tailwind": "^5.1.2",
+    "@tailwindcss/typography": "^0.5.15",
+    "astro": "^4.16.6",
+    "lucide-astro": "^0.453.0",
     "photoswiper": "^3.0.4",
-    "swiper": "^11.1.4"
+    "swiper": "^11.1.4",
+    "tailwindcss": "^3.4.14"
+  },
+  "devDependencies": {
+    "prettier": "^3.3.3",
+    "prettier-plugin-astro": "^0.14.1"
   }
 }

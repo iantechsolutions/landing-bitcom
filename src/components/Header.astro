@@ -1,39 +1,120 @@
-<header class="header">
-  <div class="logo-container">
-    <figure>
-      <img class="logo" src="./images/logo bitcom.png" alt="" />
-    </figure>
-  </div>
-  <div class="menu">
-    <img class="abrir-menu" id="abrir" src="./images/cerrar menu.png" />
-    <nav class="nav" id="nav">
-      <img class="cerrar-menu" id="cerrar" src="./images/cerrar menu.png" />
-        <div class="navlinks">
-      <ul>
-        <li>
-          <a href="#home-4" class="plat">Nuestra Plataforma</a>
-        </li>
-        <li>
-          <a href="#home-3">Servicios</a>
-        </li>
-        <li>
-          <a href="/contact">Contacto</a>
-        </li>
-        <li>
-            <figure>
-          <a href="https://bitcompay.vercel.app/dashboard"><img src="/images/btnacc.png" class="btn-acceso" alt="" /></a>
-        </figure>
-        </li>
-      </ul>
-    </div>
+<header
+  class="absolute
+  flex items-center justify-between top-0 lg:top-12 w-full lg:w-11/12 max-w-screen-xl bg-white
+  shadow-lg z-50 lg:rounded-full px-7 lg:px-[2.7rem] py-4
+  lg:left-1/2 lg:transform lg:-translate-x-1/2"
+>
+  <figure class="flex items-center">
+    <img
+      class="h-auto w-32 lg:w-40"
+      src="./images/logo-bitcom-dark.png"
+      alt=""
+    />
+  </figure>
+
+  <div class="flex gap-4 lg:contents">
+    <nav class="flex items-center order-last lg:order-none">
+      <span class="nav-label" hidden>Navigation</span>
+      <button id="btnOpen" aria-expanded="false" aria-labelledby="nav-label">
+        <img class="h-6 lg:hidden" id="abrir" src="./images/menu.svg" />
+      </button>
+      <div
+        id="topnav_menu"
+        class="hidden lg:flex lg:items-center aria-expanded:inset-0 aria-expanded:fixed aria-expanded:flex aria-expanded:flex-col"
+        aria-labelledby="nav-label"
+        role="dialog"
+      >
+        <button id="btnClose" aria-label="Close">
+          <img
+            class="h-6 block lg:hidden"
+            id="cerrar"
+            src="./images/close-menu.svg"
+          />
+        </button>
+        <ul class="flex gap-4">
+          <li>
+            <a
+              href="#home-2"
+              class="text-[#3e3e3e] font-medium opacity-70 text-base"
+              >Servicios</a
+            >
+          </li>
+          <li>
+            <a href="#home-3" class="text-[#3e3e3e] font-medium opacity-70 text-base"
+              >Cash Managment</a
+            >
+          </li>
+          <li>
+            <a
+              href="#home-4"
+              class="text-[#3e3e3e] font-medium opacity-70 text-base"
+              >Plataforma</a
+            >
+          </li>
+          <li>
+            <a
+              href="#contact"
+              class="text-[#3e3e3e] font-medium opacity-70 text-base"
+              >Contacto</a
+            >
+          </li>
+        </ul>
+      </div>
     </nav>
+
+    <div class="flex items-center gap-4 lg:gap-6">
+      <button
+        class="border-[3px] border-[#6952EB] text-[#6952EB] text-xs lg:text-sm font-[625] rounded-full
+       px-2 lg:px-4 py-1 lg:py-2 tracking-wide"
+      >
+        <span class="text-[#6952EB] hidden lg:inline">Acceso </span>Entidades
+      </button>
+      <button>
+        <img
+          class="h-8 w-8 lg:h-[2.7rem] lg:w-[2.7rem]"
+          src="./images/theme-switcher.png"
+          alt="theme-switcher"
+        />
+      </button>
+    </div>
   </div>
 </header>
 
 <script>
-  const nav = document.querySelector("#nav");
-  const abrir = document.querySelector("#abrir");
-  const cerrar = document.querySelector("#cerrar");
+  const btnOpen = document.getElementById("btnOpen");
+  const btnClose = document.getElementById("cerrar");
+  const media = window.matchMedia("(max-width: 1024px)");
+  const topnav_menu = document.getElementById("topnav_menu");
+  const main = document.querySelector("main");
+  const body = document.querySelector("body");
+
+  function openMobile() {
+    btnOpen.setAttribute("aria-expanded", "true");
+    topnav_menu.removeAttribute("inert");
+    // topnav_menu.removeAttribute("style");
+    main.setAttribute("inert", "");
+    btnClose.focus();
+  }
+
+  function closeMobile() {
+    btnOpen.setAttribute("aria-expanded", "false");
+    topnav_menu.setAttribute("inert", "");
+    topnav_menu.setAttribute("style", "display: none");
+    main.removeAttribute("inert");
+    btnOpen.focus();
+
+    setTimeout(() => {
+      topnav_menu.style.transition = "none";
+    }, 500);
+  }
+
+  btnOpen.addEventListener("click", openMobile);
+  btnClose.addEventListener("click", closeMobile);
+</script>
+<!-- <script>
+  const nav = document.querySelector("#topnav_menu");
+  const abrir = document.querySelector("#btnOpen");
+  const cerrar = document.querySelector("#btnClose");
 
   abrir.addEventListener("click", () => {
     nav.classList.add("visible");
@@ -42,8 +123,7 @@
   cerrar.addEventListener("click", () => {
     nav.classList.remove("visible");
   });
-</script>
-
+</script> -->
 <script>
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
@@ -61,174 +141,12 @@
 </script>
 
 <style>
-  .header {
-    height: auto;
-    display: grid;
-    grid-template-columns: repeat(2, 2fr);
-    align-items: center;
-
-    background-color: #212121;
-  }
-
-
-
-  .logo-container {
-    height: 100%; 
-    background-color: #212121;
-    padding-left: 8vw;
-  }
-
-  .logo-container figure {
-    border-left: 0.3vh dotted #1bdfb7;
-    border-radius: 0 3vh 0;
-    padding-top: 3.5vh;
-    padding-bottom: 3vh;
-    border-bottom: 0.3vh dotted #1bdfb7;
-    display: flex
-    align-items: center;
-
-    height: 100%;
-  }
-
-  .logo {
-    height: 4vh;
-    margin-left: 10dvw;
-  }
-
-  .menu{
-    height: 100%;
-  }
-
-  nav{
-    padding-top: 3.5vh;
-    padding-bottom: 3vh;
-    border-bottom: 0.3vh dotted #1bdfb7;
-    display: flex
-    align-items: center;
-    height: 100%;
-  }
-
-  .navlinks {
-
-  }
-
-  .navlinks ul{
-    list-style-type: none;
+  @layer nav {
+  #btnOpen[aria-expanded="true"] + #topnav_menu {
     display: flex;
-    gap: 2vw;
-    align-items: center;
-    text-align: center;
-    }
-
-  .navlinks li{
-    font-size: 2.4vh;
+    flex-direction: column;
+    gap: 1rem;
+    inset: 0;
   }
-
-  .navlinks a {
-    text-decoration: none;
-    color: white;
-  }
-
-  .btn-acceso {
-    height: 4vh;
-    width: auto;
-  }
-
-  .navlinks a.plat {
-    color: #1bdfb7;
-  }
-
-  .abrir-menu {
-    /* margin-right: 1vw; */
-  }
-
-  .abrir-menu,
-  .cerrar-menu {
-    height: 3.5vh;
-    height: auto;
-    display: none;
-  }
-
-
-
-  
-  
-  
-  
-  @media screen and (max-width: 768px) {
-    .header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .abrir-menu, .cerrar-menu {
-        display: block;
-        cursor: pointer;
-    }
-
-    .abrir-menu {
-        margin-left: 5vh;
-    }
-
-    .menu {
-        order: 1;
-    }
-
-    .logo-container {
-        order: 2;
-        margin-left: auto;
-    }
-
-    .logo {
-        margin-left: 0;
-        margin-right: 10dvw;
-        border: none;
-    }
-
-    .logo-container figure {
- 
-  border-left:  none; 
-
-      border-bottom:  none;
 }
-
-    .nav {
-        opacity: 0;
-        visibility: hidden;
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100vh;
-        width: 100vw;
-        background-color: #212121;
-        padding: 2rem;
-        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
-    }
-
-    .nav.visible {
-        opacity: 1;
-        visibility: visible;
-    }
-
-    .navlinks {
-        margin-top: 20px;
-        border-bottom: 0;
-    }
-
-    .navlinks ul{
-        display: flex;
-        flex-direction: column;
-        align-items: start;
-        text-align: center;
-    }
-
-    .navlinks a {
-        color: white;
-    }
-
-    .btn-acceso {
-        display: none;
-    }
-} 
 </style>
