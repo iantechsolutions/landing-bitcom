@@ -1,0 +1,64 @@
+---
+interface Props{
+    title: string;
+    content: string;
+    iconUrl: string;
+    iconAlt:string
+}
+const { title, content, iconUrl, iconAlt} = Astro.props;
+---
+
+<div class="card">
+    <div class="card-content">
+      <div class="card-icon">
+        <img src={iconUrl} alt={iconAlt}/>
+      </div>
+      <div class="flex flex-col gap-1">
+        <h3 class="card-title">{title}</h3>
+        <p class="card-text">
+          {content}
+        </p>
+      <div>
+    </div>
+  </div>
+
+
+  <style>
+    
+  .card {
+    background-color:white;
+    border-radius: 10px;
+    padding: 1rem 1.5rem;
+  }
+
+  .card-content {
+    max-width: 100%;
+  }
+
+  .card-title {
+    color: #6952EB;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .card-text {
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+
+  .card-icon {
+    border-radius: 9999px;
+    padding: 0.5rem;
+    background-color: #DEF5DD;
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .card-icon img {
+    width: 1.5rem;
+    height: auto;
+  }
+
+  </style>

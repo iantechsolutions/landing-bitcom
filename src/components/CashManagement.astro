@@ -1,98 +1,64 @@
 ---
-
+import CashCard from "./CashCard.astro";
 ---
 
 <section class="home-3" id="home-3">
-  <div class="home-3-title">
-    <h2>
-      Cash <span>Management</span>
-    </h2>
-    <p>
+  <h2>
+      Cash Management
+  </h2>
+  <p>
       Evite costos tercerizando los pagos a sus
-      <span>proveedores, servicios e impuestos.</span>
-    </p>
-  </div>
-  <div class="none">
-    <p>
-      Evite costos tercerizando los pagos a sus proveedores, servicios e
-      impuestos.
-    </p>
-  </div>
-  <div class="home-3-content">
-    <div class="img-1-container">
-      <img
-        src="/images/compumockup.png"
-        alt="Imagen descriptiva"
-        class="img-1"
-      />
-    </div>
-    <div class="home-3-items">
-      <div class="items-1">
-        <br />
-      </div>
-      <div class="items-2">
-        <p>Sin límite en cuanto a volumen y cantidad de pagos.</p>
-        <ul>
-          <li>Pago a proveedores</li>
-          <li>Pago de Honorarios y/o comisiones.</li>
-          <li>Pago de Servicios y/o Impuestos AFIP mediante VEP</li>
-        </ul>
-        <br />
-        <p>Métodos de pago</p>
-        <ul>
-          <li>Transferencias Programadas</li>
-          <li>Transferencias Inmediatas.</li>
-          <li>Emisiones de CPD electrónico</li>
-        </ul>
-      </div>
-    </div>
+      proveedores, servicios e impuestos.
+  </p>
+  <div class="w-5/6 flex gap-3 mt-9">
+    <CashCard
+      title="Sin límite en cuanto a volumen y cantidad de pagos."
+      items={[
+        "Pago a proveedores",
+        "Pago de honorarios y/o comisiones",
+        "Pago de servicios y/o impuestos AFIP mediante VEP",
+      ]}/>
+      <CashCard
+      title="Métodos de pago"
+      items={[
+        "Transferencias programadas.",
+        "Transferencias inmediatas.",
+        "Emisión de CPD electrónico.",
+      ]}/>
   </div>
 </section>
 
 <style>
   .home-3 {
-    background-image: url("/images/2560 h3.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
-    color: white;
-    font-family: "Spline Sans", sans-serif;
+    background-color:white;
+    border-radius: 4rem;
   }
 
   .none {
     display: none;
   }
 
-  .home-3-title {
+  .home-3 {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: start;
-    padding-top: 17vh;
-    padding-left: 10vw;
+    align-items: center;
+    padding: 4rem 4rem;
   }
 
-  .home-3-title h2 {
-    font-size: 2.5vw;
-    font-weight: 450;
+  .home-3 h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #6952EB;
+    text-transform: uppercase;
   }
 
-  .home-3-title h2 span {
-    color: #1bdfb7;
-    font-weight: 450;
-  }
 
-  .home-3-title p {
-    font-size: 1.6vw;
-    font-family: "Roboto", sans-serif;
-    font-weight: 300;
-    color: white;
-  }
-
-  .home-3-title p span {
-    color: white;
+  .home-3 p {
+    font-size: 1.4rem;
     font-weight: 500;
+    width: 55%;
+    text-align: center;
   }
 
   .home-3-content {

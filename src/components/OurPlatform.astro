@@ -1,35 +1,43 @@
 ---
-
+import PaymentCard from "./PaymentCard.astro";
+import SectionTitle from "./SectionTitle.astro";
 ---
 
 <section class="home-4" id="home-4">
-  <div class="home-4-tittle">
-    <h2>
-      Nuestra <span>plataforma</span>
-    </h2>
-    <p>Gestione sus <span>recaudaciones y pagos</span> de forma online:</p>
-  </div>
+  <SectionTitle title="Nuestra plataforma" subtitle="Gestione sus recaudaciones y pagos de forma online:"/>
   <div class="home-4-container">
     <div class="grid-container-4">
-      <figure>
-        <img src="/images/card1h4.png" alt="" />
-      </figure>
-      <figure>
-        <img src="/images/card2h4.png" alt="" />
-      </figure>
-      <figure>
-        <img src="/images/card3h4.png" alt="" />
-      </figure>
-      <figure>
-        <img src="/images/card4h4.png" alt="" />
-      </figure>
-      <figure>
-        <img src="/images/card5h4.png" alt="" />
-      </figure>
-      <figure>
-        <img src="/images/card6h4.png" alt="" />
-      </figure>
-    </div>
+     <PaymentCard
+     title="Gestion multicanal"
+     content="Envíe instrucciones de cobranzas y pagos de manera fácil a través de nuestra plataforma, mediante transmisión de archivos."
+     iconUrl="/images/platform-icons/gestion-multicanal.svg"
+     iconAlt="Icono gestion multicanal"/>
+     <PaymentCard
+     title="Reportes Personalizados"
+     content="Acceda a informes detallados sobre sus recaudaciones y/o pagos, con la posibilidad de exportar archivos en formato Excel o texto. "
+     iconUrl="/images/platform-icons/reportes-personalizados.svg"
+     iconAlt="Icono gestion multicanal"/>
+     <PaymentCard
+     title="Consulta de Movimientos"
+     content="Manténganse informado sobre todos los movimientos, saldos disponibles y proyectados, registrados en su Cuenta BitcomPay. "
+     iconUrl="/images/platform-icons/consulta-movimientos.svg"
+     iconAlt="Icono gestion multicanal"/>
+     <PaymentCard
+      title="Notificaciones Automatizadas"
+      content="Personalice notificaciones automatizadas para su cartera de clientes y proveedores, utilizando plantillas con su marca."
+      iconUrl="/images/platform-icons/notificaciones-personalizadas.svg"
+      iconAlt="Icono gestion multicanal"/>
+      <PaymentCard
+      title="Distribución de Comprobantes"
+      content="Facilite la recaudación de su cartera mediante la distribución de Comprobantes, con instrucciones claras de los canales habilitados para su pago"
+      iconUrl="/images/platform-icons/distribucion-comprobantes.svg"
+      iconAlt="Icono gestion multicanal"/>
+      <PaymentCard
+      title="Análisis Estadístico"
+      content="Utilice nuestro Dashboard para acceder a información estadística relevante que le ayudará en la toma de decisiones."
+      iconUrl="/images/platform-icons/analisis-estadistico.svg"
+      iconAlt="Icono gestion multicanal"/>
+  </div>
   </div>
 
   <div class="sliderh4">
@@ -57,24 +65,22 @@
 
   <style>
     .home-4 {
-      background-color: #212121;
-      /* padding-top: 3rem;
-  padding-bottom: 3rem; */
       width: auto;
       height: 90vh;
+      margin-top: 8vh;
     }
 
     .home-4-tittle {
       display: flex;
       flex-direction: column;
+      text-align: center;
       padding-top: 13vh;
-      padding-left: 10vw;
     }
 
     .home-4-tittle h2 {
-      font-size: 2.5vw;
-      color: white;
-      font-family: "Spline Sans", sans-serif;
+      font-size: 1.8vw;
+      font-weight: 600;
+      color: #85ce81;
     }
 
     .home-4-tittle span {
@@ -83,14 +89,13 @@
 
     .home-4-tittle p {
       font-size: 1.6vw;
-      font-family: "Roboto", sans-serif;
       font-weight: 300;
-      color: white;
+      
     }
 
     .home-4-tittle p span {
       font-weight: 500;
-      color: white;
+     
     }
 
     .home-4-container {
@@ -102,8 +107,10 @@
     .grid-container-4 {
       display: grid;
       grid-template-columns: repeat(3, 3fr);
+      gap: 1rem;
       margin-top: 3rem;
       border-radius: 10vh;
+      width: 80vw;
     }
     .grid-container-4 figure {
       margin: 0;
@@ -216,7 +223,7 @@
         font-size: 2vh;
         font-family: "Roboto", sans-serif;
         font-weight: 300;
-        color: white;
+
         text-align: center;
       }
 
@@ -332,7 +339,6 @@
     @media screen and (max-width: 375px) {
       .home-4-tittle h2 {
         font-size: 30px;
-        color: white;
         font-family: "Spline Sans", sans-serif;
       }
 

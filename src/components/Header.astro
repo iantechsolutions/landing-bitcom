@@ -18,17 +18,25 @@
       <button id="btnOpen" aria-expanded="false" aria-labelledby="nav-label">
         <img class="h-6 lg:hidden" id="abrir" src="./images/menu.svg" />
       </button>
-      <div class="hidden lg:block">
-        <img
-          class="h-6 block lg:hidden"
-          id="cerrar"
-          src="./images/close-menu.svg"
-        />
-        <ul class="flex gap-3">
+      <div
+        id="topnav_menu"
+        class="hidden lg:flex lg:items-center aria-expanded:inset-0 aria-expanded:fixed aria-expanded:flex aria-expanded:flex-col"
+        aria-labelledby="nav-label"
+        role="dialog"
+      >
+        <button id="btnClose" aria-label="Close">
+          <img
+            class="h-6 block lg:hidden"
+            id="cerrar"
+            src="./images/close-menu.svg"
+          />
+        </button>
+        <ul class="flex gap-4">
           <li>
             <a
               href="#home-3"
-              class="text-[#3e3e3e] font-medium opacity-70 text-base">Servicios</a
+              class="text-[#3e3e3e] font-medium opacity-70 text-base"
+              >Servicios</a
             >
           </li>
           <li>
@@ -46,13 +54,14 @@
           <li>
             <a
               href="/contact"
-              class="text-[#3e3e3e] font-medium opacity-70 text-base">Contacto</a
+              class="text-[#3e3e3e] font-medium opacity-70 text-base"
+              >Contacto</a
             >
           </li>
         </ul>
       </div>
     </nav>
-  
+
     <div class="flex items-center gap-4 lg:gap-6">
       <button
         class="border-[3px] border-[#6952EB] text-[#6952EB] text-xs lg:text-sm font-[625] rounded-full
@@ -68,14 +77,44 @@
         />
       </button>
     </div>
-    
   </div>
 </header>
 
 <script>
-  const nav = document.querySelector("#nav");
-  const abrir = document.querySelector("#abrir");
-  const cerrar = document.querySelector("#cerrar");
+  const btnOpen = document.getElementById("btnOpen");
+  const btnClose = document.getElementById("cerrar");
+  const media = window.matchMedia("(max-width: 1024px)");
+  const topnav_menu = document.getElementById("topnav_menu");
+  const main = document.querySelector("main");
+  const body = document.querySelector("body");
+
+  function openMobile() {
+    btnOpen.setAttribute("aria-expanded", "true");
+    topnav_menu.removeAttribute("inert");
+    // topnav_menu.removeAttribute("style");
+    main.setAttribute("inert", "");
+    btnClose.focus();
+  }
+
+  function closeMobile() {
+    btnOpen.setAttribute("aria-expanded", "false");
+    topnav_menu.setAttribute("inert", "");
+    topnav_menu.setAttribute("style", "display: none");
+    main.removeAttribute("inert");
+    btnOpen.focus();
+
+    setTimeout(() => {
+      topnav_menu.style.transition = "none";
+    }, 500);
+  }
+
+  btnOpen.addEventListener("click", openMobile);
+  btnClose.addEventListener("click", closeMobile);
+</script>
+<!-- <script>
+  const nav = document.querySelector("#topnav_menu");
+  const abrir = document.querySelector("#btnOpen");
+  const cerrar = document.querySelector("#btnClose");
 
   abrir.addEventListener("click", () => {
     nav.classList.add("visible");
@@ -84,8 +123,7 @@
   cerrar.addEventListener("click", () => {
     nav.classList.remove("visible");
   });
-</script>
-
+</script> -->
 <script>
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
@@ -101,3 +139,14 @@
     });
   });
 </script>
+
+<style>
+  @layer nav {
+  #btnOpen[aria-expanded="true"] + #topnav_menu {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    inset: 0;
+  }
+}
+</style>

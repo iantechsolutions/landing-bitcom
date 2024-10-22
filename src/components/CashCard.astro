@@ -1,0 +1,36 @@
+---
+interface CashCardProps {
+  title: string;
+  items: string[];
+}
+const {title, items}= Astro.props;
+---
+
+<div class="bg-[#DEF5DD] py-10 px-12 w-1/2 rounded-xl">
+    <h1 class="font-bold text-lg w-5/6">{title}</h1>
+    <ul class="mt-4">
+        {items.map((item)=>(
+            <li> <img src="/images/check.svg"/>
+            <span>{item}</span>
+            </li>
+        ))}
+    </div>
+</div>
+
+<style>
+    li{
+        display: flex;
+        align-items: center;
+        margin-top: 0.4rem;
+        font-size: 1rem;
+    }
+    li img{
+        width: 1rem;
+        height: 1rem;
+        margin-right: 0.5rem;
+    }
+    li span {
+    display: inline-block;
+    vertical-align: top; /* Alinea el texto con el borde superior */
+  }
+</style>
