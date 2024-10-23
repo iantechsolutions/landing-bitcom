@@ -26,7 +26,6 @@
       </button>
       <div
         id="topnav_menu"
-        class="lg:flex lg:items-center"
         aria-labelledby="nav-label"
         role="dialog"
       >
@@ -63,7 +62,7 @@
         class="border-[3px] border-[#6952EB] text-[#6952EB] dark:text-[#9D8DF9] dark:border-[#9D8DF9] text-xs lg:text-sm font-[625] rounded-full
        px-2 lg:px-4 py-1 lg:py-2 tracking-wide"
       >
-        <span class="text-[#9D8DF9] hidden lg:inline">Acceso </span>Entidades
+        <span class="text-[#6952EB] dark:text-[#9D8DF9] hidden lg:inline">Acceso </span>Entidades
       </button>
       <button id="theme-switcher">
         <img
@@ -86,6 +85,7 @@
   function openMobile() {
     btnOpen.setAttribute("aria-expanded", "true");
     topnav_menu.removeAttribute("inert");
+    topnav_menu.style.background= '#212121'
     main.setAttribute("inert", "");
     btnClose.focus();
   }
@@ -132,14 +132,20 @@
     const themeSwitcher = document.getElementById("theme-switcher");
     const themeSwitcherImg = document.getElementById("theme-switcher-img") as HTMLImageElement;
     const logoImage= document.getElementById("bitcom-logo") as HTMLImageElement;
+    const btnOpen= document.getElementById("abrir") as HTMLImageElement;
+    const btnClose= document.getElementById("cerrar") as HTMLImageElement;
     function toggleTheme() {
       document.documentElement.classList.toggle("dark");
       if (document.documentElement.classList.contains("dark")) {
         themeSwitcherImg.src = "./images/theme-switcher-dark.png";
         logoImage.src = "./images/logo-bitcom-light.png";
+        btnOpen.src= "./images/menu-dark.svg"
+        btnClose.src= "./images/close-menu-dark.svg"
       } else {
         themeSwitcherImg.src = "./images/theme-switcher.png";
         logoImage.src = "./images/logo-bitcom-dark.png";
+        btnOpen.src= "./images/menu.svg"
+        btnClose.src= "./images/close-menu.svg"
       }
     }
     themeSwitcher.addEventListener("click", toggleTheme);
@@ -174,7 +180,6 @@
       background-color: white;
     }
   }
-
   @media (max-width: 1024px) {
     #topnav_menu {
       inset: 0;
@@ -184,9 +189,12 @@
       transition: translate 0.5s ease-in-out;
       padding: 1.5rem;
     }
+
     #topnav_links {
       flex-direction: column;
       gap: 2rem;
     }
   }
+
+
 </style>

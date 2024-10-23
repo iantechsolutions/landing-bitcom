@@ -1,14 +1,38 @@
 ---
-interface Props{
-    title: string;
-    subtitle: string;
-    color?: string;
-    subColor?:string;
+interface Props {
+  title: string;
+  subtitle: string;
+  color?: string;
+  subColor?: string;
 }
-const {title, subtitle, subColor, color} = Astro.props;
+const { title, subtitle, subColor, color } = Astro.props;
 ---
 
 <div class="flex flex-col items-center text-center">
-    <h2 class={`text-[#85ce81] uppercase text-[1.4rem] font-[600] ${color}`}>{title}</h2>
-    <p class={`font-[500] w-[66%] text-[1.8rem] ${subColor}`}>{subtitle}</p>
+  <h2 id="title" class={`text-[#85ce81] uppercase font-[600] ${color}`}>
+    {title}
+  </h2>
+  <p id="subtitle" class={`font-[500] w-[66%] ${subColor}`}>
+    {subtitle}
+  </p>
 </div>
+
+<style>
+  #title {
+    font-size: 0.8rem;
+    font-size: clamp(
+      0.8rem,
+      0.6577319587628867rem + 0.6185567010309277vw,
+      1.4rem
+    );
+  }
+
+  #subtitle {
+    font-size: 1.2rem;
+    font-size: clamp(
+      1.2rem,
+      1.0577319587628866rem + 0.6185567010309279vw,
+      1.8rem
+    );
+  }
+</style>

@@ -1,63 +1,81 @@
 ---
-import {ChevronRight} from 'lucide-astro'
+import { ChevronRight } from "lucide-astro";
 ---
 
-<section class="w-full flex flex-col md:flex-row justify-center gap-3 items-center mt-20 px-20" id="home">
+<section
+  class="w-full flex flex-col md:flex-row justify-center gap-3 items-center mt-20 px-20"
+  id="home"
+>
   <div class="header-home">
     <h1>
       Simplifique la gestión <br />de tesorería
       <span>de su empresa</span>
     </h1>
     <p>
-      Acceda a un servicio integral de Gestion de Canales de Recaudación
-      y<br />
+      Acceda a un servicio integral de Gestion de Canales de Recaudación y<br />
       Cash Managment de forma online con nuestra Plataforma.
     </p>
 
-    <button> Accedé a nuestro sistema <ChevronRight class="h-4" strokeWidth={1} /></button>
+    <button>
+      Accedé a nuestro sistema <ChevronRight
+        class="h-4"
+        strokeWidth={1}
+      /></button
+    >
   </div>
   <div>
-    <img src="/images/mockup 1.png"class='40vw' alt="" />
-  <div>
+    <img src="/images/mockup 1.png" class="40vw" alt="" />
+    <div></div>
+
+    <style>
+      .home {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .header-home h1 {
+        font-size: 2rem;
+        font-size: clamp(
+          2rem,
+          1.7628865979381443rem + 1.0309278350515463vw,
+          3rem
+        );
+        font-weight: 600;
+        text-align: start;
+        margin-top: 8rem;
+      }
+
+      .header-home h1 span {
+        color: #85ce81;
+      }
+
+      .header-home p {
+        font-size: 0.8rem;
+        font-size: clamp(
+          0.8rem,
+          0.6340206185567011rem + 0.7216494845360825vw,
+          1.5rem
+        );
+        font-weight: 400;
+        text-align: start;
+        margin-top: 1.5rem;
+      }
+
+      .header-home button {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 25rem;
+        border: none;
+        background-color: #bef0bb;
+        color: #366b33;
+        font-weight: 700;
+        font-size: 1rem;
+        padding: 0.9rem 1.2rem;
+        margin-top: 2rem;
+        border-radius: 9999px;
+      }
+    </style>
+  </div>
 </section>
-
-<style>
-  .home {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .header-home h1 {
-    font-size: 3rem;
-    font-weight: 600;
-    text-align: start;
-    margin-top: 8rem;
-  }
-
-  .header-home h1 span {
-    color: #85ce81;
-  }
-
-  .header-home p {
-    font-size: 1.5rem;
-    font-weight: 400;
-    text-align: start;
-    margin-top: 1.5rem;
-  }
-
-  .header-home button {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 25rem;
-    border: none;
-    background-color: #bef0bb;
-    color: #366b33;
-    font-weight: 700;
-    font-size: 1rem;
-    padding: 0.9rem 1.2rem;
-    margin-top: 2rem;
-    border-radius:9999px;
-  }
-</style>
