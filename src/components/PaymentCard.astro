@@ -8,13 +8,14 @@ interface Props{
 const { title, content, iconUrl, iconAlt} = Astro.props;
 ---
 
-<div class="card">
+<div class="rounded-[10px] bg-[#F7F7F7] pt-4 pb-6 px-6 dark:backdrop--blur__safari dark:backdrop-filter
+      dark:backdrop-blur-4xl dark:bg-opacity-20">
     <div class="card-content">
       <div class="card-icon">
         <img src={iconUrl} alt={iconAlt}/>
       </div>
-      <div class="flex flex-col gap-1">
-        <h3 class="card-title">{title}</h3>
+      <div class="flex flex-col gap-2">
+        <h3 class="text-[0.9rem] font-[600] uppercase text-[#5034F2] dark:text-[#9D8CFD]">{title}</h3>
         <p class="card-text">
           {content}
         </p>
@@ -24,25 +25,8 @@ const { title, content, iconUrl, iconAlt} = Astro.props;
 
 
   <style>
-  .card {
-    background-color:white;
-    border-radius: 10px;
-    padding: 1rem 1.5rem;
-  }
-
-  .card-content {
-    max-width: 100%;
-  }
-
-  .card-title {
-    color: #6952EB;
-    font-size: 0.8rem;
-    font-weight: 700;
-    text-transform: uppercase;
-  }
-
   .card-text {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     font-weight: 500;
   }
 

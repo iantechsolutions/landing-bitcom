@@ -1,11 +1,12 @@
 <header
   class="absolute
-  flex items-center justify-between top-0 lg:top-12 w-full lg:w-11/12 max-w-screen-xl bg-white
+  flex items-center justify-between top-0 lg:top-12 w-full lg:w-[86%] max-w-screen-xl bg-white dark:bg-[#212121]
   shadow-lg z-50 lg:rounded-full px-7 lg:px-[2.7rem] py-4
   lg:left-1/2 lg:transform lg:-translate-x-1/2"
 >
   <figure class="flex items-center">
     <img
+      id="bitcom-logo"
       class="h-auto w-32 lg:w-40"
       src="./images/logo-bitcom-dark.png"
       alt=""
@@ -33,31 +34,23 @@
           <img class="h-6" id="cerrar" src="./images/close-menu.svg" />
         </button>
         <ul class="flex items-center gap-4" id="topnav_links">
-          <li class="link">
-            <a
-              href="#home-2"
-              class="text-[#3e3e3e] font-medium opacity-70 text-base"
+          <li class="link dark:text-[#ffffff]">
+            <a href="#home-2" class="font-medium opacity-70 text-base"
               >Servicios</a
             >
           </li>
-          <li class="link">
-            <a
-              href="#home-3"
-              class="text-[#3e3e3e] font-medium opacity-70 text-base"
+          <li class="link dark:text-[#ffffff]">
+            <a href="#home-3" class="font-medium opacity-70 text-base"
               >Cash Managment</a
             >
           </li>
-          <li class="link">
-            <a
-              href="#home-4"
-              class="text-[#3e3e3e] font-medium opacity-70 text-base"
+          <li class="link dark:text-[#ffffff]">
+            <a href="#home-4" class="font-medium opacity-70 text-base"
               >Plataforma</a
             >
           </li>
-          <li class="link">
-            <a
-              href="#contact"
-              class="text-[#3e3e3e] font-medium opacity-70 text-base"
+          <li class="link dark:text-[#ffffff]">
+            <a href="#contact" class="font-medium opacity-70 text-base"
               >Contacto</a
             >
           </li>
@@ -67,13 +60,14 @@
 
     <div class="flex items-center gap-4 lg:gap-6">
       <button
-        class="border-[3px] border-[#6952EB] text-[#6952EB] text-xs lg:text-sm font-[625] rounded-full
+        class="border-[3px] border-[#6952EB] text-[#6952EB] dark:text-[#9D8DF9] dark:border-[#9D8DF9] text-xs lg:text-sm font-[625] rounded-full
        px-2 lg:px-4 py-1 lg:py-2 tracking-wide"
       >
-        <span class="text-[#6952EB] hidden lg:inline">Acceso </span>Entidades
+        <span class="text-[#9D8DF9] hidden lg:inline">Acceso </span>Entidades
       </button>
-      <button>
+      <button id="theme-switcher">
         <img
+          id="theme-switcher-img"
           class="h-8 w-8 lg:h-[2.7rem] lg:w-[2.7rem]"
           src="./images/theme-switcher.png"
           alt="theme-switcher"
@@ -108,7 +102,7 @@
       // is mobile
       console.log("is mobile");
       topnav_menu.setAttribute("inert", "");
-      topnav_menu.style.transition = "none";
+      topnav_menu.style.transition='none'
     } else {
       // is tablet/desktop
       console.log("is desktop");
@@ -133,7 +127,24 @@
     });
   });
 </script>
-
+<script>
+   document.addEventListener("DOMContentLoaded", function () {
+    const themeSwitcher = document.getElementById("theme-switcher");
+    const themeSwitcherImg = document.getElementById("theme-switcher-img") as HTMLImageElement;
+    const logoImage= document.getElementById("bitcom-logo") as HTMLImageElement;
+    function toggleTheme() {
+      document.documentElement.classList.toggle("dark");
+      if (document.documentElement.classList.contains("dark")) {
+        themeSwitcherImg.src = "./images/theme-switcher-dark.png";
+        logoImage.src = "./images/logo-bitcom-light.png";
+      } else {
+        themeSwitcherImg.src = "./images/theme-switcher.png";
+        logoImage.src = "./images/logo-bitcom-dark.png";
+      }
+    }
+    themeSwitcher.addEventListener("click", toggleTheme);
+  });
+</script>
 <script>
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
@@ -169,6 +180,8 @@
       inset: 0;
       position: fixed;
       translate: 100vw 0;
+      background-color: white;
+      transition: translate 0.5s ease-in-out;
       padding: 1.5rem;
     }
     #topnav_links {

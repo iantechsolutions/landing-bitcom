@@ -1,49 +1,57 @@
 ---
-import PaymentCard from './PaymentCard.astro'
+import PaymentCard from "./PaymentCard.astro";
 ---
+
 <section class="home-2" id="home-2">
   <div class="home-2-tittle">
-    <h2>
-      Canales de Recaudación:
-    </h2>
+    <h2>Canales de Recaudación:</h2>
     <p>
-      Con un solo contrato publique su marca en todas las entidades de recaudación con mayor alcance de todo el país
+      Con un solo contrato publique su marca en todas las entidades de
+      recaudación con mayor alcance de todo el país
     </p>
   </div>
   <div class="home-2-container">
-    <div class="grid-container">
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-3 gap-y-3 mt-8 w-[80vw]"
+    >
       <PaymentCard
         title="Débito Directo Bancario"
-        content="Ordene débitos directos en Cajas de Ahorro y/o Cuentas Corrientes de todos los Bancos del País."
+        content="Ordene débitos automáticos en cajas de ahorro y/o cuentas corrientes de todos los bancos del sistema financiero."
         iconUrl="/images/payment-icons/debito-directo-bancario.png"
-        iconAlt="Icono Bancario"/>
+        iconAlt="Icono Bancario"
+      />
       <PaymentCard
         title="Débito Automático en tarjetas"
         content="Sus clientes o afiliados podrán optar por el servicio de débito automático en tarjetas de crédito y/o débito."
         iconUrl="/images/payment-icons/debito-automatico.png"
-        iconAlt="debito automatico icon"/>
+        iconAlt="debito automatico icon"
+      />
       <PaymentCard
         title="Recaudación en Efectivo"
         content="Habilite los Canales de Recaudación de Pago Fácil y/o Rapipago en todo el País, con la modalidad de su conveniencia."
         iconUrl="/images/payment-icons/efectivo.png"
-        iconAlt="icono efectivo"/>
+        iconAlt="icono efectivo"
+      />
 
       <PaymentCard
         title="Canales Electrónicos de pagos"
         content="Ofrezca la opción de pago de servicios en Home Banking y/o Billeteras Virtuales homologadas."
         iconUrl="/images/payment-icons/canal-electronico.png"
-        iconAlt="Icono canal eletronico"/>
+        iconAlt="Icono canal eletronico"
+      />
 
       <PaymentCard
         title="Gateway de Pagos"
-        content="Set de herramientas para ventas con Tarjetas y/o QR presenciales y/o a distancia."
+        content="Incluye POS físico para ventas presenciales, lectura de QR, generación de links de pago y envío por RRSS, Pos Web para venta telefónica y botón de pago."
         iconUrl="/images/payment-icons/gateway.png"
-        iconAlt="icono gateway de pagos"/>
+        iconAlt="icono gateway de pagos"
+      />
       <PaymentCard
         title="Cobranzas Mayoristas"
         content="Reciba en nuestra Cuenta Recaudadora Mayorista el pago de Facturas de sus Clientes Corporativos."
         iconUrl="/images/payment-icons/cobranzas.png"
-        iconAlt="Icono cobranzas"/>
+        iconAlt="Icono cobranzas"
+      />
     </div>
   </div>
 </section>
@@ -53,32 +61,32 @@ import PaymentCard from './PaymentCard.astro'
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items:center;
-    margin-top: 8vh;
-    margin-bottom: 8vh;
+    align-items: center;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
   }
 
   .home-2-tittle {
     display: flex;
     flex-direction: column;
-    align-items:center;
-    padding-top: 2vh;
-    padding-bottom: 2vh;
+    align-items: center;
+    padding-top: 4rem;
+    padding-bottom: 2rem;
   }
 
   .home-2-tittle h2 {
-    font-size:1.1rem;
-    font-weight:600;
+    font-size: 1.4rem;
+    font-weight: 600;
     color: #85ce81;
     text-transform: uppercase;
     text-align: center;
   }
 
   .home-2-tittle p {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     font-weight: 500;
     text-align: center;
-    width: 60%;
+    width: 66%;
   }
 
   .home-2-container {
@@ -86,144 +94,4 @@ import PaymentCard from './PaymentCard.astro'
     justify-content: center;
     align-items: center;
   }
-
-  .grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 3fr);
-    gap: 0.8rem 0.7rem;
-    margin-top: 2rem;
-    width: 80vw;
-  }
-  .swiper {
-    visibility: hidden;
-  }
-  @media screen and (max-width: 1024px) {
-    .home-2-tittle h2 {
-      font-size: 4.5vh;
-    }
-
-    .home-2-tittle p {
-      font-size: 2vh;
-    }
-
-    .card {
-      height: 24vh;
-      width: 30vw;
-    }
-
-    .card-title {
-      font-size: 1.3em;
-    }
-
-    .card-text {
-      font-size: 1.4vh;
-    }
-
-    .card-icon {
-      top: -40px;
-      right: -20px;
-    }
-
-    .card-icon img {
-      width: 80px;
-      height: 80px;
-    }
-  }
-
-  @media screen and (max-width: 768px) {
-    .home-2-container {
-      display: none;
-    }
-
-    .swiper {
-      visibility: visible;
-      padding-top: 10vh;
-    }
-
-    .swiper-slide {
-      height: auto;
-      display: flex;
-      justify-content: center;
-    }
-
-    .card {
-      width: 100vw;
-      height: 25vh;
-    }
-  }
-
-  @media screen and (max-width: 425px) {
-    .home-2-tittle {
-      align-items: center;
-      justify-content: center;
-      padding-top: 10vh;
-      padding-left: 2vw;
-    }
-
-    .home-2-tittle h2 {
-      font-size: 7vw;
-    }
-
-    .home-2-tittle p {
-      font-size: 4vw;
-      text-align: center;
-    }
-
-    .swiper {
-      visibility: visible;
-      padding-top: 10vh;
-    }
-
-    .swiper-slide {
-      height: auto;
-      width: auto;
-      display: flex;
-      justify-content: center;
-    }
-
-    .card {
-      width: 90vw;
-      height: 20vh;
-    }
-  }
 </style>
-
-<script>
-  import Swiper from "swiper";
-  import "swiper/css";
-  import { Navigation } from "swiper/modules";
-  import "swiper/css/navigation";
-
-  const swiper = new Swiper(".swiper", {
-    modules: [Navigation],
-    loop: true,
-    slidesPerView: 3,
-    spaceBetween: 40,
-    navigation: {
-      prevEl: ".swiper-button-prev",
-      nextEl: ".swiper-button-next",
-    },
-    breakpoints: {
-      1024: {
-        slidesPerView: 3,
-        spaceBetween: 40,
-      },
-      768: {
-        slidesPerView: 2,
-        spaceBetween: 20,
-      },
-      425: {
-        slidesPerView: 1,
-        spaceBetween: 10,
-      },
-      375: {
-        slidesPerView: 1,
-        spaceBetween: 10,
-      },
-      0: {
-        slidesPerView: 1,
-        spaceBetween: 10,
-      },
-    },
-  });
-</script>

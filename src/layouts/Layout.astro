@@ -23,7 +23,7 @@ const { title } = Astro.props;
     />
     <title>{title}</title>
   </head>
-  <body>
+  <body class="dark:text-[#ffffff] bg-landing-light dark:bg-landing-dark">
     <slot />
 
     <!--CARROUSEL-->
@@ -48,10 +48,9 @@ const { title } = Astro.props;
     margin: 0;
     padding: 0;
     font-family: "Montserrat", sans-serif;
-    color: #3e3e3e;
   }
 
   body {
-    background-image: url("/images/Bitcompay-BACKGROUND-White.jpg");
+    color: #3e3e3e;
   }
 </style>

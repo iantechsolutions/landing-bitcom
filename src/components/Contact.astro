@@ -1,15 +1,16 @@
 ---
+import { ChevronRight } from "lucide-astro";
 import SectionTitle from "./SectionTitle.astro";
 import FieldFrom from "./ui/FieldFrom.astro";
 ---
 
-<section class="flex flex-col items-center mt-10" id="contact">
+<section class="flex flex-col items-center mt-20" id="contact">
   <SectionTitle
     title="CONTÁCTENOS"
     subtitle="Seleccione el medio de contacto preferido y conversemos"
   />
   <div class="contact-container">
-    <form class= "grid grid-cols-2 gap-x-8">
+    <form class="grid grid-cols2 md:grid-cols-2 gap-x-8">
       <FieldFrom
         label="Nombre y apellido"
         id="name"
@@ -27,14 +28,15 @@ import FieldFrom from "./ui/FieldFrom.astro";
         id="company"
         placeholder="Ingrese el nombre de su empresa"
       />
-      <FieldFrom label="Teléfono" id="phone" tel placeholder=""/>
-      <FieldFrom label="Motivo" id="motive" motive placeholder=""/>
+      <FieldFrom label="Teléfono" id="phone" tel placeholder="" />
+      <FieldFrom label="Motivo" id="motive" motive placeholder="" />
       <FieldFrom
         label="Mensaje"
         id="message"
         placeholder="Ingrese su mensaje"
         textArea
       />
+      <button class="" type="submit"> Enviar <ChevronRight class="h-4" strokeWidth={1} /></button>
     </form>
   </div>
 </section>
@@ -58,5 +60,19 @@ import FieldFrom from "./ui/FieldFrom.astro";
     font-weight: 500;
     color: #666;
     margin-bottom: 2vh;
+  }
+  button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 25rem;
+    border: none;
+    background-color: #bef0bb;
+    color: #366b33;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0.7rem 1.2rem;
+    margin-top: 2rem;
+    border-radius: 9999px;
   }
 </style>
