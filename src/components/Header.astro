@@ -99,6 +99,9 @@
     topnav_menu.classList.remove("translate-x-0");
     main.removeAttribute("inert");
     btnOpen.focus();
+    setTimeout(() => {
+      topnav_menu.style.transition = "none";
+    }, 500);
   }
 
   function setupTopNav(e) {
@@ -129,66 +132,6 @@
   });
 </script>
 
-<style>
-  @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
-</style>
-<script>
-  const btnOpen = document.getElementById("btnOpen");
-  const btnClose = document.getElementById("btnClose");
-  const media = window.matchMedia("(max-width: 1024px)");
-  const topnav_menu = document.getElementById("topnav_menu");
-  const main = document.querySelector("main");
-  function openMobile() {
-    btnOpen.setAttribute("aria-expanded", "true");
-    topnav_menu.removeAttribute("inert");
-    topnav_menu.removeAttribute("style");
-    main.setAttribute("inert", "");
-    btnClose.focus();
-  }
-
-  function closeMobile() {
-    btnOpen.ariaExpanded = "false";
-    topnav_menu.setAttribute("inert", "");
-    main.removeAttribute("inert");
-    btnOpen.focus();
-
-    setTimeout(() => {
-      topnav_menu.style.transition = "none";
-    }, 500);
-  }
-
-  function setupTopNav(e) {
-    if (e.matches) {
-      // is mobile
-      console.log("is mobile");
-      topnav_menu.setAttribute("inert", "");
-      topnav_menu.style.transition = "none";
-    } else {
-      // is tablet/desktop
-      console.log("is desktop");
-      closeMobile();
-      topnav_menu.removeAttribute("inert");
-    }
-  }
-  setupTopNav(media);
-
-  btnOpen.addEventListener("click", openMobile);
-  btnClose.addEventListener("click", closeMobile);
-  media.addEventListener("change", function (e) {
-    setupTopNav(e);
-  });
-  const elements = document.querySelectorAll(".link");
-  elements.forEach((element) => {
-    // Perform actions on each element
-    element.addEventListener("click", () => {
-      if (media.matches) {
-        closeMobile();
-      }
-    });
-  });
-</script>
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const themeSwitcher = document.getElementById("theme-switcher");
@@ -198,7 +141,6 @@
     const logoImage = document.getElementById(
       "bitcom-logo",
     ) as HTMLImageElement;
-    const topnav_menu = document.getElementById("topnav_menu");
     const btnOpen = document.getElementById("abrir") as HTMLImageElement;
     const btnClose = document.getElementById("cerrar") as HTMLImageElement;
     function toggleTheme() {
@@ -215,6 +157,7 @@
         btnClose.src = "./images/close-menu.svg";
       }
     }
+    toggleTheme();
     themeSwitcher.addEventListener("click", toggleTheme);
   });
 </script>
