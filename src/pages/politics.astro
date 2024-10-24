@@ -19,6 +19,7 @@ import Layout from "../layouts/Layout.astro";
           </li>
         </ul>
       </div>
+      <hr class="border-[#9B9999] border-l-2 mb-3 lg:h-full"/>
       <div id="politics" class="content-body">
         <h2 class="content-title">
           Utopía de un hombre que está cansado, un cuento de Jorge Luis Borges
@@ -90,7 +91,8 @@ import Layout from "../layouts/Layout.astro";
   }
 
   document.addEventListener("DOMContentLoaded", () => {
-    const html= document.querySelector("html");
+    const html = document.querySelector("html");
+    const darkTheme= html.classList.contains("dark");
     const tabsLinks = document.querySelectorAll(".legales-item");
     tabsLinks.forEach((link) => {
       link.addEventListener("click", (e) => {
@@ -103,7 +105,6 @@ import Layout from "../layouts/Layout.astro";
         }
       });
     });
-
     const defaultTab = document.getElementById("defaultTab");
     if (defaultTab) {
       const tab = defaultTab.getAttribute("data-tab");
@@ -121,6 +122,11 @@ import Layout from "../layouts/Layout.astro";
     margin-bottom: 10rem;
     margin-top: 13rem;
     display: flex;
+    @media (max-width: 1024px) {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      flex-direction: column;
+    }
   }
 
   .legales {
@@ -140,6 +146,10 @@ import Layout from "../layouts/Layout.astro";
   .legales-list {
     margin-top: 1.5rem;
     list-style-type: none;
+    @media (max-width: 1024px) {
+      display: flex;
+      gap: 3rem;
+    }
   }
 
   .legales-item {
@@ -147,6 +157,9 @@ import Layout from "../layouts/Layout.astro";
     color: #9b9999;
     font-size: 1.25rem;
     margin-bottom: 1.5rem;
+    @media (max-width: 1024px) {
+      margin-bottom: 1rem;
+    }
   }
   .legales-item.active {
     color: #3e3e3e;
@@ -157,7 +170,6 @@ import Layout from "../layouts/Layout.astro";
   }
   .content-body {
     flex: 1;
-    border-left: 2px solid #9b9999;
     padding-left: 2.5rem;
     padding-top: 1rem;
     padding-bottom: 1rem;

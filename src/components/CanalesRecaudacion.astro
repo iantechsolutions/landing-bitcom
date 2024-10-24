@@ -1,58 +1,54 @@
 ---
 import PaymentCard from "./PaymentCard.astro";
+import SectionTitle from "./SectionTitle.astro";
 ---
 
-<section class="home-2" id="home-2">
-  <div class="home-2-tittle">
-    <h2>Canales de Recaudación:</h2>
-    <p>
-      Con un solo contrato publique su marca en todas las entidades de
-      recaudación con mayor alcance de todo el país
-    </p>
-  </div>
-  <div class="home-2-container">
-    <div
-      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-3 gap-y-3 mt-8 w-[80vw]"
-    >
-      <PaymentCard
-        title="Débito Directo Bancario"
-        content="Ordene débitos automáticos en cajas de ahorro y/o cuentas corrientes de todos los bancos del sistema financiero."
-        iconUrl="/images/payment-icons/debito-directo-bancario.png"
-        iconAlt="Icono Bancario"
-      />
-      <PaymentCard
-        title="Débito Automático en tarjetas"
-        content="Sus clientes o afiliados podrán optar por el servicio de débito automático en tarjetas de crédito y/o débito."
-        iconUrl="/images/payment-icons/debito-automatico.png"
-        iconAlt="debito automatico icon"
-      />
-      <PaymentCard
-        title="Recaudación en Efectivo"
-        content="Habilite los Canales de Recaudación de Pago Fácil y/o Rapipago en todo el País, con la modalidad de su conveniencia."
-        iconUrl="/images/payment-icons/efectivo.png"
-        iconAlt="icono efectivo"
-      />
+<section class="home-2 2xl:max-w-7xl 2xl:mx-auto" id="home-2">
+  <SectionTitle
+    title="Canales de Recaudación"
+    subtitle="Ofrecemos una amplia variedad de canales de recaudación para que puedas cobrar de forma segura y eficiente."
+  />
+  <div
+    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-3 gap-y-3 mt-8 w-[80%] max-w-[80%]"
+  >
+    <PaymentCard
+      title="Débito Directo Bancario"
+      content="Ordene débitos automáticos en cajas de ahorro y/o cuentas corrientes de todos los bancos del sistema financiero."
+      iconUrl="/images/payment-icons/debito-directo-bancario.png"
+      iconAlt="Icono Bancario"
+    />
+    <PaymentCard
+      title="Débito Automático en tarjetas"
+      content="Sus clientes o afiliados podrán optar por el servicio de débito automático en tarjetas de crédito y/o débito."
+      iconUrl="/images/payment-icons/debito-automatico.png"
+      iconAlt="debito automatico icon"
+    />
+    <PaymentCard
+      title="Recaudación en Efectivo"
+      content="Habilite los Canales de Recaudación de Pago Fácil y/o Rapipago en todo el País, con la modalidad de su conveniencia."
+      iconUrl="/images/payment-icons/efectivo.png"
+      iconAlt="icono efectivo"
+    />
 
-      <PaymentCard
-        title="Canales Electrónicos de pagos"
-        content="Ofrezca la opción de pago de servicios en Home Banking y/o Billeteras Virtuales homologadas."
-        iconUrl="/images/payment-icons/canal-electronico.png"
-        iconAlt="Icono canal eletronico"
-      />
+    <PaymentCard
+      title="Canales Electrónicos de pagos"
+      content="Ofrezca la opción de pago de servicios en Home Banking y/o Billeteras Virtuales homologadas."
+      iconUrl="/images/payment-icons/canal-electronico.png"
+      iconAlt="Icono canal eletronico"
+    />
 
-      <PaymentCard
-        title="Gateway de Pagos"
-        content="Incluye POS físico para ventas presenciales, lectura de QR, generación de links de pago y envío por RRSS, Pos Web para venta telefónica y botón de pago."
-        iconUrl="/images/payment-icons/gateway.png"
-        iconAlt="icono gateway de pagos"
-      />
-      <PaymentCard
-        title="Cobranzas Mayoristas"
-        content="Reciba en nuestra Cuenta Recaudadora Mayorista el pago de Facturas de sus Clientes Corporativos."
-        iconUrl="/images/payment-icons/cobranzas.png"
-        iconAlt="Icono cobranzas"
-      />
-    </div>
+    <PaymentCard
+      title="Gateway de Pagos"
+      content="Incluye POS físico para ventas presenciales, lectura de QR, generación de links de pago y envío por RRSS, Pos Web para venta telefónica y botón de pago."
+      iconUrl="/images/payment-icons/gateway.png"
+      iconAlt="icono gateway de pagos"
+    />
+    <PaymentCard
+      title="Cobranzas Mayoristas"
+      content="Reciba en nuestra Cuenta Recaudadora Mayorista el pago de Facturas de sus Clientes Corporativos."
+      iconUrl="/images/payment-icons/cobranzas.png"
+      iconAlt="Icono cobranzas"
+    />
   </div>
 </section>
 
@@ -87,11 +83,5 @@ import PaymentCard from "./PaymentCard.astro";
     font-weight: 500;
     text-align: center;
     width: 66%;
-  }
-
-  .home-2-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
 </style>

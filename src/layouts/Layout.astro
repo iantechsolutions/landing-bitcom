@@ -5,12 +5,12 @@ interface Props {
   page: optionsPage;
 }
 
-const { title,page } = Astro.props;
+const { title, page } = Astro.props;
 
-const pageStyles : Record <optionsPage, string>= {
+const pageStyles: Record<optionsPage, string> = {
   home: "bg-landing-light dark:bg-landing-dark",
   politics: "bg-[#eae9e9] dark:bg-[#131313]",
-}
+};
 ---
 
 <!doctype html>
@@ -18,7 +18,7 @@ const pageStyles : Record <optionsPage, string>= {
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
-    <meta name="viewport" content="width=device-width " />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 " />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <!--ROBOTO-->
@@ -56,8 +56,13 @@ const pageStyles : Record <optionsPage, string>= {
     padding: 0;
     font-family: "Montserrat", sans-serif;
   }
-
+  html, body {
+    overflow-x: hidden;
+  }
   body {
     color: #3e3e3e;
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-size: cover; /* Ajusta la imagen para que cubra todo el viewport */
+    background-position: center; /* Centra la imagen en el viewport */
   }
 </style>

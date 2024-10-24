@@ -6,13 +6,15 @@ interface Props {
   subColor?: string;
 }
 const { title, subtitle, subColor, color } = Astro.props;
+// subcolor es decir color en dark mode opcional
 ---
+
 
 <div class="flex flex-col items-center text-center">
   <h2 id="title" class={`text-[#85ce81] uppercase font-[600] ${color}`}>
     {title}
   </h2>
-  <p id="subtitle" class={`font-[500] w-[66%] ${subColor}`}>
+  <p id="subtitle" class={`font-[500] w-[85%] md:w-[66%] ${subColor}`}>
     {subtitle}
   </p>
 </div>
@@ -20,19 +22,11 @@ const { title, subtitle, subColor, color } = Astro.props;
 <style>
   #title {
     font-size: 0.8rem;
-    font-size: clamp(
-      0.8rem,
-      0.6577319587628867rem + 0.6185567010309277vw,
-      1.4rem
-    );
+    font-size: clamp(0.8rem, 0.8rem + 0.5999999999999999vw, 1.4rem);
   }
 
   #subtitle {
-    font-size: 1.2rem;
-    font-size: clamp(
-      1.2rem,
-      1.0577319587628866rem + 0.6185567010309279vw,
-      1.8rem
-    );
+    font-size: 0.9rem;
+    font-size: clamp(0.9rem, 0.76rem + 0.90010000000000vw, 1.8rem);
   }
 </style>

@@ -9,8 +9,8 @@ import FieldFrom from "./ui/FieldFrom.astro";
     title="CONTÁCTENOS"
     subtitle="Seleccione el medio de contacto preferido y conversemos"
   />
-  <div class="contact-container">
-    <form class="grid grid-cols2 md:grid-cols-2 gap-x-8">
+  <div class="2xl:max-w-7xl mx-auto md:px-10">
+    <form class="grid grid-cols2 md:grid-cols-2 md:gap-x-8">
       <FieldFrom
         label="Nombre y apellido"
         id="name"
@@ -42,25 +42,7 @@ import FieldFrom from "./ui/FieldFrom.astro";
 </section>
 
 <style>
-  .contact-container {
-    padding: 3vw;
-    margin-top: 5vh;
-    text-align: center;
-    width: 70%;
-  }
 
-  h1 {
-    color: #1bdfb7;
-    font-weight: 500;
-    font-size: 2.3vw;
-  }
-
-  p {
-    font-size: 1.1vw;
-    font-weight: 500;
-    color: #666;
-    margin-bottom: 2vh;
-  }
   button {
     display: flex;
     justify-content: space-between;
@@ -74,5 +56,11 @@ import FieldFrom from "./ui/FieldFrom.astro";
     padding: 0.7rem 1.2rem;
     margin-top: 2rem;
     border-radius: 9999px;
+  }
+
+  @media(max-width: 768px) {
+    button {
+      width: 100%;
+    }
   }
 </style>

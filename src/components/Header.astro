@@ -1,8 +1,5 @@
 <header
-  class="absolute
-  flex items-center justify-between top-0 lg:top-12 w-full lg:w-[86%] max-w-screen-xl bg-white dark:bg-[#212121]
-  shadow-lg z-50 lg:rounded-full px-7 lg:px-[2.7rem] py-4
-  lg:left-1/2 lg:transform lg:-translate-x-1/2"
+  class="absolute flex items-center justify-between mx-auto top-0 lg:top-12 w-full lg:w-[86%] max-w-screen-xl bg-white dark:bg-[#212121] shadow-lg z-50 lg:rounded-full px-7 lg:px-[2.7rem] py-4 lg:left-1/2 lg:transform lg:-translate-x-1/2"
 >
   <figure class="flex items-center">
     <img
@@ -26,13 +23,16 @@
       </button>
       <div
         id="topnav_menu"
+        class="fixed flex flex-col inset-0 translate-x-full bg-white
+        transition-transform duration-500 ease-in-out p-6 lg:relative
+        lg:inset-auto lg:translate-x-0 lg:p-0 dark:bg-[#212121]"
         aria-labelledby="nav-label"
         role="dialog"
       >
-        <button id="btnClose" aria-label="Close" class="lg:hidden">
+        <button id="btnClose" aria-label="Close" class="self-end lg:hidden">
           <img class="h-6" id="cerrar" src="./images/close-menu.svg" />
         </button>
-        <ul class="flex items-center gap-4" id="topnav_links">
+        <ul class="flex flex-col items-center gap-6 lg:flex-row lg:gap-4" id="topnav_links">
           <li class="link dark:text-[#ffffff]">
             <a href="/#home-2" class="font-medium opacity-70 text-base"
               >Servicios</a
@@ -59,10 +59,12 @@
 
     <div class="flex items-center gap-4 lg:gap-6">
       <button
-        class="border-[3px] border-[#6952EB] text-[#6952EB] dark:text-[#9D8DF9] dark:border-[#9D8DF9] text-xs lg:text-sm font-[625] rounded-full
-       px-2 lg:px-4 py-1 lg:py-2 tracking-wide"
+        class="border-[3px] border-[#6952EB] text-[#6952EB] dark:text-[#9D8DF9] dark:border-[#9D8DF9] text-xs lg:text-sm font-[625] rounded-full px-2 lg:px-4 py-1 lg:py-2 tracking-wide
+        hidden min-[1130px]:inline"
       >
-        <span class="text-[#6952EB] dark:text-[#9D8DF9] hidden lg:inline">Acceso </span>Entidades
+        <span class="text-[#6952EB] dark:text-[#9D8DF9] hidden lg:inline"
+          >Acceso
+        </span>Entidades
       </button>
       <button id="theme-switcher">
         <img
@@ -82,10 +84,66 @@
   const media = window.matchMedia("(max-width: 1024px)");
   const topnav_menu = document.getElementById("topnav_menu");
   const main = document.querySelector("main");
+
+  function openMobile() {
+    btnOpen.setAttribute("aria-expanded", "true");
+    topnav_menu.classList.remove("translate-x-full");
+    topnav_menu.classList.add("translate-x-0");
+    main.setAttribute("inert", "");
+    btnClose.focus();
+  }
+
+  function closeMobile() {
+    btnOpen.setAttribute("aria-expanded", "false");
+    topnav_menu.classList.add("translate-x-full");
+    topnav_menu.classList.remove("translate-x-0");
+    main.removeAttribute("inert");
+    btnOpen.focus();
+  }
+
+  function setupTopNav(e) {
+    if (e.matches) {
+      // is mobile
+      topnav_menu.classList.add("translate-x-full");
+    } else {
+      // is tablet/desktop
+      closeMobile();
+    }
+  }
+
+  setupTopNav(media);
+
+  btnOpen.addEventListener("click", openMobile);
+  btnClose.addEventListener("click", closeMobile);
+  media.addEventListener("change", function (e) {
+    setupTopNav(e);
+  });
+
+  const elements = document.querySelectorAll(".link");
+  elements.forEach((element) => {
+    element.addEventListener("click", () => {
+      if (media.matches) {
+        closeMobile();
+      }
+    });
+  });
+</script>
+
+<style>
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+</style>
+<script>
+  const btnOpen = document.getElementById("btnOpen");
+  const btnClose = document.getElementById("btnClose");
+  const media = window.matchMedia("(max-width: 1024px)");
+  const topnav_menu = document.getElementById("topnav_menu");
+  const main = document.querySelector("main");
   function openMobile() {
     btnOpen.setAttribute("aria-expanded", "true");
     topnav_menu.removeAttribute("inert");
-    topnav_menu.style.background= '#212121'
+    topnav_menu.removeAttribute("style");
     main.setAttribute("inert", "");
     btnClose.focus();
   }
@@ -95,6 +153,10 @@
     topnav_menu.setAttribute("inert", "");
     main.removeAttribute("inert");
     btnOpen.focus();
+
+    setTimeout(() => {
+      topnav_menu.style.transition = "none";
+    }, 500);
   }
 
   function setupTopNav(e) {
@@ -102,7 +164,7 @@
       // is mobile
       console.log("is mobile");
       topnav_menu.setAttribute("inert", "");
-      topnav_menu.style.transition='none'
+      topnav_menu.style.transition = "none";
     } else {
       // is tablet/desktop
       console.log("is desktop");
@@ -128,24 +190,29 @@
   });
 </script>
 <script>
-   document.addEventListener("DOMContentLoaded", function () {
+  document.addEventListener("DOMContentLoaded", function () {
     const themeSwitcher = document.getElementById("theme-switcher");
-    const themeSwitcherImg = document.getElementById("theme-switcher-img") as HTMLImageElement;
-    const logoImage= document.getElementById("bitcom-logo") as HTMLImageElement;
-    const btnOpen= document.getElementById("abrir") as HTMLImageElement;
-    const btnClose= document.getElementById("cerrar") as HTMLImageElement;
+    const themeSwitcherImg = document.getElementById(
+      "theme-switcher-img",
+    ) as HTMLImageElement;
+    const logoImage = document.getElementById(
+      "bitcom-logo",
+    ) as HTMLImageElement;
+    const topnav_menu = document.getElementById("topnav_menu");
+    const btnOpen = document.getElementById("abrir") as HTMLImageElement;
+    const btnClose = document.getElementById("cerrar") as HTMLImageElement;
     function toggleTheme() {
       document.documentElement.classList.toggle("dark");
       if (document.documentElement.classList.contains("dark")) {
         themeSwitcherImg.src = "./images/theme-switcher-dark.png";
         logoImage.src = "./images/logo-bitcom-light.png";
-        btnOpen.src= "./images/menu-dark.svg"
-        btnClose.src= "./images/close-menu-dark.svg"
+        btnOpen.src = "./images/menu-dark.svg";
+        btnClose.src = "./images/close-menu-dark.svg";
       } else {
         themeSwitcherImg.src = "./images/theme-switcher.png";
         logoImage.src = "./images/logo-bitcom-dark.png";
-        btnOpen.src= "./images/menu.svg"
-        btnClose.src= "./images/close-menu.svg"
+        btnOpen.src = "./images/menu.svg";
+        btnClose.src = "./images/close-menu.svg";
       }
     }
     themeSwitcher.addEventListener("click", toggleTheme);
@@ -166,35 +233,3 @@
     });
   });
 </script>
-
-<style>
-  @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
-  @layer components {
-    #btnOpen[aria-expanded="true"] + #topnav_menu {
-      width: 100vw;
-      height: 100vh;
-      translate: 0;
-      transition: translate 0.5s ease-in-out;
-      background-color: white;
-    }
-  }
-  @media (max-width: 1024px) {
-    #topnav_menu {
-      inset: 0;
-      position: fixed;
-      translate: 100vw 0;
-      background-color: white;
-      transition: translate 0.5s ease-in-out;
-      padding: 1.5rem;
-    }
-
-    #topnav_links {
-      flex-direction: column;
-      gap: 2rem;
-    }
-  }
-
-
-</style>

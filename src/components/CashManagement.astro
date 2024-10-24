@@ -4,11 +4,12 @@ import SectionTitle from "./SectionTitle.astro";
 ---
 
 <section class="home-3 rounded-xl bg-white dark:bg-[#1A1A18]" id="home-3">
-  <div class="flex flex-col items-center text-center">
-    <h2 class={`text-[#6952EB] uppercase text-[1.4rem] font-[600] dark:text-[#9D8DF9] `}>Cash Management</h2>
-    <p class={`font-[500] w-[66%] text-[1.8rem]`}>Evite costos tercerizando los pagos a sus proveedores, servicios e impuestos</p>
-</div>
-  <div class="flex flex-col md:flex-row w-full md:w-5/6 gap-3 mt-9">
+  <SectionTitle
+    title="Cash Management"
+    subtitle="Evite el costo tercerizando los pagos a sus proveedores, servicios e impuestos"
+    color="text-[#7059ec]"
+    />
+  <div class="flex flex-col md:flex-row w-full md:w-5/6 gap-3 mt-9 2xl:max-w-7xl mx-auto">
     <CashCard
       title="Sin límite en cuanto a volumen y cantidad de pagos."
       items={[
@@ -32,7 +33,12 @@ import SectionTitle from "./SectionTitle.astro";
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 4rem 4rem;
+    padding: 2rem 2rem;
+  }
+  @media (max-width: 768px) {
+    .home-3 {
+      padding: 2rem 1rem;
+    }
   }
 
   .home-3 h2 {

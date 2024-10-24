@@ -3,17 +3,17 @@ import { ChevronRight } from "lucide-astro";
 ---
 
 <section
-  class="w-full flex flex-col md:flex-row justify-center gap-3 items-center mt-20 px-20"
+  class="w-full flex flex-col md:flex-row justify-center gap-3 items-center md:mt-20 px-20 2xl:max-w-7xl 2xl:mx-auto"
   id="home"
 >
   <div class="header-home">
     <h1>
-      Simplifique la gestión <br />de tesorería
+      Simplifique la gestión de tesorería
       <span>de su empresa</span>
     </h1>
     <p>
-      Acceda a un servicio integral de Gestion de Canales de Recaudación y<br />
-      Cash Managment de forma online con nuestra Plataforma.
+      Acceda a un servicio integral de gestión de canales de recaudación y cash
+      management de forma online con nuestra plataforma.
     </p>
 
     <button>
@@ -75,6 +75,13 @@ import { ChevronRight } from "lucide-astro";
         padding: 0.9rem 1.2rem;
         margin-top: 2rem;
         border-radius: 9999px;
+      }
+
+      @media (max-width: 1024px) {
+        .header-home button {
+          width: 15rem;
+          font-size: 0.8rem;
+        }
       }
     </style>
   </div>

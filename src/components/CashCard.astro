@@ -6,8 +6,8 @@ interface CashCardProps {
 const {title, items}= Astro.props;
 ---
 
-<div class="flex-1 bg-[#DEF5DD] py-10 px-12 rounded-xl bg-clip-padding dark:backdrop--blur__safari dark:backdrop-filter dark:backdrop-blur-4xl dark:bg-opacity-40">
-    <h1 class="font-bold text-xl w-5/6">{title}</h1>
+<div class="flex-1 bg-[#DEF5DD] py-10 px-4 sm:px-12 rounded-xl bg-clip-padding dark:backdrop--blur__safari dark:backdrop-filter dark:backdrop-blur-4xl dark:bg-opacity-40">
+    <h1 class="font-bold sm:text-base md:text-lg lg:text-xl w-5/6 ">{title}</h1>
     <ul class="mt-4">
         {items.map((item)=>(
             <li> <img src="/images/check.svg"/>
@@ -23,6 +23,11 @@ const {title, items}= Astro.props;
         align-items: center;
         margin-top: 0.4rem;
         font-size: 1.1rem;
+    }
+    @media(max-width: 678px){
+        li{
+            font-size: 0.9rem;
+        }
     }
     li img{
         width: 1.3rem;
