@@ -1,0 +1,178 @@
+---
+import Header from "../components/Header.astro";
+import OurNetworks from "../components/OurNetworks.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="terminos y condiciones" page="politics">
+  <Header />
+  <main>
+    <section class="content">
+      <div class="legales">
+        <h1 class="legales-title">Legales</h1>
+        <ul class="legales-list">
+          <li class="legales-item" data-tab="politics" id="defaultTab">
+            Políticas de privacidad
+          </li>
+          <li class="legales-item" data-tab="consumer_rights">
+            Defensa del consumidor
+          </li>
+        </ul>
+      </div>
+      <div id="politics" class="content-body">
+        <h2 class="content-title">
+          Utopía de un hombre que está cansado, un cuento de Jorge Luis Borges
+        </h2>
+        <p class="content-text">
+          No hay dos cerros iguales, pero en cualquier lugar de la tierra la
+          llanura es una y la misma. Yo iba por un camino de la llanura. Me
+          pregunté sin mucha curiosidad si estaba en Oklahoma o en Texas o en la
+          región que los literatos llaman la pampa. Ni a derecha ni a izquierda
+          vi un alambrado. Como otras veces repetí despacio estas líneas, de
+          Emilio Oribe: En medio de la pánica llanura interminableY cerca del
+          Brasil, que van creciendo y agrandándose. El camino era desparejo.
+          Empezó a caer la lluvia. A unos doscientos o trescientos metros vi la
+          luz de una casa. Era baja y rectangular y cercada de árboles. Me abrió
+          la puerta un hombre tan alto que casi me dio miedo. Estaba vestido de
+          gris. Sentí que esperaba a alguien. No había cerradura en la puerta.
+          Entramos en una larga habitación con las paredes de madera. Pendía del
+          cielo raso una lámpara de luz amarillenta. La mesa, por alguna razón,
+          me extrañó. En la mesa había una clepsidra, la primera que he visto,
+          fuera de algún grabado en acero. El hombre me indicó una de las
+          sillas. Ensayé diversos idiomas y no nos entendimos. Cuando él habló
+          lo hizo en latín. Junté mis ya lejanas memorias de bachiller y me
+          preparé para el diálogo. —Por la ropa —me dijo—, veo que llegas de
+          otro siglo. La diversidad de las lenguas favorecía la diversidad de
+          los pueblos y aún de las guerras; la tierra ha regresado al latín. Hay
+          quienes temen que vuelva a degenerar en francés, en lemosín o en
+          papiamento, pero el riesgo no es inmediato. Por lo demás, ni lo que ha
+          sido ni lo que será me interesan. No dije nada y agregó: —Si no te
+          desagrada ver comer a otro, ¿quieres acompañarme? Comprendí que
+          advertía mi zozobra y dije que sí.
+        </p>
+      </div>
+      <div id="consumer_rights" class="content-body">
+        <h2 class="content-title">Cuento cualquiera de Jorge Luis Borges</h2>
+        <p class="content-text">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores,
+          ratione corrupti excepturi beatae sint aliquid labore est consequatur
+          natus! Repudiandae beatae aperiam ipsa vitae aspernatur dolorum
+          excepturi unde incidunt quod! Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Dolores, ratione corrupti excepturi beatae sint
+          aliquid labore est consequatur natus! Repudiandae beatae aperiam ipsa
+          vitae aspernatur dolorum excepturi unde incidunt quod! Lorem ipsum
+          dolor sit amet consectetur adipisicing elit. Debitis itaque aut nihil
+          ipsam ducimus repudiandae est laborum libero, esse animi cumque atque
+          facilis consequuntur at ipsum adipisci sapiente quam dolor! Fuga
+          incidunt quia unde exercitationem. Error sint aspernatur perferendis
+          magni. Recusandae temporibus asperiores maiores omnis modi blanditiis
+          ad consequuntur tempora fugit cumque quos corporis minima est pariatur
+          quidem, et facere? Minima totam iure soluta ad eaque illum non officia
+          explicabo velit doloribus, est cum inventore ex nostrum provident
+          necessitatibus! Enim incidunt blanditiis, dignissimos ut beatae aut
+          eos quae neque nisi! Aliquam maiores facere nostrum debitis explicabo
+          laboriosam illum, beatae asperiores est dolores quisquam vel libero
+          sunt earum nihil perspiciatis id inventore neque quaerat. Officiis
+          nihil natus aspernatur. Cupiditate, nostrum fuga!
+        </p>
+      </div>
+    </section>
+    <OurNetworks page="politics" />
+  </main>
+</Layout>
+<script>
+  function openTab(tab: string) {
+    const tabsContents = document.querySelectorAll(".content-body");
+    const tabsLinks = document.querySelectorAll(".legales-item");
+    tabsContents.forEach((content) => content.classList.remove("show"));
+    tabsLinks.forEach((link) => link.classList.remove("active"));
+    document.getElementById(tab)?.classList.add("show");
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const tabsLinks = document.querySelectorAll(".legales-item");
+    tabsLinks.forEach((link) => {
+      link.addEventListener("click", (e) => {
+        const target = e.target as HTMLElement;
+        const tab = target.getAttribute("data-tab");
+        if (tab) {
+          openTab(tab);
+          tabsLinks.forEach((link) => link.classList.remove("active"));
+          target.classList.add("active");
+        }
+      });
+    });
+
+    const defaultTab = document.getElementById("defaultTab");
+    if (defaultTab) {
+      const tab = defaultTab.getAttribute("data-tab");
+      if (tab) {
+        openTab(tab);
+        defaultTab.classList.add("active");
+      }
+    }
+  });
+</script>
+<style>
+  .content {
+    padding-left: 8rem;
+    padding-right: 8rem;
+    margin-bottom: 10rem;
+    margin-top: 13rem;
+    display: flex;
+  }
+
+  .legales {
+    padding-left: 0.5rem;
+    padding-right: 2.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .legales-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #85ce81;
+  }
+
+  .legales-list {
+    margin-top: 1.5rem;
+    list-style-type: none;
+  }
+
+  .legales-item {
+    font-weight: 500;
+    color: #9b9999;
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+  .legales-item.active {
+    color: #3e3e3e;
+    font-weight: 700;
+  }
+
+  .legales-item:hover {
+    cursor: pointer;
+  }
+  .content-body {
+    flex: 1;
+    border-left: 2px solid #9b9999;
+    padding-left: 2.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    display: none;
+  }
+  .content-body.show {
+    display: block;
+  }
+  .content-title {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  .content-text {
+    margin-top: 1.25rem;
+    font-size: 1.25rem;
+  }
+</style>

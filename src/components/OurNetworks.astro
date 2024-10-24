@@ -1,39 +1,48 @@
 ---
 import SectionTitle from "./SectionTitle.astro";
+type PageOptions = "home" | "politics";
+interface Props {
+  page: PageOptions;
+}
+const { page } = Astro.props;
 ---
 
 <section class="home-5" id="home-5">
-  <SectionTitle
-    title="Redes habilitadas"
-    subtitle="Nuestro pricipales Partners"
-    subColor="text-white"
-  />
+  {
+    page === "home" && (
+    <SectionTitle
+      title="Redes habilitadas"
+      subtitle="Nuestro pricipales Partners"
+      subColor="text-white"
+    />
 
-  <div class="flex gap-12 justify-center items-center mt-14">
-    <div class="slide">
-      <img src="/images/networks-logo/visa.png" alt="visa" />
+    <div class="flex gap-12 justify-center items-center mt-14">
+      <div class="slide">
+        <img src="/images/networks-logo/visa.png" alt="visa" />
+      </div>
+      <div class="slide">
+        <img src="/images/networks-logo/mastercard.png" alt="mastercard" />
+      </div>
+      <div class="slide">
+        <img src="/images/networks-logo/american-express.png" alt="express" />
+      </div>
+      <div class="slide">
+        <img src="/images/networks-logo/pago-facil.png" alt="pago facil" />
+      </div>
+      <div class="slide-small">
+        <img src="/images/networks-logo/rapipago.png" alt="rapipago" id="rapipago"/>
+      </div>
+      <div class="slide-small">
+        <img src="/images/networks-logo/pagomiscuentas.png" alt="pagomiscuentas" />
+      </div>
+      <div class="slide-small">
+        <img src="/images/networks-logo/payway.png" alt="payway" />
+      </div>
     </div>
-    <div class="slide">
-      <img src="/images/networks-logo/mastercard.png" alt="mastercard" />
-    </div>
-    <div class="slide">
-      <img src="/images/networks-logo/american-express.png" alt="express" />
-    </div>
-    <div class="slide">
-      <img src="/images/networks-logo/pago-facil.png" alt="pago facil" />
-    </div>
-    <div class="slide-small">
-      <img src="/images/networks-logo/rapipago.png" alt="rapipago" id="rapipago"/>
-    </div>
-    <div class="slide-small">
-      <img src="/images/networks-logo/pagomiscuentas.png" alt="pagomiscuentas" />
-    </div>
-    <div class="slide-small">
-      <img src="/images/networks-logo/payway.png" alt="payway" />
-    </div>
-  </div>
-  
-  <hr class="w-full mt-20 mb-16 bg-[#ffffff] opacity-80"/>
+
+    <hr class="w-full mt-20 mb-16 bg-[#ffffff] opacity-80"/>)
+  }
+
   <div class="w-full flex flex-col items-center">
     <figure class="mb-6">
       <img
@@ -46,10 +55,10 @@ import SectionTitle from "./SectionTitle.astro";
       <img src="/images/data-fiscal.png" class="h-20" />
     </figure>
     <ul class="flex justify-center gap-6">
-      <li class="text-[#FFFFFF] underline text-xs opacity-80">
+      <li class="text-[#FFFFFF] underline text-xs opacity-80 cursor-pointer">
         Politicas de privacidad
       </li>
-      <li class="text-[#FFFFFF] underline text-xs opacity-80">
+      <li class="text-[#FFFFFF] underline text-xs opacity-80 cursor-pointer">
         Defensa del consumidor
       </li>
     </ul>
