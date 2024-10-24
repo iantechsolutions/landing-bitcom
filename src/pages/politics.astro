@@ -4,7 +4,7 @@ import OurNetworks from "../components/OurNetworks.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="terminos y condiciones" page="politics">
+<Layout title="Legales" page="politics">
   <Header />
   <main>
     <section class="content">
@@ -90,6 +90,7 @@ import Layout from "../layouts/Layout.astro";
   }
 
   document.addEventListener("DOMContentLoaded", () => {
+    const html= document.querySelector("html");
     const tabsLinks = document.querySelectorAll(".legales-item");
     tabsLinks.forEach((link) => {
       link.addEventListener("click", (e) => {
@@ -151,7 +152,6 @@ import Layout from "../layouts/Layout.astro";
     color: #3e3e3e;
     font-weight: 700;
   }
-
   .legales-item:hover {
     cursor: pointer;
   }
