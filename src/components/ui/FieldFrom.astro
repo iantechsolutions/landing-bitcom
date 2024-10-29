@@ -11,7 +11,7 @@ const { label, id, placeholder, textArea, tel, motive } = Astro.props;
 ---
 
 <div
-  class={`flex flex-col gap-2 items-start border-b-2 border-[#85CE81] px-0 my-4 pb-2 ${textArea ? 'md:col-span-2' : ''}`}
+  class={`flex flex-col gap-2 items-start border-b-2 border-[#85CE81] px-0 my-4 pb-2 ${textArea ? "md:col-span-2" : ""}`}
 >
   <label for={id} class="text-[#747474] text-left w-full">{label}</label>
   {
@@ -27,11 +27,13 @@ const { label, id, placeholder, textArea, tel, motive } = Astro.props;
   {
     tel && (
       <div class="flex gap-2 items-center pl-4">
-        <select
-          class="border-none bg-inherit focus:outline-none text-left truncate"
-        >
-          <option value="phone">Telefono</option>
-          <option value="cellphone">Celular</option>
+        <select class="border-none bg-inherit focus:outline-none text-left truncate">
+          <option value="phone" class="dark:bg-black">
+            Telefono
+          </option>
+          <option value="cellphone" class="dark:bg-black">
+            Celular
+          </option>
         </select>
         <input
           type="tel"
@@ -50,9 +52,15 @@ const { label, id, placeholder, textArea, tel, motive } = Astro.props;
         name={id}
         class="pl-4 border-none bg-inherit focus:outline-none w-full truncate"
       >
-        <option value="consulta">Consulta</option>
-        <option value="reclamo">Reclamo</option>
-        <option value="sugerencia">Sugerencia</option>
+        <option value="consulta" class="dark:bg-black">
+          Consulta
+        </option>
+        <option value="reclamo" class="dark:bg-black">
+          Reclamo
+        </option>
+        <option value="sugerencia" class="dark:bg-black">
+          Sugerencia
+        </option>
       </select>
     )
   }
@@ -69,3 +77,11 @@ const { label, id, placeholder, textArea, tel, motive } = Astro.props;
     )
   }
 </div>
+
+<style>
+  textarea {
+    resize: none;
+    height: 2rem;
+    overflow-y: auto;
+  }
+</style>

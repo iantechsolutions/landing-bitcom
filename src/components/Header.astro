@@ -58,14 +58,15 @@
     </nav>
 
     <div class="flex items-center gap-4 lg:gap-6">
-      <button
+      <a
+        href="https://bitcompay-6035u93gg-ianconsultings-projects.vercel.app/"
         class="border-[3px] border-[#6952EB] text-[#6952EB] dark:text-[#9D8DF9] dark:border-[#9D8DF9] text-xs lg:text-sm font-[625] rounded-full px-2 lg:px-4 py-1 lg:py-2 tracking-wide
         hidden min-[1130px]:inline"
       >
         <span class="text-[#6952EB] dark:text-[#9D8DF9] hidden lg:inline"
           >Acceso
         </span>Entidades
-      </button>
+      </a>
       <button id="theme-switcher">
         <img
           id="theme-switcher-img"
@@ -133,7 +134,7 @@
 </script>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
+ 
     const themeSwitcher = document.getElementById("theme-switcher");
     const themeSwitcherImg = document.getElementById(
       "theme-switcher-img",
@@ -143,8 +144,7 @@
     ) as HTMLImageElement;
     const btnOpen = document.getElementById("abrir") as HTMLImageElement;
     const btnClose = document.getElementById("cerrar") as HTMLImageElement;
-    function toggleTheme() {
-      document.documentElement.classList.toggle("dark");
+    function toggleIcons() {
       if (document.documentElement.classList.contains("dark")) {
         themeSwitcherImg.src = "./images/theme-switcher-dark.png";
         logoImage.src = "./images/logo-bitcom-light.png";
@@ -157,9 +157,11 @@
         btnClose.src = "./images/close-menu.svg";
       }
     }
-    toggleTheme();
-    themeSwitcher.addEventListener("click", toggleTheme);
-  });
+    toggleIcons();
+    themeSwitcher.addEventListener("click", ()=>{
+      document.documentElement.classList.toggle("dark");
+      toggleIcons();
+    });
 </script>
 <script>
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {

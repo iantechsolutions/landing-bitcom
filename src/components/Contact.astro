@@ -10,7 +10,12 @@ import FieldFrom from "./ui/FieldFrom.astro";
     subtitle="Seleccione el medio de contacto preferido y conversemos"
   />
   <div class="2xl:max-w-7xl mx-auto md:px-10">
-    <form class="grid grid-cols2 md:grid-cols-2 md:gap-x-8">
+    <form
+      id="form"
+      class="grid grid-cols2 md:grid-cols-2 md:gap-x-8"
+      action="https://formspree.io/f/mbljdeqb"
+      method="post"
+    >
       <FieldFrom
         label="Nombre y apellido"
         id="name"
@@ -36,13 +41,113 @@ import FieldFrom from "./ui/FieldFrom.astro";
         placeholder="Ingrese su mensaje"
         textArea
       />
-      <button class="" type="submit"> Enviar <ChevronRight class="h-4" strokeWidth={1} /></button>
+      <button type="submit">
+        Enviar <ChevronRight class="h-4" strokeWidth={1} /></button
+      >
     </form>
+    <div id="toast">
+      ¡Gracias por contactarnos! Le responderemos a la brevedad
+    </div>
   </div>
 </section>
 
+<script>
+  const form = document.querySelector("form");
+  const toast = document.querySelector("#toast");
+  async function handleSubmit(event) {
+    const data = new FormData(event.target);
+    event.preventDefault();
+    fetch(event.target.action, {
+      method: form.method,
+      body: data,
+      headers: {
+        Accept: "application/json",
+      },
+    }).then((response) => {
+      if (response.ok) {
+        form.reset();
+      } else {
+        toast.innerHTML = "Ocurrió un error, por favor intente nuevamente";
+      }
+      toast.classList.add("show");
+      setTimeout(() => {
+        toast.classList.remove("show");
+      }, 3000);
+    });
+  }
+  form.addEventListener("submit", handleSubmit);
+</script>
 <style>
+  #toast {
+    visibility: hidden; /* Hidden by default. Visible on click */
+    min-width: 250px; /* Set a default minimum width */
+    margin-left: -125px; /* Divide value of min-width by 2 */
+    background-color: #333; /* Black background color */
+    color: #fff; /* White text color */
+    text-align: center; /* Centered text */
+    border-radius: 2px; /* Rounded borders */
+    padding: 16px; /* Padding */
+    position: fixed; /* Sit on top of the screen */
+    z-index: 1; /* Add a z-index if needed */
+    left: 50%; /* Center the snackbar */
+    bottom: 30px; /* 30px from the bottom */
+  }
+  #snackbar.show {
+    visibility: visible; /* Show the snackbar */
+    /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+  However, delay the fade out process for 2.5 seconds */
+    -webkit-animation:
+      fadein 0.5s,
+      fadeout 0.5s 2.5s;
+    animation:
+      fadein 0.5s,
+      fadeout 0.5s 2.5s;
+  }
 
+  /* Animations to fade the snackbar in and out */
+  @-webkit-keyframes fadein {
+    from {
+      bottom: 0;
+      opacity: 0;
+    }
+    to {
+      bottom: 30px;
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadein {
+    from {
+      bottom: 0;
+      opacity: 0;
+    }
+    to {
+      bottom: 30px;
+      opacity: 1;
+    }
+  }
+
+  @-webkit-keyframes fadeout {
+    from {
+      bottom: 30px;
+      opacity: 1;
+    }
+    to {
+      bottom: 0;
+      opacity: 0;
+    }
+  }
+
+  @keyframes fadeout {
+    from {
+      bottom: 30px;
+      opacity: 1;
+    }
+    to {
+      bottom: 0;
+      opacity: 0;
+    }
+  }
   button {
     display: flex;
     justify-content: space-between;
@@ -58,7 +163,7 @@ import FieldFrom from "./ui/FieldFrom.astro";
     border-radius: 9999px;
   }
 
-  @media(max-width: 768px) {
+  @media (max-width: 768px) {
     button {
       width: 100%;
     }
