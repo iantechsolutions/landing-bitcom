@@ -19,7 +19,7 @@ export const POST: APIRoute = async ({ request }) => {
 
     const { data: emailData, error } = await resend.emails.send({
       from: "Desarrollo <desarrollo@iantech.com.ar>",
-      to: "info@bitcompay.com.ar",
+      to: "info@bitcompay.ar",
       subject: "Suscripcion en Bitcompay",
       html: emailText,
     });
