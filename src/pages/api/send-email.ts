@@ -24,9 +24,7 @@ export const POST: APIRoute = async ({ request }) => {
       html: emailText,
     });
 
-    if (error) {
-      return new Response(JSON.stringify({ error }), { status: 500 });
-    }
+    console.log("error", error);
 
     return new Response(JSON.stringify({ data: emailData }), { status: 200 });
   } catch (e) {
