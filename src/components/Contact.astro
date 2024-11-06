@@ -2,8 +2,8 @@
 import { ChevronRight } from "lucide-astro";
 import SectionTitle from "./SectionTitle.astro";
 import FieldFrom from "./ui/FieldFrom.astro";
-
 ---
+
 <section class="flex flex-col items-center mt-20" id="contact">
   <SectionTitle
     title="CONTÁCTENOS"
@@ -45,11 +45,12 @@ import FieldFrom from "./ui/FieldFrom.astro";
         Enviar <ChevronRight class="h-4" strokeWidth={1} />
       </button>
     </form>
-    <div id="toast">
+    <div id="toast" class="toast hidden">
       ¡Gracias por contactarnos! Le responderemos a la brevedad
     </div>
   </div>
 </section>
+
 <script>
   const form = document.querySelector("form");
   const toast = document.querySelector("#toast");
@@ -57,8 +58,7 @@ import FieldFrom from "./ui/FieldFrom.astro";
   async function handleSubmit(event) {
     event.preventDefault();
     try {
-      const formData = new FormData(event.target as HTMLFormElement);
-      
+      const formData = new FormData(event.target);
       const formValues = {};
       formData.forEach((value, key) => {
         formValues[key] = value;
@@ -71,52 +71,54 @@ import FieldFrom from "./ui/FieldFrom.astro";
 
       if (response.ok) {
         toast.textContent = "¡Gracias por contactarnos! Le responderemos a la brevedad";
-        //toast.style.visibility = "visible";
+        toast.classList.remove("hidden");
+        setTimeout(() => {
+          toast.classList.add("hidden");
+        }, 3000);
+        form.reset();
       } else {
         toast.textContent = "Hubo un error al enviar el mensaje. Por favor, inténtelo de nuevo.";
-        //toast.style.visibility = "visible";
+        toast.classList.remove("hidden");
+        setTimeout(() => {
+          toast.classList.add("hidden");
+        }, 3000);
       }
     } catch (error) {
       console.error("Error:", error);
       toast.textContent = "Hubo un error al enviar el mensaje. Por favor, inténtelo de nuevo.";
-      // toast.style.visibility = "visible";
+      toast.classList.remove("hidden");
+      setTimeout(() => {
+        toast.classList.add("hidden");
+      }, 3000);
     }
   }
+
   form.addEventListener("submit", handleSubmit);
-
-
-
-  
-
 </script>
-<style>
-  #toast {
-    visibility: hidden; /* Hidden by default. Visible on click */
-    min-width: 250px; /* Set a default minimum width */
-    margin-left: -125px; /* Divide value of min-width by 2 */
-    background-color: #333; /* Black background color */
-    color: #fff; /* White text color */
-    text-align: center; /* Centered text */
-    border-radius: 2px; /* Rounded borders */
-    padding: 16px; /* Padding */
-    position: fixed; /* Sit on top of the screen */
-    z-index: 1; /* Add a z-index if needed */
-    left: 50%; /* Center the snackbar */
-    bottom: 30px; /* 30px from the bottom */
-  }
-  #snackbar.show {
-    visibility: visible; /* Show the snackbar */
-    /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
-  However, delay the fade out process for 2.5 seconds */
-    -webkit-animation:
-      fadein 0.5s,
-      fadeout 0.5s 2.5s;
-    animation:
-      fadein 0.5s,
-      fadeout 0.5s 2.5s;
-  }
 
-  /* Animations to fade the snackbar in and out */
+<style>
+  .toast {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+  }
+  .toast.hidden {
+    visibility: hidden;
+  }
+  .toast:not(.hidden) {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
   @-webkit-keyframes fadein {
     from {
       bottom: 0;
@@ -127,7 +129,6 @@ import FieldFrom from "./ui/FieldFrom.astro";
       opacity: 1;
     }
   }
-
   @keyframes fadein {
     from {
       bottom: 0;
@@ -138,7 +139,6 @@ import FieldFrom from "./ui/FieldFrom.astro";
       opacity: 1;
     }
   }
-
   @-webkit-keyframes fadeout {
     from {
       bottom: 30px;
@@ -149,7 +149,6 @@ import FieldFrom from "./ui/FieldFrom.astro";
       opacity: 0;
     }
   }
-
   @keyframes fadeout {
     from {
       bottom: 30px;
@@ -174,7 +173,6 @@ import FieldFrom from "./ui/FieldFrom.astro";
     margin-top: 2rem;
     border-radius: 9999px;
   }
-
   @media (max-width: 768px) {
     button {
       width: 100%;
