@@ -13,8 +13,9 @@ import FieldFrom from "./ui/FieldFrom.astro";
     <form
       id="form"
       class="grid grid-cols2 md:grid-cols-2 md:gap-x-8"
-      action="https://formspree.io/f/mbljdeqb"
       method="post"
+      action="/api/send-email"
+      enctype="application/x-www-form-urlencoded"
     >
       <FieldFrom
         label="Nombre y apellido"
@@ -27,7 +28,6 @@ import FieldFrom from "./ui/FieldFrom.astro";
         placeholder="Ingrese su CUIL/CUIT"
       />
       <FieldFrom label="Mail" id="email" placeholder="Ingrese su mail" />
-
       <FieldFrom
         label="Empresa"
         id="company"
@@ -39,13 +39,13 @@ import FieldFrom from "./ui/FieldFrom.astro";
         label="Mensaje"
         id="message"
         placeholder="Ingrese su mensaje"
-        textArea
+        textArea={true}
       />
       <button type="submit">
-        Enviar <ChevronRight class="h-4" strokeWidth={1} /></button
-      >
+        Enviar <ChevronRight class="h-4" strokeWidth={1} />
+      </button>
     </form>
-    <div id="toast">
+    <div id="toast" class="toast hidden">
       ¡Gracias por contactarnos! Le responderemos a la brevedad
     </div>
   </div>
@@ -54,57 +54,71 @@ import FieldFrom from "./ui/FieldFrom.astro";
 <script>
   const form = document.querySelector("form");
   const toast = document.querySelector("#toast");
+
   async function handleSubmit(event) {
-    const data = new FormData(event.target);
     event.preventDefault();
-    fetch(event.target.action, {
-      method: form.method,
-      body: data,
-      headers: {
-        Accept: "application/json",
-      },
-    }).then((response) => {
+    try {
+      const formData = new FormData(event.target);
+      const formValues = {};
+      formData.forEach((value, key) => {
+        formValues[key] = value;
+      });
+      console.log(formValues);
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        body: formData,
+      });
+
       if (response.ok) {
+        toast.textContent = "¡Gracias por contactarnos! Le responderemos a la brevedad";
+        toast.classList.remove("hidden");
+        setTimeout(() => {
+          toast.classList.add("hidden");
+        }, 3000);
         form.reset();
       } else {
-        toast.innerHTML = "Ocurrió un error, por favor intente nuevamente";
+        toast.textContent = "Hubo un error al enviar el mensaje. Por favor, inténtelo de nuevo.";
+        toast.classList.remove("hidden");
+        setTimeout(() => {
+          toast.classList.add("hidden");
+        }, 3000);
       }
-      toast.classList.add("show");
+    } catch (error) {
+      console.error("Error:", error);
+      toast.textContent = "Hubo un error al enviar el mensaje. Por favor, inténtelo de nuevo.";
+      toast.classList.remove("hidden");
       setTimeout(() => {
-        toast.classList.remove("show");
+        toast.classList.add("hidden");
       }, 3000);
-    });
-  }
-  form.addEventListener("submit", handleSubmit);
-</script>
-<style>
-  #toast {
-    visibility: hidden; /* Hidden by default. Visible on click */
-    min-width: 250px; /* Set a default minimum width */
-    margin-left: -125px; /* Divide value of min-width by 2 */
-    background-color: #333; /* Black background color */
-    color: #fff; /* White text color */
-    text-align: center; /* Centered text */
-    border-radius: 2px; /* Rounded borders */
-    padding: 16px; /* Padding */
-    position: fixed; /* Sit on top of the screen */
-    z-index: 1; /* Add a z-index if needed */
-    left: 50%; /* Center the snackbar */
-    bottom: 30px; /* 30px from the bottom */
-  }
-  #snackbar.show {
-    visibility: visible; /* Show the snackbar */
-    /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
-  However, delay the fade out process for 2.5 seconds */
-    -webkit-animation:
-      fadein 0.5s,
-      fadeout 0.5s 2.5s;
-    animation:
-      fadein 0.5s,
-      fadeout 0.5s 2.5s;
+    }
   }
 
-  /* Animations to fade the snackbar in and out */
+  form.addEventListener("submit", handleSubmit);
+</script>
+
+<style>
+  .toast {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+  }
+  .toast.hidden {
+    visibility: hidden;
+  }
+  .toast:not(.hidden) {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
   @-webkit-keyframes fadein {
     from {
       bottom: 0;
@@ -115,7 +129,6 @@ import FieldFrom from "./ui/FieldFrom.astro";
       opacity: 1;
     }
   }
-
   @keyframes fadein {
     from {
       bottom: 0;
@@ -126,7 +139,6 @@ import FieldFrom from "./ui/FieldFrom.astro";
       opacity: 1;
     }
   }
-
   @-webkit-keyframes fadeout {
     from {
       bottom: 30px;
@@ -137,7 +149,6 @@ import FieldFrom from "./ui/FieldFrom.astro";
       opacity: 0;
     }
   }
-
   @keyframes fadeout {
     from {
       bottom: 30px;
@@ -162,7 +173,6 @@ import FieldFrom from "./ui/FieldFrom.astro";
     margin-top: 2rem;
     border-radius: 9999px;
   }
-
   @media (max-width: 768px) {
     button {
       width: 100%;
