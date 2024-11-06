@@ -19,8 +19,9 @@ const { label, id, placeholder, textArea, tel, motive } = Astro.props;
       <textarea
         id={id}
         name={id}
-        class="border-none bg-inherit focus:outline-none w-full h-14 truncate"
+        class="border-none bg-inherit focus:outline-none w-full h-14"
         placeholder={placeholder}
+        wrap="soft"
       />
     )
   }
@@ -80,8 +81,8 @@ const { label, id, placeholder, textArea, tel, motive } = Astro.props;
 
 <style>
   textarea {
-    resize: none;
-    height: 2rem;
+    resize: vertical;
     overflow-y: auto;
+    word-wrap: break-word; /* Ensure words break to the next line */
   }
 </style>
