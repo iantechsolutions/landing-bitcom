@@ -4,43 +4,53 @@ import SectionTitle from "./SectionTitle.astro";
 ---
 
 <section class="home-4" id="home-4">
-  <SectionTitle title="Nuestra plataforma" subtitle="Gestione sus recaudaciones y pagos de forma online:"/>
+  <SectionTitle
+    title="Nuestra plataforma"
+    subtitle="Gestione sus recaudaciones y pagos de forma online:"
+  />
   <div class="home-4-container">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mt-3 rounded-xl w-[80vw] max-w-[80vw] 2xl:max-w-7xl mx-auto">
-     <PaymentCard
-     title="Gestion multicanal"
-     content="Envíe instrucciones de cobranzas y pagos de manera fácil a través de nuestra plataforma, mediante transmisión de archivos."
-     iconUrl="/images/platform-icons/gestion-multicanal.svg"
-     iconAlt="Icono gestion multicanal"/>
-     <PaymentCard
-     title="Reportes Personalizados"
-     content="Acceda a informes detallados sobre sus recaudaciones y/o pagos, con la posibilidad de exportar archivos en formato Excel o texto. "
-     iconUrl="/images/platform-icons/reportes-personalizados.svg"
-     iconAlt="Icono gestion multicanal"/>
-     <PaymentCard
-     title="Consulta de Movimientos"
-     content="Manténganse informado sobre todos los movimientos, saldos disponibles y proyectados, registrados en su Cuenta BitcomPay. "
-     iconUrl="/images/platform-icons/consulta-movimientos.svg"
-     iconAlt="Icono gestion multicanal"/>
-     <PaymentCard
-      title="Notificaciones Automatizadas"
-      content="Personalice notificaciones automatizadas para su cartera de clientes y proveedores, utilizando plantillas con su marca."
-      iconUrl="/images/platform-icons/notificaciones-personalizadas.svg"
-      iconAlt="Icono gestion multicanal"/>
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mt-3 rounded-xl w-[80vw] max-w-[80vw] 2xl:max-w-7xl mx-auto"
+    >
       <PaymentCard
-      title="Distribución de Comprobantes"
-      content="Facilite la recaudación de su cartera mediante la distribución de Comprobantes, con instrucciones claras de los canales habilitados para su pago"
-      iconUrl="/images/platform-icons/distribucion-comprobantes.svg"
-      iconAlt="Icono gestion multicanal"/>
+        title="Gestion multicanal"
+        content="Envíe instrucciones de cobranzas y pagos de manera fácil a través de nuestra plataforma, mediante transmisión de archivos."
+        iconUrl="/images/platform-icons/gestion-multicanal.svg"
+        iconAlt="Icono gestion multicanal"
+      />
       <PaymentCard
-      title="Análisis Estadístico"
-      content="Utilice nuestro Dashboard para acceder a información estadística relevante que le ayudará en la toma de decisiones."
-      iconUrl="/images/platform-icons/analisis-estadistico.svg"
-      iconAlt="Icono gestion multicanal"/>
-  </div>
+        title="Reportes Personalizados"
+        content="Acceda a informes detallados sobre sus recaudaciones y/o pagos, con la posibilidad de exportar archivos en formato Excel o texto. "
+        iconUrl="/images/platform-icons/reportes-personalizados.svg"
+        iconAlt="Icono gestion multicanal"
+      />
+      <PaymentCard
+        title="Consulta de Movimientos"
+        content="Manténganse informado sobre todos los movimientos, saldos disponibles y proyectados, registrados en su Cuenta BitcomPay. "
+        iconUrl="/images/platform-icons/consulta-movimientos.svg"
+        iconAlt="Icono gestion multicanal"
+      />
+      <PaymentCard
+        title="Notificaciones Automatizadas"
+        content="Personalice notificaciones automatizadas para su cartera de clientes y proveedores, utilizando plantillas con su marca."
+        iconUrl="/images/platform-icons/notificaciones-personalizadas.svg"
+        iconAlt="Icono gestion multicanal"
+      />
+      <PaymentCard
+        title="Distribución de Comprobantes"
+        content="Facilite la recaudación de su cartera mediante la distribución de Comprobantes, con instrucciones claras de los canales habilitados para su pago."
+        iconUrl="/images/platform-icons/distribucion-comprobantes.svg"
+        iconAlt="Icono gestion multicanal"
+      />
+      <PaymentCard
+        title="Análisis Estadístico"
+        content="Utilice nuestro Dashboard para acceder a información estadística relevante que le ayudará en la toma de decisiones."
+        iconUrl="/images/platform-icons/analisis-estadistico.svg"
+        iconAlt="Icono gestion multicanal"
+      />
+    </div>
   </div>
 
-  
   <style>
     .home-4 {
       width: auto;
@@ -66,7 +76,6 @@ import SectionTitle from "./SectionTitle.astro";
 
     .home-4-tittle p span {
       font-weight: 500;
-
     }
 
     .home-4-container {
