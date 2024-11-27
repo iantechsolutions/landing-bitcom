@@ -3,8 +3,7 @@ import { ChevronRight } from "lucide-astro";
 ---
 
 <section
-  class="w-full flex flex-col md:flex-row justify-center gap-3 items-center md:mt-20 px-20 2xl:max-w-7xl 2xl:mx-auto"
-  id="home"
+  class="w-[86%] flex flex-col md:flex-row md:justify-between gap-10 sm:gap-5 md:gap-3 items-center md:mt-2 lg:mt-32 2xl:max-w-7xl mx-auto"
 >
   <div class="header-home">
     <h1>
@@ -16,73 +15,46 @@ import { ChevronRight } from "lucide-astro";
       management de forma online con nuestra plataforma.
     </p>
 
-    <a href="/#contact">
+    <a
+      class="flex justify-between items-center text-wrap w-[90%]
+      sm:w-[70%] md:w-[60%] xl:md-[50%] border-none bg-[#bef0bb] text-[#366b33]
+      font-bold text-xs sm:text-sm mb:text-base py-2 min-[402px]:py-[0.9rem] px-2 md:px-[1.2rem]
+      mt-8 rounded-full"
+      href="/#contact"
+    >
       Consulte por nuestro sistema <ChevronRight
         class="h-4"
         strokeWidth={1}
       /></a
     >
   </div>
-  <div>
-    <img src="/images/mockup 1.png" class="40vw" alt="" />
-    <div></div>
 
-    <style>
-      .home {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .header-home h1 {
-        font-size: 2rem;
-        font-size: clamp(
-          2rem,
-          1.7628865979381443rem + 1.0309278350515463vw,
-          3rem
-        );
-        font-weight: 600;
-        text-align: start;
-        margin-top: 8rem;
-      }
-
-      .header-home h1 span {
-        color: #85ce81;
-      }
-
-      .header-home p {
-        font-size: 0.8rem;
-        font-size: clamp(
-          0.8rem,
-          0.6340206185567011rem + 0.7216494845360825vw,
-          1.5rem
-        );
-        font-weight: 400;
-        text-align: start;
-        margin-top: 1.5rem;
-      }
-
-      .header-home a {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 25rem;
-        border: none;
-        background-color: #bef0bb;
-        color: #366b33;
-        font-weight: 700;
-        font-size: 1rem;
-        padding: 0.9rem 1.2rem;
-        margin-top: 2rem;
-        border-radius: 9999px;
-      }
-
-      @media (max-width: 1024px) {
-        .header-home button {
-          width: 15rem;
-          font-size: 0.8rem;
-        }
-      }
-    </style>
-  </div>
+  <img src="/public/images/mockup 1-cropped.png" class="md:w-[40vw]" />
 </section>
+
+<style>
+  .header-home h1 {
+    font-size: 2rem;
+    font-size: clamp(2rem, 1.7628865979381443rem + 1.0309278350515463vw, 3rem);
+    font-weight: 600;
+    text-align: start;
+    margin-top: 8rem;
+  }
+
+  .header-home h1 span {
+    color: #85ce81;
+  }
+
+  .header-home p {
+    font-size: 0.8rem;
+    font-size: clamp(
+      0.8rem,
+      0.6340206185567011rem + 0.7216494845360825vw,
+      1.5rem
+    );
+    font-weight: 400;
+    text-align: start;
+    margin-top: 1.5rem;
+    text-wrap: wrap;
+  }
+</style>

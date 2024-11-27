@@ -1,15 +1,16 @@
 <header
   class="absolute flex items-center justify-between mx-auto top-0 lg:top-12 w-full lg:w-[86%] max-w-screen-xl bg-white dark:bg-[#212121] shadow-lg z-50 lg:rounded-full px-7 lg:px-[2.7rem] py-4 lg:left-1/2 lg:transform lg:-translate-x-1/2"
 >
-  <figure class="flex items-center">
-    <img
-      id="bitcom-logo"
-      class="h-auto w-32 lg:w-40"
-      src="./images/logo-bitcom-dark.png"
-      alt=""
-    />
-  </figure>
-
+  <a href="/">
+    <figure class="flex items-center">
+      <img
+        id="bitcom-logo"
+        class="h-auto w-32 lg:w-40"
+        src="/images/logo-bitcom-dark.png"
+        alt="Bitcom Logo"
+      />
+    </figure>
+  </a>
   <div class="flex gap-4 lg:contents">
     <nav class="flex items-center order-last lg:order-none">
       <span class="nav-label" hidden>Navigation</span>
@@ -32,7 +33,10 @@
         <button id="btnClose" aria-label="Close" class="self-end lg:hidden">
           <img class="h-6" id="cerrar" src="./images/close-menu.svg" />
         </button>
-        <ul class="flex flex-col items-center gap-6 lg:flex-row lg:gap-4" id="topnav_links">
+        <ul
+          class="flex flex-col items-center gap-6 lg:flex-row lg:gap-4"
+          id="topnav_links"
+        >
           <li class="link dark:text-[#ffffff]">
             <a href="/#home-2" class="font-medium opacity-70 text-base"
               >Servicios</a
@@ -71,7 +75,7 @@
         <img
           id="theme-switcher-img"
           class="h-8 w-8 lg:h-[2.7rem] lg:w-[2.7rem]"
-          src="./images/theme-switcher.png"
+          src="/images/theme-switcher-dark.png"
           alt="theme-switcher"
         />
       </button>
@@ -134,34 +138,31 @@
 </script>
 
 <script>
- 
-    const themeSwitcher = document.getElementById("theme-switcher");
-    const themeSwitcherImg = document.getElementById(
-      "theme-switcher-img",
-    ) as HTMLImageElement;
-    const logoImage = document.getElementById(
-      "bitcom-logo",
-    ) as HTMLImageElement;
-    const btnOpen = document.getElementById("abrir") as HTMLImageElement;
-    const btnClose = document.getElementById("cerrar") as HTMLImageElement;
-    function toggleIcons() {
-      if (document.documentElement.classList.contains("dark")) {
-        themeSwitcherImg.src = "./images/theme-switcher-dark.png";
-        logoImage.src = "./images/logo-bitcom-light.png";
-        btnOpen.src = "./images/menu-dark.svg";
-        btnClose.src = "./images/close-menu-dark.svg";
-      } else {
-        themeSwitcherImg.src = "./images/theme-switcher.png";
-        logoImage.src = "./images/logo-bitcom-dark.png";
-        btnOpen.src = "./images/menu.svg";
-        btnClose.src = "./images/close-menu.svg";
-      }
+  const themeSwitcher = document.getElementById("theme-switcher");
+  const themeSwitcherImg = document.getElementById(
+    "theme-switcher-img",
+  ) as HTMLImageElement;
+  const logoImage = document.getElementById("bitcom-logo") as HTMLImageElement;
+  const btnOpen = document.getElementById("abrir") as HTMLImageElement;
+  const btnClose = document.getElementById("cerrar") as HTMLImageElement;
+  function toggleIcons() {
+    if (document.documentElement.classList.contains("dark")) {
+      themeSwitcherImg.src = "/images/theme-switcher-dark.png";
+      logoImage.src = "/images/logo-bitcom-light.png";
+      btnOpen.src = "/images/menu-dark.svg";
+      btnClose.src = "/images/close-menu-dark.svg";
+    } else {
+      themeSwitcherImg.src = "/images/theme-switcher.png";
+      logoImage.src = "/images/logo-bitcom-dark.png";
+      btnOpen.src = "/images/menu.svg";
+      btnClose.src = "/images/close-menu.svg";
     }
+  }
+  toggleIcons();
+  themeSwitcher.addEventListener("click", () => {
+    document.documentElement.classList.toggle("dark");
     toggleIcons();
-    themeSwitcher.addEventListener("click", ()=>{
-      document.documentElement.classList.toggle("dark");
-      toggleIcons();
-    });
+  });
 </script>
 <script>
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
